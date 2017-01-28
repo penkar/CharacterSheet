@@ -1,0 +1,11 @@
+{
+  "name": "char_sheet",
+  "version": "1.0.0",
+  "description": "\"A character sheet.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeffrey Penkar",
+  "license": "ISC"
+}
