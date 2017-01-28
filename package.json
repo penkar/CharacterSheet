@@ -4,10 +4,14 @@
   "description": "\"A character sheet.\"",
   "main": "index.js",
   "scripts": {
+    "start": "webpack",
+    "dev": "webpack & python -m SimpleHTTPServer 9999",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react": "^15.1.0"
+    "react": "^15.1.0",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "classnames": "^2.2.5",
