@@ -1,9 +1,13 @@
 import React, {Component, PropTypes} from 'react';
+import Sheet from './Sheet.js';
+
+require('../../style/Base.scss')
 
 export default class App extends Component {
-  render() {console.log(4);
+  render() {
     return (
-      <div>APP
+      <div>
+        <Sheet />
       </div>
     )
   }
