@@ -7,9 +7,11 @@ const initial = {
   charisma: {value: 0, placeholder: 0, modifier: 0},
 }
 
-export const abilityReducer = function(state=initial, action) {
+const abilityReducer = (state=initial, action) => {
   switch (action.type) {
     default:
       return state;
   }
 }
+
+export default abilityReducer

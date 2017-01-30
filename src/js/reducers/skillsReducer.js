@@ -19,9 +19,11 @@ const initial = {
   survival: {checked: false, value: 0, placeholder: 0},
 }
 
-export default skillsReducer = function(state=initial, action) {
+const skillsReducer = (state=initial, action) => {
   switch (action.type) {
     default:
       return state;
   }
 }
+
+export default skillsReducer

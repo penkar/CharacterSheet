@@ -10,7 +10,7 @@ const initial = {
   characterName: '',
 }
 
-export default characterNameReducer = function(state=initial, action) {
+const characterNameReducer = (state=initial, action) => {
   switch (action.type) {
     case '':
       return state;
@@ -18,3 +18,4 @@ export default characterNameReducer = function(state=initial, action) {
       return state;
   }
 }
+export default characterNameReducer

@@ -31,9 +31,11 @@ const initial = {
   },
 }
 
-export const savingReducer = function(state=initial, action) {
+const savingReducer = (state=initial, action) => {
   switch (action.type) {
     default:
       return state;
   }
 }
+
+export default savingReducer
