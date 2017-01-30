@@ -26,6 +26,8 @@ const initial = {
 
 const characterBioReducer = (state=initial, action) => {
   switch (action.type) {
+    case WRITING:
+      return state;
     default:
       return state;
   }

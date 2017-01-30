@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
+import * as constants from '../constants'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -11,8 +12,12 @@ class Sheet extends Component {
   static PropTypes = {
 
   }
+
+  componentDidMount() {
+    this.props.dispatch({type:'WRITING'})
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div id='sheet'>
         Sheet

@@ -1,12 +1,5 @@
-import {
-  CHANGE_SETTING,
-} from './settings'
+// SETTINGS CONSTANTS
+export const CHANGE_SETTING = 'CHANGE_SETTING'
 
-import {
-  WRITING,
-} from './characterinformation'
-
-export default {
-  CHANGE_SETTING,
-  WRITING,
-}
+// CHARACTER CONSTANTS
+export const WRITING = 'WRITING';

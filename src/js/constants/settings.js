@@ -1,1 +1,0 @@
-export const CHANGE_SETTING = 'CHANGE_SETTING'
