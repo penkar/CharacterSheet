@@ -1,4 +1,13 @@
 const initial = {
+  proficiencyBonus: {value: 0,placeholder: 0,},
+  
+  strengthSaving: {checked: false,value: 0,placeholder: 0,},
+  dexteritySaving: {checked: false,value: 0,placeholder: 0,},
+  constitutionSaving: {checked: false,value: 0,placeholder: 0,},
+  intelligenceSaving: {checked: false,value: 0,placeholder: 0,},
+  wisdomSaving: {checked: false,value: 0,placeholder: 0,},
+  charismaSaving: {checked: false,value: 0,placeholder: 0,},
+
   acrobatics: {checked: false, value: 0, placeholder: 0},
   animalHandling: {checked: false, value: 0, placeholder: 0},
   arcana: {checked: false, value: 0, placeholder: 0},

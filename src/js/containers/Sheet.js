@@ -1,10 +1,18 @@
 import React, {Component, PropTypes} from 'react'
+import {connect} from 'react-redux';
 
-export default class Sheet extends Component {
+const mapStateToProps = (state)=>{
+  return ({
+    state
+  });
+}
+
+class Sheet extends Component {
   static PropTypes = {
 
   }
   render() {
+    console.log(this.props);
     return (
       <div id='sheet'>
         Sheet
@@ -12,3 +20,5 @@ export default class Sheet extends Component {
     )
   }
 }
+
+export default connect(mapStateToProps)(Sheet)
