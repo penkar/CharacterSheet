@@ -2,4 +2,23 @@
   width: 850px;
   float: right;
   text-align: center;
+  background-color: lightgray;
+  height: 100vh;
+
+  table {
+    width: 100%;
+    text-align: left;
+    font-size: 8px;
+
+    
+
+    .input-field {
+      line-height: 1rem;
+      font-size: 10px;
+      border: 0px;
+      border-bottom: solid 1px black;
+      width: 100%;
+      background-color: transparent;
+    }
+  }
 }

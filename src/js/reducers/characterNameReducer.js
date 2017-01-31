@@ -2,6 +2,7 @@ const initial = {
   class:'',
   level:0,
   background:'',
+  race:'',
   alignment:'',
   playerName:'',
   experiencePoints:0,
