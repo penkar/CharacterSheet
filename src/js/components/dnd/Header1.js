@@ -8,10 +8,10 @@ export default class Header1 extends Component {
     return (
       <tr>
         <td></td>
-        <td><Input placeholder={props.class} value={props.class} specific='' field='class'/></td>
-        <td><Input placeholder={props.background} value={props.background} specific='' field='background'/></td>
-        <td><Input placeholder={props.playerName} value={props.playerName} specific='' field='playerName'/></td>
-        <td><Input placeholder={props.faction} value={props.faction} specific='' field='faction'/></td>
+        <td className='ll t'><Input placeholder={props.class} value={props.class} specific='' field='class'/></td>
+        <td className='t'><Input placeholder={props.background} value={props.background} specific='' field='background'/></td>
+        <td className='t'><Input placeholder={props.playerName} value={props.playerName} specific='' field='playerName'/></td>
+        <td className='rr t'><Input placeholder={props.faction} value={props.faction} specific='' field='faction'/></td>
       </tr>
     )
   }
@@ -20,10 +20,10 @@ export default class Header1 extends Component {
     return (
       <tr>
         <td></td>
-        <td>Class & Level</td>
+        <td className='ll'>Class & Level</td>
         <td>Background</td>
         <td>Player Name</td>
-        <td>Faction</td>
+        <td className='rr'>Faction</td>
       </tr>
     )
   }
@@ -32,11 +32,11 @@ export default class Header1 extends Component {
     let {props} = this;
     return (
       <tr>
-        <td><Input placeholder={props.characterName} value={props.characterName} specific='' field='characterName'/></td>
-        <td><Input placeholder={props.race} value={props.race} specific='' field='race'/></td>
+        <td className='ll t b'><Input placeholder={props.characterName} value={props.characterName} specific='' field='characterName'/></td>
+        <td className='ll'><Input placeholder={props.race} value={props.race} specific='' field='race'/></td>
         <td><Input placeholder={props.alignment} value={props.alignment} specific='' field='alignment'/></td>
         <td><Input placeholder={props.experiencePoints} value={props.experiencePoints} specific='' field='experiencePoints'/></td>
-        <td><Input placeholder={props.dciNumber} value={props.dciNumber} specific='' field='dciNumber'/></td>
+        <td className='rr'><Input placeholder={props.dciNumber} value={props.dciNumber} specific='' field='dciNumber'/></td>
       </tr>
     )
   }
@@ -45,17 +45,17 @@ export default class Header1 extends Component {
     return (
       <tr>
         <td>Character Name</td>
-        <td>Race</td>
-        <td>Alignment</td>
-        <td>Experience Points</td>
-        <td>DCI Number</td>
+        <td className='ll b'>Race</td>
+        <td className='b'>Alignment</td>
+        <td className='b'>Experience Points</td>
+        <td className='rr b'>DCI Number</td>
       </tr>
     )
   }
 
   render() {
     return (
-      <table id='sheet-header'>
+      <table id='sheet-header' cellSpacing='0'>
         <tbody>
           {::this._row1()}
           {::this._row2()}
