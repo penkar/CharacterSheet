@@ -3,8 +3,8 @@ import cn from 'classnames'
 
 export default class Input extends Component {
   static propTypes = {
-    placeholder: PropTypes.string,
-    value: PropTypes.string,
+    placeholder: PropTypes.any,
+    value: PropTypes.any,
     specific: PropTypes.string,
   }
 

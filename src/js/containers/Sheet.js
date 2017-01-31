@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
 import * as constants from '../constants'
 
-import {Header} from '../components/dnd/index'
+import {Header1, Header2} from '../components/dnd/index'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -24,7 +24,8 @@ class Sheet extends Component {
     let {characterNameReducer} = this.props;
     return (
       <div id='sheet'>
-        <Header {...characterNameReducer}/>
+        <Header1 {...characterNameReducer}/>
+        <Header2 {...characterNameReducer}/>
       </div>
     )
   }

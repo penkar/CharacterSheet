@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {Input} from '../generics'
 
 
-export default class Header extends Component {
+export default class Header1 extends Component {
   _row1() {
     let {props} = this;
     return (
@@ -29,13 +29,14 @@ export default class Header extends Component {
   }
 
   _row3() {
+    let {props} = this;
     return (
       <tr>
-        <td><Input placeholder={''} value={''} specific='' field='characterName'/></td>
-        <td><Input placeholder={''} value={''} specific='' field='race'/></td>
-        <td><Input placeholder={''} value={''} specific='' field='alignment'/></td>
-        <td><Input placeholder={''} value={''} specific='' field='experiencePoints'/></td>
-        <td><Input placeholder={''} value={''} specific='' field='dciNumber'/></td>
+        <td><Input placeholder={props.characterName} value={props.characterName} specific='' field='characterName'/></td>
+        <td><Input placeholder={props.race} value={props.race} specific='' field='race'/></td>
+        <td><Input placeholder={props.alignment} value={props.alignment} specific='' field='alignment'/></td>
+        <td><Input placeholder={props.experiencePoints} value={props.experiencePoints} specific='' field='experiencePoints'/></td>
+        <td><Input placeholder={props.dciNumber} value={props.dciNumber} specific='' field='dciNumber'/></td>
       </tr>
     )
   }
@@ -53,14 +54,13 @@ export default class Header extends Component {
   }
 
   render() {
-    let {characterNameReducer} = this.props;
     return (
       <table id='sheet-header'>
         <tbody>
-          {::this._row1(characterNameReducer)}
-          {::this._row2(characterNameReducer)}
-          {::this._row3(characterNameReducer)}
-          {::this._row4(characterNameReducer)}
+          {::this._row1()}
+          {::this._row2()}
+          {::this._row3()}
+          {::this._row4()}
         </tbody>
       </table>
     )
