@@ -1,6 +1,7 @@
 const initial = {
+  inspiration: {value: 0,placeholder: 0,},
   proficiencyBonus: {value: 0,placeholder: 0,},
-  
+
   strengthSaving: {checked: false,value: 0,placeholder: 0,},
   dexteritySaving: {checked: false,value: 0,placeholder: 0,},
   constitutionSaving: {checked: false,value: 0,placeholder: 0,},
