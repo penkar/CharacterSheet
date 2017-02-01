@@ -1,7 +1,7 @@
 #skills {
   display: flex;
   flex-direction: column;
-  width: 120px;
+  width: 150px;
   font-size: 8px;
   text-align: left;
   padding-left: 15px;
@@ -32,11 +32,22 @@
     }
   }
 
-  #savingthrows {
-
+  #savingthrows, #skillscores {
+    margin-top: 10px;
+    border: 1px solid black;
   }
 
   #skillscores {
-    
+
+  }
+
+  .score {
+    input {
+      width: 1rem;
+      line-height: 1rem;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
   }
 }
