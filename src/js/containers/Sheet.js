@@ -2,11 +2,12 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
 import * as constants from '../constants'
 
-import {Header1, Header2} from '../components/dnd/index'
+import {Header1, Header2, Abilities} from '../components/dnd/index'
 
 const mapStateToProps = (state)=>{
   return ({
     characterNameReducer: state.characterNameReducer,
+    abilities: state.abilityReducer,
     state,
   });
 }
@@ -21,10 +22,11 @@ class Sheet extends Component {
   }
 
   render() {
-    let {characterNameReducer} = this.props;
+    let {characterNameReducer, abilities} = this.props;
     return (
       <div id='sheet'>
         <Header1 {...characterNameReducer}/>
+        <Abilities {...abilities}/>
         <Header2 {...characterNameReducer}/>
       </div>
     )
