@@ -1,4 +1,6 @@
 const initial = {
+  passiveWisdom: {value: 0,placeholder: 0,},
+
   inspiration: {value: 0,placeholder: 0,},
   proficiencyBonus: {value: 0,placeholder: 0,},
 
