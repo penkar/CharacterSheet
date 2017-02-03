@@ -2,8 +2,9 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
 import * as constants from '../constants'
 
-import {Header1, Header2, Abilities, Skills, } from '../components/dnd/index'
+import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
 import {PassiveWisdom,} from '../components/dnd/skill'
+import {ProficienciesAndLanguages} from '../components/dnd/textfields'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -25,7 +26,7 @@ class Sheet extends Component {
   }
 
   render() {
-    let {characterNameReducer, abilities, skills,} = this.props;
+    let {characterNameReducer, abilities, skills, textfields,} = this.props;
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
@@ -37,6 +38,7 @@ class Sheet extends Component {
               <Skills {...skills}/>
             </div>
             <PassiveWisdom passiveWisdom={skills.passiveWisdom}/>
+            <ProficienciesAndLanguages text={textfields.otherProficienciesAndLanguages}/>
           </div>
 
           <Header2 {...characterNameReducer}/>
