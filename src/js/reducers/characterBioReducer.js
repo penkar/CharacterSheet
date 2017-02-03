@@ -19,7 +19,7 @@ const initial = {
   characterApperance:'',
   alliesAndOrganizations:'',
   additionalFeaturesAndTraits:'',
-  characterBacksotry:'',
+  characterBackstory:'',
   treasure:'',
   totalNonConsumableMagicItems:'',
 }
