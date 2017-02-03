@@ -4,7 +4,7 @@ import * as constants from '../constants'
 
 import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
 import {PassiveWisdom,} from '../components/dnd/skill'
-import {CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
+import {Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -27,12 +27,13 @@ class Sheet extends Component {
 
   render() {
     let {characterNameReducer, abilities, skills, textfields,} = this.props;
+    console.log(textfields)
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
           <Header1 {...characterNameReducer}/>
 
-          <div style={{flexDirection:'row', display:'flex'}}>
+          <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
 
             <div style={{flexDirection:'column'}}>
               <div style={{flexDirection:'row', display:'flex'}}>
@@ -58,13 +59,16 @@ class Sheet extends Component {
 
           <Header2 {...characterNameReducer}/>
 
-          <div style={{flexDirection:'row', display:'flex'}}>
+          <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
             <div style={{flexDirection:'column'}}>
               <CharacterApperance text={textfields.characterApperance} field='characterApperance'/>
               <CharacterBackstory text={textfields.characterBacksotry} field='characterBacksotry'/>
             </div>
 
             <div style={{flexDirection:'column'}}>
+              <Allies text={textfields.allies} field='allies'/>
+              <Treasure text={textfields.treasure} field='treasure'/>
+              <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits'/>
             </div>
           </div>
 
