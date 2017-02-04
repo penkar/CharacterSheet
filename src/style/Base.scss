@@ -10,3 +10,10 @@ html, body {
 @import 'Sheet';
 @import 'Skills';
 @import 'TextField';
+
+#backstory, #allies, #addl, #treasure, #attacks, #equiptment, #featuresandtraits, #flaws, #personalitytraits, #ideals, #bonds, #proficienciesandlanguages {
+  border: solid 1px black;
+  border-left: double;
+  border-right: double;
+  padding: 1px;
+}

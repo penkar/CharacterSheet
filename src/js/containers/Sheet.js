@@ -35,6 +35,8 @@ class Sheet extends Component {
         <div style={{flexDirection:'column'}}>
           <Header1 {...characterNameReducer}/>
 
+          <br/>
+
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
 
             <div style={{flexDirection:'column'}}>
@@ -61,7 +63,11 @@ class Sheet extends Component {
 
           </div>
 
+          <br/>
+
           <Header2 {...characterNameReducer}/>
+
+          <br/>
 
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
             <div style={{flexDirection:'column', width:'30%'}}>
