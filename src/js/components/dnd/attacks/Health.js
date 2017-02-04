@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import Field from './Field';
+import DeathSaves from './DeathSaves';
+import HitDie from './HitDie';
 
 export default class Health extends Component {
   static propTypes = {
@@ -17,6 +19,7 @@ export default class Health extends Component {
     temporaryHitPoints: PropTypes.number,
 
     hitDice: PropTypes.number,
+    hitDiceTotal: PropTypes.number,
     failures: PropTypes.number,
     successes: PropTypes.number,
   }
@@ -30,10 +33,15 @@ export default class Health extends Component {
           <Field field='initiative' value={props.initiative} name='Initiative'/>
           <Field field='speed' value={props.speed} name='Speed'/>
         </div>
+
         <Field field='hitPoints' value={props.hitPoints} name='Hit Point Maximum'/>
         <Field field='currentHitPoints' value={props.currentHitPoints} name='Current Hit Points'/>
         <Field field='temporaryHitPoints' value={props.temporaryHitPoints} name='Temporary Hit Points'/>
 
+        <div style={{display:'flex', flexDirection:'row'}}>
+          <HitDie hitDie={props.hitDie} hitDieTotal={props.hitDieTotal} />
+          <DeathSaves failures={props.failures} successes={props.successes}/>
+        </div>
       </div>
     )
   }

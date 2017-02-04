@@ -17,6 +17,25 @@
 #health {
   font-size: 9px;
 
+  #deathsaves {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #hitdie {
+    display: flex;
+    flex-direction: column;;
+
+    input {
+      width: 1rem;
+      line-height: 1rem;
+    }
+
+    textarea {
+
+    }
+  }
+
   #armorClass, #speed, #initiative {
     padding: 3px;
     margin-left: 2px;

@@ -8,6 +8,7 @@ const initial = {
   temporaryHitPoints:0,
 
   hitDice:0,
+  hitDiceTotal:0,
 
   successes: 0,
   failures:0,
