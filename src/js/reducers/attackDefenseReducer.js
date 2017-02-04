@@ -13,9 +13,9 @@ const initial = {
   failures:0,
 
   attacksAndSpells:'',
-  attack1:{name:'',bonud:'',dmg:'',},
-  attack2:{name:'',bonud:'',dmg:'',},
-  attack3:{name:'',bonud:'',dmg:'',},
+  attack1:{name:'',bonus:'',dmg:'',},
+  attack2:{name:'',bonus:'',dmg:'',},
+  attack3:{name:'',bonus:'',dmg:'',},
 }
 
 const attackDefenseReducer = (state=initial, action) => {

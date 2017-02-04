@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as constants from '../constants'
 
 import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
+import {AttacksAndSpellcasting} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
 import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
 
@@ -12,6 +13,7 @@ const mapStateToProps = (state)=>{
     abilities: state.abilityReducer,
     skills: state.skillsReducer,
     textfields: state.characterBioReducer,
+    attacks: state.attackDefenseReducer,
     state,
   });
 }
@@ -26,7 +28,8 @@ class Sheet extends Component {
   }
 
   render() {
-    let {characterNameReducer, abilities, skills, textfields,} = this.props;
+    let {characterNameReducer, abilities, skills, textfields, attacks,} = this.props;
+    let atcks = {att: attacks.attacksAndSpells, att1: attacks.attack1, att2: attacks.attack1, att3: attacks.attack3}
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
@@ -44,6 +47,7 @@ class Sheet extends Component {
             </div>
 
             <div style={{flexDirection:'column'}}>
+              <AttacksAndSpellcasting {...atcks}/>
               <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} />
             </div>
 

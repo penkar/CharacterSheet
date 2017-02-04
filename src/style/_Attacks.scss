@@ -1,0 +1,15 @@
+#attacks {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+
+  .attack {
+    display: flex;
+    flex-direction: row;
+    
+    div, input {
+      width: 40px;
+      flex-grow: 1;
+    }
+  }
+}
