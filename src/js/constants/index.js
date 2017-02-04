@@ -3,3 +3,6 @@ export const CHANGE_SETTING = 'CHANGE_SETTING'
 
 // CHARACTER CONSTANTS
 export const WRITING = 'WRITING';
+
+// GETTER SETTER;
+export const HYDRATE = 'HYDRATE'

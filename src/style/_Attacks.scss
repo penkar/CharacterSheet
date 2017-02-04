@@ -6,10 +6,66 @@
   .attack {
     display: flex;
     flex-direction: row;
-    
+
     div, input {
       width: 40px;
       flex-grow: 1;
     }
   }
+}
+
+#health {
+  font-size: 9px;
+
+  #armorClass, #speed, #initiative {
+    padding: 3px;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2rem;
+    min-width: 2.5rem;
+
+    input {
+      width: 1rem;
+      line-height: 1rem;
+    }
+  }
+
+  #armorClass {
+    border: double;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+  }
+
+  #speed, #initiative {
+    border: solid 1px black;
+    border-right: double;
+    border-left: double;
+  }
+
+  #currentHitPoints, #hitPoints, #temporaryHitPoints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px black
+  }
+
+  #temporaryHitPoints {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  #currentHitPoints, #temporaryHitPoints {
+    input {
+      width: 95%;
+    }
+  }
+
+  #hitPoints {
+    flex-direction: row-reverse;
+    margin-top: 4px;
+    border-bottom: 1px solid transparent;
+  }
+
 }
