@@ -38,7 +38,7 @@ export default class Health extends Component {
         <Field field='currentHitPoints' value={props.currentHitPoints} name='Current Hit Points'/>
         <Field field='temporaryHitPoints' value={props.temporaryHitPoints} name='Temporary Hit Points'/>
 
-        <div style={{display:'flex', flexDirection:'row'}}>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
           <HitDie hitDie={props.hitDie} hitDieTotal={props.hitDieTotal} />
           <DeathSaves failures={props.failures} successes={props.successes}/>
         </div>
