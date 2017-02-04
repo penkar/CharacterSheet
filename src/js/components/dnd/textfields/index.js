@@ -9,7 +9,8 @@ import CharacterApperance from './CharacterApperance'
 import Allies from './Allies'
 import Treasure from './Treasure'
 import AddlFeaturesAndTraits from './AddlFeaturesAndTraits'
+import Equiptment from './Equiptment'
 
-export {Bonds, Flaws, Ideals, PersonalityTraits,
+export {Bonds, Flaws, Ideals, PersonalityTraits, Equiptment,
   ProficienciesAndLanguages, FeaturesAndTraits, CharacterBackstory,
   CharacterApperance, Allies, Treasure, AddlFeaturesAndTraits, }

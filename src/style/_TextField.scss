@@ -1,4 +1,17 @@
 #personalitytraits, #ideals, #flaws, #featuresandtraits, #bonds, #proficienciesandlanguages, #apperance, #backstory, #allies, #addl, #treasure {
- font-size: 10px;
- margin-top: 10px;
+  font-size: 10px;
+  margin-top: 10px;
+  textarea {
+    width: 95%;
+  }
+}
+
+#backstory, #allies, #addl, #treasure {
+  border: solid 1px black;
+  border-left: double;
+  border-right: double;
+}
+
+#apperance {
+  border: solid 2px black;
 }

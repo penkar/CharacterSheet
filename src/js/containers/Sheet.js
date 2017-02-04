@@ -4,7 +4,7 @@ import * as constants from '../constants'
 
 import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
 import {PassiveWisdom,} from '../components/dnd/skill'
-import {Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
+import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -27,7 +27,6 @@ class Sheet extends Component {
 
   render() {
     let {characterNameReducer, abilities, skills, textfields,} = this.props;
-    console.log(textfields)
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
@@ -45,6 +44,7 @@ class Sheet extends Component {
             </div>
 
             <div style={{flexDirection:'column'}}>
+              <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} />
             </div>
 
             <div style={{flexDirection:'column'}}>
@@ -60,12 +60,12 @@ class Sheet extends Component {
           <Header2 {...characterNameReducer}/>
 
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
-            <div style={{flexDirection:'column'}}>
+            <div style={{flexDirection:'column', width:'30%'}}>
               <CharacterApperance text={textfields.characterApperance} field='characterApperance'/>
               <CharacterBackstory text={textfields.characterBacksotry} field='characterBacksotry'/>
             </div>
 
-            <div style={{flexDirection:'column'}}>
+            <div style={{flexDirection:'column', width:'65%'}}>
               <Allies text={textfields.allies} field='allies'/>
               <Treasure text={textfields.treasure} field='treasure'/>
               <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits'/>
