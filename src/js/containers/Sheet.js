@@ -35,7 +35,7 @@ class Sheet extends Component {
 
   render() {
     let {characterNameReducer, abilities, skills, textfields, attacks, change,} = this.props;
-    let atcks = {att: attacks.attacksAndSpells, att1: attacks.attack1, att2: attacks.attack1, att3: attacks.attack3}
+    let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack1, att3: attacks.attack3}
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
@@ -51,21 +51,21 @@ class Sheet extends Component {
                 <Skills {...skills}/>
               </div>
               <PassiveWisdom passiveWisdom={skills.passiveWisdom}/>
-              <ProficienciesAndLanguages text={textfields.otherProficienciesAndLanguages} field='otherProficienciesAndLanguages'/>
+              <ProficienciesAndLanguages text={textfields.otherProficienciesAndLanguages} field='otherProficienciesAndLanguages' change={change}/>
             </div>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
               <Health {...attacks}/>
-              <AttacksAndSpellcasting {...atcks}/>
-              <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} />
+              <AttacksAndSpellcasting {...atcks} change={change}/>
+              <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} change={change}/>
             </div>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
-              <PersonalityTraits text={textfields.personalityTraits} field='personalityTraits'/>
-              <Ideals text={textfields.personalityTraits} field='personalityTraits'/>
-              <Bonds text={textfields.bonds} field='bonds'/>
-              <Flaws text={textfields.flaws} field='flaws'/>
-              <FeaturesAndTraits text={textfields.featuresAndTraits} field='featuresAndTraits'/>
+              <PersonalityTraits text={textfields.personalityTraits} field='personalityTraits' change={change}/>
+              <Ideals text={textfields.ideals} field='ideals' change={change}/>
+              <Bonds text={textfields.bonds} field='bonds' change={change}/>
+              <Flaws text={textfields.flaws} field='flaws' change={change}/>
+              <FeaturesAndTraits text={textfields.featuresAndTraits} field='featuresAndTraits' change={change}/>
             </div>
 
           </div>
@@ -78,14 +78,14 @@ class Sheet extends Component {
 
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
             <div style={{flexDirection:'column', width:'30%'}}>
-              <CharacterApperance text={textfields.characterApperance} field='characterApperance'/>
-              <CharacterBackstory text={textfields.characterBacksotry} field='characterBacksotry'/>
+              <CharacterApperance text={textfields.characterApperance} field='characterApperance' change={change}/>
+              <CharacterBackstory text={textfields.characterBackstory} field='characterBackstory' change={change}/>
             </div>
 
             <div style={{flexDirection:'column', width:'65%'}}>
-              <Allies text={textfields.allies} field='allies'/>
-              <Treasure text={textfields.treasure} field='treasure'/>
-              <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits'/>
+              <Allies text={textfields.allies} field='allies' change={change}/>
+              <Treasure text={textfields.treasure} field='treasure' change={change}/>
+              <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits' change={change}/>
             </div>
           </div>
 

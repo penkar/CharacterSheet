@@ -1,3 +1,5 @@
+import {BIO_STRING, BIO_INT,} from '../constants'
+
 import {WRITING} from '../constants'
 
 const initial = {
@@ -5,9 +7,11 @@ const initial = {
   ideals:'',
   bonds:'',
   flaws:'',
-  attacksAndSpellcasting:'',
   featuresAndTraits:'',
+
   otherProficienciesAndLanguages:'',
+  attacksAndSpellcasting:'',
+
   equiptment:'',
   gold: {
     cp: 0,
@@ -16,18 +20,26 @@ const initial = {
     gp: 0,
     pp: 0,
   },
+
   characterApperance:'',
+  characterBackstory:'',
+
   alliesAndOrganizations:'',
   additionalFeaturesAndTraits:'',
-  characterBackstory:'',
   treasure:'',
+
   totalNonConsumableMagicItems:'',
 }
 
 const characterBioReducer = (state=initial, action) => {
+  let nstate = {};
   switch (action.type) {
-    case WRITING:
-      return state;
+    case BIO_STRING:
+      nstate[action.field] = action.value;
+      return Object.assign({}, state, nstate);
+    case BIO_INT:
+      nstate[action.field] = parseInt(action.value);
+      return Object.assign({}, state, {gold: nstate});
     default:
       return state;
   }
