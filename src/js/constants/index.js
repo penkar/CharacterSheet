@@ -16,5 +16,8 @@ export const BIO_INT = 'BIO_INT'
 export const ATT_DEF_STRING = 'ATT_DEF_STRING'
 export const ATT_DEF_INT = 'ATT_DEF_INT'
 
+// Score actions
+export const ABILITY_SCORE = 'ABILITY_SCORE'
+
 // GETTER SETTER;
 export const HYDRATE = 'HYDRATE'

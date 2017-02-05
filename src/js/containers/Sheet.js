@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as constants from '../constants'
-import {change} from '../actions'
+import {change, changeScore} from '../actions'
 
 import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
@@ -24,7 +24,8 @@ const mapStateToProps = (state)=>{
 const mapDispatchToActions = (dispatch) => {
   return {
     dispatch,
-    change: bindActionCreators(change, dispatch)
+    change: bindActionCreators(change, dispatch),
+    changeScore: bindActionCreators(changeScore, dispatch),
   }
 }
 
@@ -34,7 +35,7 @@ class Sheet extends Component {
   }
 
   render() {
-    let {characterNameReducer, abilities, skills, textfields, attacks, change,} = this.props;
+    let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div id='sheet'>
@@ -47,10 +48,10 @@ class Sheet extends Component {
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
               <div style={{flexDirection:'row', display:'flex'}}>
-                <Abilities {...abilities}/>
-                <Skills {...skills}/>
+                <Abilities {...abilities} change={changeScore}/>
+                <Skills {...skills} change={changeScore}/>
               </div>
-              <PassiveWisdom passiveWisdom={skills.passiveWisdom}/>
+              <PassiveWisdom passiveWisdom={skills.passiveWisdom} change={changeScore}/>
               <ProficienciesAndLanguages text={textfields.otherProficienciesAndLanguages} field='otherProficienciesAndLanguages' change={change}/>
             </div>
 
