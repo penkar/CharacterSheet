@@ -13,7 +13,7 @@ export default class HitDie extends Component {
         <div>
           Total: <input value={hitDie}/>
         </div>
-        <textarea row='5' cols='10'/>
+        <textarea rows='5' cols='10'/>
         <span>HIT DICE</span>
       </div>
     )

@@ -3,13 +3,17 @@ import cn from 'classnames'
 
 export default class Input extends Component {
   static propTypes = {
+    change: PropTypes.func,
     placeholder: PropTypes.any,
     value: PropTypes.any,
     specific: PropTypes.string,
+    field: PropTypes.string,
   }
 
-  _change() {
-    console.log(10);
+  _change(e) {
+    let {change, field} = this.props;
+    let value = e.target.value;
+    change({field, value});
   }
 
   render() {

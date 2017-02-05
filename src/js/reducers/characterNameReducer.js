@@ -1,3 +1,5 @@
+import {CHAR_NAME_STRING, CHAR_NAME_INT} from '../constants'
+
 const initial = {
   class:'',
   level:0,
@@ -15,13 +17,17 @@ const initial = {
   eyes:'',
   skin:'',
   hair:'',
-
 }
 
 const characterNameReducer = (state=initial, action) => {
+  let nstate = {}
   switch (action.type) {
-    case '':
-      return state;
+    case CHAR_NAME_INT:
+      nstate[action.field] = parseInt(action.value);
+      return Object.assign({}, state, nstate);
+    case CHAR_NAME_STRING:
+      nstate[action.field] = action.value;
+      return Object.assign({}, state, nstate);
     default:
       return state;
   }

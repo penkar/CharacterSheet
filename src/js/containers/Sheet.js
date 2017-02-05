@@ -1,6 +1,9 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import * as constants from '../constants'
+import {change} from '../actions'
 
 import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
@@ -18,22 +21,25 @@ const mapStateToProps = (state)=>{
   });
 }
 
+const mapDispatchToActions = (dispatch) => {
+  return {
+    dispatch,
+    change: bindActionCreators(change, dispatch)
+  }
+}
+
 class Sheet extends Component {
   static PropTypes = {
 
   }
 
-  componentDidMount() {
-    this.props.dispatch({type:'WRITING'})
-  }
-
   render() {
-    let {characterNameReducer, abilities, skills, textfields, attacks,} = this.props;
+    let {characterNameReducer, abilities, skills, textfields, attacks, change,} = this.props;
     let atcks = {att: attacks.attacksAndSpells, att1: attacks.attack1, att2: attacks.attack1, att3: attacks.attack3}
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
-          <Header1 {...characterNameReducer}/>
+          <Header1 {...characterNameReducer} change={change}/>
 
           <br/>
 
@@ -66,7 +72,7 @@ class Sheet extends Component {
 
           <br/>
 
-          <Header2 {...characterNameReducer}/>
+          <Header2 {...characterNameReducer} change={change}/>
 
           <br/>
 
@@ -89,4 +95,4 @@ class Sheet extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Sheet)
+export default connect(mapStateToProps, mapDispatchToActions)(Sheet)
