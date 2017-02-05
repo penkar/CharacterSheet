@@ -5,13 +5,19 @@ export default class Field extends Component {
     value: PropTypes.number,
     field: PropTypes.string,
     name: PropTypes.string,
+    change: PropTypes.func,
+  }
+
+  _change(e) {
+    let value = e.target.value, {change, field} = this.props;
+    change({field, value});
   }
 
   render() {
     let {name, field, value} = this.props;
     return (
       <div id={field} key={field}>
-        <input value={value} />
+        <input value={value} onChange={::this._change}/>
         <span>{name}</span>
       </div>
     )

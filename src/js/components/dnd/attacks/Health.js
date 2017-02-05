@@ -5,6 +5,8 @@ import HitDie from './HitDie';
 
 export default class Health extends Component {
   static propTypes = {
+    change: PropTypes.func,
+
     attack1: PropTypes.object,
     attack2: PropTypes.object,
     attack3: PropTypes.object,
@@ -19,28 +21,28 @@ export default class Health extends Component {
     temporaryHitPoints: PropTypes.number,
 
     hitDice: PropTypes.number,
-    hitDiceTotal: PropTypes.number,
+    hitDiceTotal: PropTypes.string,
     failures: PropTypes.number,
     successes: PropTypes.number,
   }
 
   render() {
-    let {props} = this;
+    let {props} = this, {change} = this.props;
     return (
       <div id='health'>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
-          <Field field='armorClass' value={props.armorClass} name='Armor Class'/>
-          <Field field='initiative' value={props.initiative} name='Initiative'/>
-          <Field field='speed' value={props.speed} name='Speed'/>
+          <Field field='armorClass' value={props.armorClass} name='Armor Class' change={change}/>
+          <Field field='initiative' value={props.initiative} name='Initiative' change={change}/>
+          <Field field='speed' value={props.speed} name='Speed' change={change}/>
         </div>
 
-        <Field field='hitPoints' value={props.hitPoints} name='Hit Point Maximum'/>
-        <Field field='currentHitPoints' value={props.currentHitPoints} name='Current Hit Points'/>
-        <Field field='temporaryHitPoints' value={props.temporaryHitPoints} name='Temporary Hit Points'/>
+        <Field field='hitPoints' value={props.hitPoints} name='Hit Point Maximum' change={change}/>
+        <Field field='currentHitPoints' value={props.currentHitPoints} name='Current Hit Points' change={change}/>
+        <Field field='temporaryHitPoints' value={props.temporaryHitPoints} name='Temporary Hit Points' change={change}/>
 
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
-          <HitDie hitDie={props.hitDie} hitDieTotal={props.hitDieTotal} />
-          <DeathSaves failures={props.failures} successes={props.successes}/>
+          <HitDie hitDie={props.hitDie} hitDieTotal={props.hitDieTotal} change={change}/>
+          <DeathSaves failures={props.failures} successes={props.successes} change={change}/>
         </div>
       </div>
     )

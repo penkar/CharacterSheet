@@ -12,6 +12,9 @@ export const CHAR_NAME_INT = 'CHAR_NAME_INT';
 export const BIO_STRING = 'BIO_STRING'
 export const BIO_INT = 'BIO_INT'
 
+// Attack Defense actions
+export const ATT_DEF_STRING = 'ATT_DEF_STRING'
+export const ATT_DEF_INT = 'ATT_DEF_INT'
 
 // GETTER SETTER;
 export const HYDRATE = 'HYDRATE'

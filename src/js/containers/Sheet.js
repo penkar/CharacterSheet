@@ -35,7 +35,7 @@ class Sheet extends Component {
 
   render() {
     let {characterNameReducer, abilities, skills, textfields, attacks, change,} = this.props;
-    let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack1, att3: attacks.attack3}
+    let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
@@ -55,7 +55,7 @@ class Sheet extends Component {
             </div>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
-              <Health {...attacks}/>
+              <Health {...attacks} change={change}/>
               <AttacksAndSpellcasting {...atcks} change={change}/>
               <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} change={change}/>
             </div>
