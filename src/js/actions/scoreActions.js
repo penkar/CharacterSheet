@@ -1,7 +1,5 @@
 import {ABILITY_SCORE, SKILL_SCORE, SKILL_AFFILIATE, SKILL_CHECK,} from '../constants'
 
-
-
 export const changeScore = ({field, value, modifier, checked,   ability, affiliate, skill, radio}) => {
   if(skill) {
     return ({

@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import Score from './Score'
+import {getModifier} from '../../../utilities/scoreutilities'
 
 export default class SavingThrows extends Component {
   static propTypes = {
@@ -12,19 +13,20 @@ export default class SavingThrows extends Component {
 
     change: PropTypes.func,
     pro: PropTypes.number,
+    abi: PropTypes.object,
   }
 
   render() {
-    let {change, pro} = this.props;
+    let {props} = this, {change, pro, abi,} = this.props;
     let stuff = {change, pro}
     return (
       <div id='savingthrows'>
-        <Score {...stuff} field='strengthSaving' name='Strength' obj={this.props.strengthSaving} />
-        <Score {...stuff} field='dexteritySaving' name='Dexterity' obj={this.props.dexteritySaving} />
-        <Score {...stuff} field='constitutionSaving' name='Constitution' obj={this.props.constitutionSaving} />
-        <Score {...stuff} field='intelligenceSaving' name='Intelligence' obj={this.props.intelligenceSaving} />
-        <Score {...stuff} field='wisdomSaving' name='Wisdom' obj={this.props.wisdomSaving} />
-        <Score {...stuff} field='charismaSaving' name='Charisma' obj={this.props.charismaSaving} />
+        <Score {...stuff} field='strengthSaving' name='Strength' obj={props.strengthSaving}  mod={getModifier(abi, 'str')}/>
+        <Score {...stuff} field='dexteritySaving' name='Dexterity' obj={props.dexteritySaving}  mod={getModifier(abi, 'dex')}/>
+        <Score {...stuff} field='constitutionSaving' name='Constitution' obj={props.constitutionSaving}  mod={getModifier(abi, 'con')}/>
+        <Score {...stuff} field='intelligenceSaving' name='Intelligence' obj={props.intelligenceSaving}  mod={getModifier(abi, 'int')}/>
+        <Score {...stuff} field='wisdomSaving' name='Wisdom' obj={props.wisdomSaving}  mod={getModifier(abi, 'wis')}/>
+        <Score {...stuff} field='charismaSaving' name='Charisma' obj={props.charismaSaving}  mod={getModifier(abi, 'cha')}/>
         SavingThrows
       </div>
     )

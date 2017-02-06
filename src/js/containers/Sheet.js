@@ -17,7 +17,6 @@ const mapStateToProps = (state)=>{
     skills: state.skillsReducer,
     textfields: state.characterBioReducer,
     attacks: state.attackDefenseReducer,
-    state,
   });
 }
 

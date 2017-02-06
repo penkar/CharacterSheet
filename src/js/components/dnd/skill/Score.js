@@ -6,7 +6,8 @@ export default class Score extends Component {
     obj: PropTypes.object,
     name: PropTypes.string,
     change: PropTypes.func,
-    pro: PropTypes.number
+    pro: PropTypes.number,
+    mod: PropTypes.number,
   }
 
   _onChange() {
@@ -20,8 +21,8 @@ export default class Score extends Component {
   }
 
   render() {
-    let {obj, name} = this.props;
-    let placeholder = obj.placeholder;
+    let {obj, name, mod} = this.props;
+    let placeholder = obj.placeholder + mod;
     if(obj.checked) placeholder += 2;
     return (
       <div className='score'>
