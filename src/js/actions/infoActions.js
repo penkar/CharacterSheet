@@ -2,7 +2,6 @@ import {ATT_DEF_STRING, ATT_DEF_INT, CHAR_NAME_STRING, CHAR_NAME_INT, BIO_STRING
 
 export const change = ({field, value}) => {
   let type
-  console.log(field, value);
   if('level' === field || 'experiencePoints' === field || 'dciNumber' === field) {
     type = CHAR_NAME_INT;
     value = value.replace(/\D/, '');

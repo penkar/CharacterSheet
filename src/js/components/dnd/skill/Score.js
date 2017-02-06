@@ -5,14 +5,36 @@ export default class Score extends Component {
     field: PropTypes.string,
     obj: PropTypes.object,
     name: PropTypes.string,
+    change: PropTypes.func,
+    pro: PropTypes.number
+  }
+
+  _onChange() {
+    let {change, field,} = this.props, value = this.in.value;
+    change({field, value, ability:true,})
+  }
+
+  _onChangeRadio() {
+    let {change, field,} = this.props, checked = this.ck.checked;
+    change({field, checked, radio:true,})
   }
 
   render() {
     let {obj, name} = this.props;
+    let placeholder = obj.placeholder;
+    if(obj.checked) placeholder += 2;
     return (
       <div className='score'>
-        <input checked={obj.checked} type='radio' />
-        <input placeholder={obj.placeholder} value={obj.value} />
+        <input
+          onChange={::this._onChangeRadio}
+          checked={obj.checked}
+          type='checkbox'
+          ref={(el)=>(this.ck = el)}/>
+        <input
+          onChange={::this._onChange}
+          placeholder={placeholder}
+          value={obj.value || ''}
+          ref={(el)=>(this.in = el)}/>
         <span>&nbsp;{name}</span>
       </div>
     )

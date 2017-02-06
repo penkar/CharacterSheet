@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import {modifierFunc} from '../../utilities/scoreutilities'
 
 export default class Ability extends Component {
   static propTypes = {
@@ -8,14 +9,9 @@ export default class Ability extends Component {
     change: PropTypes.func,
   }
 
-  _changeScore(e) {
+  _change(e) {
     let {change, field} = this.props, modifier = parseInt(this.mod.value || '0'), value = parseInt(this.scr.value || '0');
     change({value, modifier, field, skill:true})
-  }
-
-  _modifier(value) {
-    let m = value < 10 ? 1 : 0;
-    return parseInt(((value - m) / 2) - 5)
   }
 
   render() {
@@ -24,9 +20,16 @@ export default class Ability extends Component {
       <div key={`${field}_ability`} className='ability'>
         <div>
           <span className='clearfix'>{field}</span>
-          <input className='score' value={value} ref={(el)=>(this.scr = el)} onChange={::this._changeScore}/>
+          <input className='score'
+            value={value}
+            ref={(el)=>(this.scr = el)}
+            onChange={::this._change}/>
         </div>
-        <input className='modifier' value={modifier || ''} placeholder={::this._modifier(value)} ref={(el)=>(this.mod = el)}/>
+        <input className='modifier'
+          value={modifier || ''}
+          placeholder={modifierFunc(value)}
+          ref={(el)=>(this.mod = el)}
+          onChange={::this._change}/>
       </div>
     )
   }

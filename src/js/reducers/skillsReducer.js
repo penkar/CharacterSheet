@@ -1,3 +1,5 @@
+import {SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE, ABILITY_SCORE,} from '../constants'
+
 const initial = {
   passiveWisdom: {value: 0,placeholder: 0,},
 
@@ -33,6 +35,15 @@ const initial = {
 
 const skillsReducer = (state=initial, action) => {
   switch (action.type) {
+    case SKILL_AFFILIATE:
+      state[action.field].value = action.value;
+      return Object.assign({}, state);
+    case SKILL_SCORE:
+      state[action.field].value = action.value;
+      return Object.assign({}, state);
+    case SKILL_CHECK:
+      state[action.field].checked = action.checked;
+      return Object.assign({}, state);
     default:
       return state;
   }

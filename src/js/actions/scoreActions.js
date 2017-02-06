@@ -1,8 +1,8 @@
-import {ABILITY_SCORE, } from '../constants'
+import {ABILITY_SCORE, SKILL_SCORE, SKILL_AFFILIATE, SKILL_CHECK,} from '../constants'
 
 
 
-export const changeScore = ({field, value, modifier, ability, skill}) => {
+export const changeScore = ({field, value, modifier, checked,   ability, affiliate, skill, radio}) => {
   if(skill) {
     return ({
       type: ABILITY_SCORE,
@@ -10,7 +10,25 @@ export const changeScore = ({field, value, modifier, ability, skill}) => {
       field,
       value,
     });
+  } else if (affiliate) {
+    value = parseInt(value.replace(/\D/, ''));
+    return ({
+      type:SKILL_AFFILIATE,
+      field,
+      value,
+    });
   } else if (ability) {
-    return false;
+    value = parseInt(value.replace(/\D/, ''));
+    return ({
+      type:SKILL_SCORE,
+      field,
+      value,
+    });
+  } else if(radio) {
+    return ({
+      type: SKILL_CHECK,
+      field,
+      checked,
+    })
   }
 }

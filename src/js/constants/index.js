@@ -18,6 +18,9 @@ export const ATT_DEF_INT = 'ATT_DEF_INT'
 
 // Score actions
 export const ABILITY_SCORE = 'ABILITY_SCORE'
+export const SKILL_SCORE = 'SKILL_SCORE'
+export const SKILL_AFFILIATE = 'SKILL_AFFILIATE'
+export const SKILL_CHECK = 'SKILL_CHECK'
 
 // GETTER SETTER;
 export const HYDRATE = 'HYDRATE'
