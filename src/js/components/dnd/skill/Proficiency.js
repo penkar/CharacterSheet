@@ -7,6 +7,14 @@ export default class Proficiency extends Component {
     change: PropTypes.func,
   }
 
+  shouldComponentUpdate(next) {
+    let {value, placeholder} = this.props;
+    if(next.value === value && placeholder === next.placeholder) {
+      return false;
+    }
+    return true;
+  }
+
   _change(e) {
     let {change} = this.props, value = e.target.value;
     change({field:'proficiencyBonus', value, affiliate:true});

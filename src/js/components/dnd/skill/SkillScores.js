@@ -31,7 +31,7 @@ export default class SkillScores extends Component {
   render() {
     let {abi, change, pro} = this.props;
     let stuff = {change, pro}
-    
+
     return (
       <div id='skillscores'>
         <Score {...stuff} field='acrobatics' name='Acrobatics (Dex)' obj={this.props.acrobatics} mod={getModifier(abi, 'dex')}/>

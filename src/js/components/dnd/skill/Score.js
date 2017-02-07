@@ -10,6 +10,14 @@ export default class Score extends Component {
     mod: PropTypes.number,
   }
 
+  shouldComponentUpdate(next) {
+    let {obj, mod} = this.props;
+    if(JSON.stringify(obj) === JSON.stringify(next.obj) && mod === next.mod) {
+      return false;
+    }
+    return true;
+  }
+
   _onChange() {
     let {change, field,} = this.props, value = this.in.value;
     change({field, value, ability:true,})
@@ -24,7 +32,6 @@ export default class Score extends Component {
     let {obj, name, mod} = this.props;
     let placeholder = obj.placeholder + mod;
     if(obj.checked) placeholder += 2;
-    // console.log(name, obj.checked)
     return (
       <div className='score'>
         <input
