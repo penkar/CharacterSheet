@@ -34,16 +34,20 @@ const initial = {
 }
 
 const skillsReducer = (state=initial, action) => {
+  let field = Object.assign({}, state[action.field]), obj = {};
   switch (action.type) {
     case SKILL_AFFILIATE:
-      state[action.field].value = action.value;
-      return Object.assign({}, state);
+      field.value = action.value;
+      obj[action.field] = field;
+      return Object.assign({}, state, obj);
     case SKILL_SCORE:
-      state[action.field].value = action.value;
-      return Object.assign({}, state);
+      field.value = action.value;
+      obj[action.field] = field;
+      return Object.assign({}, state, obj);
     case SKILL_CHECK:
-      state[action.field].checked = action.checked;
-      return Object.assign({}, state);
+      field.checked = action.checked;
+      obj[action.field] = field;
+      return Object.assign({}, state, obj);
     default:
       return state;
   }

@@ -16,7 +16,6 @@ export const changeScore = ({field, value, modifier, checked,   ability, affilia
       value,
     });
   } else if (ability) {
-    value = parseInt(value.replace(/\D/, ''));
     return ({
       type:SKILL_SCORE,
       field,

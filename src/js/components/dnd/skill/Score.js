@@ -24,6 +24,7 @@ export default class Score extends Component {
     let {obj, name, mod} = this.props;
     let placeholder = obj.placeholder + mod;
     if(obj.checked) placeholder += 2;
+    // console.log(name, obj.checked)
     return (
       <div className='score'>
         <input
