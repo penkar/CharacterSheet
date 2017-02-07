@@ -7,6 +7,12 @@ export default class DeathSaves extends Component {
     change: PropTypes.func,
   }
 
+  shouldComponentUpdate(next) {
+    let {failures, successes} = this.props;
+    if(failures === next.failures && successes === next.successes) return false;
+    return true;
+  }
+
   _success(e) {
     let value = e.target.value, {change, field} = this.props;
     if(this.props.successes == value) value = '0';

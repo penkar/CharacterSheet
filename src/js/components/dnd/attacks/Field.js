@@ -8,6 +8,12 @@ export default class Field extends Component {
     change: PropTypes.func,
   }
 
+  shouldComponentUpdate(next) {
+    let {value} = this.props;
+    if(value === next.value) return false;
+    return true;
+  }
+
   _change(e) {
     let value = e.target.value, {change, field} = this.props;
     change({field, value});

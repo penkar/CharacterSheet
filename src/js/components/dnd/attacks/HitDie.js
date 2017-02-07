@@ -7,14 +7,20 @@ export default class HitDie extends Component {
     change: PropTypes.func,
   }
 
+  shouldComponentUpdate(next) {
+    let {hitDie, hitDieTotal} = this.props;
+    if(hitDie === next.hitDie && hitDieTotal === next.hitDieTotal) return false;
+    return true;
+  }
+
   _changeH(e) {
     let value = e.target.value, {change, field} = this.props;
-    change({field:'hitDice', value});
+    change({field:'hitDie', value});
   }
 
   _changeT(e) {
     let value = e.target.value, {change, field} = this.props;
-    change({field:'hitDiceTotal', value});
+    change({field:'hitDieTotal', value});
   }
 
   render() {

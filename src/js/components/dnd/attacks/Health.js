@@ -20,8 +20,8 @@ export default class Health extends Component {
     currentHitPoints: PropTypes.number,
     temporaryHitPoints: PropTypes.number,
 
-    hitDice: PropTypes.number,
-    hitDiceTotal: PropTypes.string,
+    hitDie: PropTypes.number,
+    hitDieTotal: PropTypes.string,
     failures: PropTypes.number,
     successes: PropTypes.number,
   }

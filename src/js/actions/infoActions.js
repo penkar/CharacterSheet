@@ -12,9 +12,9 @@ export const change = ({field, value}) => {
     value = value.replace(/\D/, '');
   } else if ('allies' === field || 'personalityTraits' === field || 'ideals' === field || 'bonds' === field || 'flaws' === field || 'attacksAndSpellcasting' === field || 'featuresAndTraits' === field || 'otherProficienciesAndLanguages' === field || 'equiptment' === field || 'characterApperance' === field || 'alliesAndOrganizations' === field || 'additionalFeaturesAndTraits' === field || 'characterBackstory' === field || 'treasure' === field || 'totalNonConsumableMagicItems' === field) {
     type = BIO_STRING;
-  } else if ('attack1' === field || 'attack2' === field || 'attack3' === field || field === 'hitDieTotal' || 'hitDiceTotal' === field) {
+  } else if ('attack1' === field || 'attack2' === field || 'attack3' === field || field === 'hitDieTotal' || 'hitDieTotal' === field) {
     type = ATT_DEF_STRING;
-  } else if ('failures' === field || 'successes' === field || 'armorClass' === field || 'initiative' === field || 'speed' === field || 'hitPoints' === field || 'currentHitPoints' === field || 'temporaryHitPoints' === field || 'hitDice' === field) {
+  } else if ('failures' === field || 'successes' === field || 'armorClass' === field || 'initiative' === field || 'speed' === field || 'hitPoints' === field || 'currentHitPoints' === field || 'temporaryHitPoints' === field || 'hitDie' === field) {
     type = ATT_DEF_INT;
     value = value.replace(/\D/, '');
   }

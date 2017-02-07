@@ -6,6 +6,12 @@ export default class Attack extends Component {
     value: PropTypes.object,
   }
 
+  shouldComponentUpdate(next) {
+    let {name, bonus, dmg} = this.props.value;
+    if(name === next.value.name && bonus === next.value.bonus && dmg === next.value.dmg) return false;
+    return true;
+  }
+
   _change(e) {
     let {field, change} = this.props;
     let value = {name: this.el1.value, dmg: this.el3.value, bonus: this.el2.value}

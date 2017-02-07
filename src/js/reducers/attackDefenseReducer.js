@@ -9,8 +9,8 @@ const initial = {
   currentHitPoints:0,
   temporaryHitPoints:0,
 
-  hitDice:0,
-  hitDiceTotal:'',
+  hitDie:0,
+  hitDieTotal:'',
 
   successes: 0,
   failures:0,
