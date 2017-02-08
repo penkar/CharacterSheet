@@ -3,12 +3,13 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as constants from '../constants'
-import {change, changeScore} from '../actions'
+import {change, changeScore, magicChange} from '../actions'
 
 import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
 import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
+import {magicComponent} from '../components/dnd/magic'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -17,6 +18,7 @@ const mapStateToProps = (state)=>{
     skills: state.skillsReducer,
     textfields: state.characterBioReducer,
     attacks: state.attackDefenseReducer,
+    magic: state.magicReducer,
   });
 }
 
@@ -25,6 +27,7 @@ const mapDispatchToActions = (dispatch) => {
     dispatch,
     change: bindActionCreators(change, dispatch),
     changeScore: bindActionCreators(changeScore, dispatch),
+    changeMagic: bindActionCreators(magicChange, dispatch),
   }
 }
 
@@ -34,7 +37,7 @@ class Sheet extends Component {
   }
 
   render() {
-    let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore,} = this.props;
+    let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div id='sheet'>
@@ -93,6 +96,7 @@ class Sheet extends Component {
 
           <Header3 change={change} />
 
+          {magicComponent(magic, magicChange)}
         </div>
       </div>
     )
