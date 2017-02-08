@@ -7,6 +7,7 @@ import characterBioReducer from './characterBioReducer'
 import characterNameReducer from './characterNameReducer'
 import settingsReducer from './settingsReducer'
 import skillsReducer from './skillsReducer'
+import magicReducer from './magicReducer'
 
 const rootReducer = combineReducers({
   abilityReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   characterNameReducer,
   settingsReducer,
   skillsReducer,
+  magicReducer,
 });
 
 export default rootReducer

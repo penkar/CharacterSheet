@@ -22,5 +22,10 @@ export const SKILL_SCORE = 'SKILL_SCORE'
 export const SKILL_AFFILIATE = 'SKILL_AFFILIATE'
 export const SKILL_CHECK = 'SKILL_CHECK'
 
+// Magic actions
+export const SPELL_CLASS = 'SPELL_CLASS'
+export const SPELL_STOCK = 'SPELL_STOCK'
+export const SPELL_SET = 'SPELL_SET'
+
 // GETTER SETTER;
 export const HYDRATE = 'HYDRATE'

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as constants from '../constants'
 import {change, changeScore} from '../actions'
 
-import {Header1, Header2, Abilities, Skills, } from '../components/dnd'
+import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
 import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
@@ -88,6 +88,10 @@ class Sheet extends Component {
               <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits' change={change}/>
             </div>
           </div>
+
+          <br/>
+
+          <Header3 change={change} />
 
         </div>
       </div>
