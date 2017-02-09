@@ -1,8 +1,9 @@
-import {SPELL_CLASS, SPELL_STOCK, SPELL_SET,} from '../constants'
+import {SPELL_CLASS, SPELL_STOCK, SPELL_PREPARED,} from '../constants'
 
 const initial = {
   spellcastingClass:'',
   stock: {
+    '0':'CANTRIP',
     '1':'',
     '2':'',
     '3':'',
@@ -13,7 +14,7 @@ const initial = {
     '8':'',
     '9':'',
   },
-  spellLevel0: [],
+  spellLevel0: [{name:'asfadsf', prepared:true}],
   spellLevel1: [],
   spellLevel2: [],
   spellLevel3: [],
@@ -29,7 +30,7 @@ const magicReducer = (state = initial, action) => {
   switch (action.type) {
     case SPELL_CLASS:
     case SPELL_STOCK:
-    case SPELL_SET:
+    case SPELL_PREPARED:
     default:
       return state;
   }
