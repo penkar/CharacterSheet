@@ -16,6 +16,7 @@ export default class Spell extends Component {
     let {value} = this.in, {change, level} = this.props
     if(!value) return null;
     change({level, newspell:true, value});
+    this.in.value = '';
   }
 
   render() {
@@ -24,7 +25,7 @@ export default class Spell extends Component {
         <input type='checkbox' checked={false}/>
         <div>
           <input ref={(el)=>(this.in = el)} placeholder='Spell Name' onKeyPress={::this._keypress}/>
-          <span onClick={::this._enter}>+</span>
+          <span style={{color:'green', fontSize:'1rem'}} onClick={::this._enter}>+</span>
         </div>
       </div>
     )

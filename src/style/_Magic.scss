@@ -7,6 +7,8 @@
   .magic-col {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 10px;
   }
 
   .spells {
@@ -29,6 +31,7 @@
     line-height: 1rem;
     border: 1px solid black;
     align-items: center;
+    justify-content: space-between;
 
     .lvl {
       padding: 0.25rem;
