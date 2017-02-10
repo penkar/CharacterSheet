@@ -19,10 +19,10 @@ export const magicChange = ({value, level, i, prepared, newspell, total, oldspel
       level: `spellLevel${level}`,
       i,
     })
-  } else if ( i ) {
+  } else {
     return ({
       type: SPELL_PREPARED,
-      level,
+      level: `spellLevel${level}`,
       i,
       prepared,
     });

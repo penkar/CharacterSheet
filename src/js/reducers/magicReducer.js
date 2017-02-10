@@ -39,7 +39,14 @@ const magicReducer = (state = initial, action) => {
       nstate[action.level] = [...arr];
       return Object.assign({}, state, nstate);
     case SPELL_STOCK:
+      nstate = Object.assign({}, state.action);
+      nstate[action.level] = action.value;
+      return Object.assign({}, state, nstate);
     case SPELL_PREPARED:
+      arr = [...state[action.level]];
+      arr[action.i].prepared = action.prepared;// = arr[action.i].prepared = action.prepared;
+      nstate[action.level] = [...arr];
+      return Object.assign({}, state, nstate);
     default:
       return state;
   }

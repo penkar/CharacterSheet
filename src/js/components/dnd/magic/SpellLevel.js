@@ -12,7 +12,7 @@ export default class SpellLevel extends Component {
 
   _total(e) {
     let {change, level} = this.props, {value} = e.target;
-    change({level, total:true, })
+    change({level, total:true, value});
   }
 
   _cantrip(level) {
