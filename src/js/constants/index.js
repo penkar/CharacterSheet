@@ -27,6 +27,7 @@ export const SPELL_ADD = 'SPELL_ADD'
 export const SPELL_REMOVE = 'SPELL_REMOVE'
 export const SPELL_STOCK = 'SPELL_STOCK'
 export const SPELL_PREPARED = 'SPELL_PREPARED'
+export const SPELL_STRINGS = 'SPELL_STRINGS'
 
 // GETTER SETTER;
 export const HYDRATE = 'HYDRATE'

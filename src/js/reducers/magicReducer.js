@@ -1,7 +1,10 @@
-import {SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED,} from '../constants'
+import {SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED,} from '../constants'
 
 const initial = {
   spellcastingClass:'',
+  spellcastingAbility:'',
+  spellSaveDC:'',
+  spellSaveBonus:'',
   stock: {
     '0':'CANTRIP',
     '1':'',
@@ -29,6 +32,8 @@ const initial = {
 const magicReducer = (state = initial, action) => {
   let nstate = {}, arr;
   switch (action.type) {
+    case SPELL_STRINGS:
+      return Object.assign({}, state, action.value);
     case SPELL_ADD:
       arr = [...state[action.level]];
       nstate[action.level] = [{name: action.value,prepared: false}, ...arr];
