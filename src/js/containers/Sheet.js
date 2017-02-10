@@ -42,7 +42,7 @@ class Sheet extends Component {
     return (
       <div id='sheet'>
         <div style={{flexDirection:'column'}}>
-          <Header1 {...characterNameReducer} change={change}/>
+          {Header1(characterNameReducer, change)}
 
           <br/>
 
@@ -75,17 +75,17 @@ class Sheet extends Component {
 
           <br/>
 
-          <Header2 {...characterNameReducer} change={change}/>
+          {Header2(characterNameReducer,change)}
 
           <br/>
 
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
-            <div style={{flexDirection:'column', width:'30%'}}>
+            <div style={{flexDirection:'column'}}>
               {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
               {CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change})}
             </div>
 
-            <div style={{flexDirection:'column', width:'65%'}}>
+            <div style={{flexDirection:'column'}}>
               {Allies({text: textfields.allies, field:'allies', change})}
               {Treasure({text: textfields.treasure, field:'treasure', change})}
               {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
