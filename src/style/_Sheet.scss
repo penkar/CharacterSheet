@@ -1,36 +1,76 @@
 #sheet {
-  width: 800px;
+  // width: 800px;
   float: right;
   text-align: center;
   background-color: rgba(211, 211, 211, 0.25);
   height: 100%;
   padding: 20px;
-
   display: flex;
 
-  table {
-    width: 800px;
-    text-align: left;
+  #header1 {
     font-size: 8px;
-
-    td.tt {border-top: double;}
-    td.t {border-top: solid 1px;}
-    td.ll {border-left: double;}
-    td.l {border-left: solid 1px;}
-    td.rr {border-right: double;}
-    td.r {border-right: solid 1px;}
-    td.bb {border-bottom: double;}
-    td.b {border-bottom: solid 1px;}
+    display: flex;
+    flex-direction: column;
 
     .input-field {
       line-height: 1rem;
       font-size: 10px;
       border: 0px;
       border-bottom: solid 1px lightgray;
-      width: 100%;
-      background-color: transparent;
     }
+
+    >div {
+      flex-basis: 20%;
+    }
+    >div:first-of-type{
+      flex-basis: 18%;
+    }
+
+    .header-row {
+      display: flex;
+      flex-direction: row;
+
+      >div {
+        flex-basis: 20%;
+      }
+      >div:first-of-type{
+        flex-basis: 18%;
+      }
+    }
+
+    .tt {border-top: double;}
+    .t {border-top: solid 1px;}
+    .ll {border-left: double;}
+    .l {border-left: solid 1px;}
+    .rr {border-right: double;}
+    .r {border-right: solid 1px;}
+    .bb {border-bottom: double;}
+    .b {border-bottom: solid 1px;}
   }
+
+  // table {
+  //   width: 800px;
+  //   text-align: left;
+  //   font-size: 8px;
+  //
+  //   td.tt {border-top: double;}
+  //   td.t {border-top: solid 1px;}
+  //   td.ll {border-left: double;}
+  //   td.l {border-left: solid 1px;}
+  //   td.rr {border-right: double;}
+  //   td.r {border-right: solid 1px;}
+  //   td.bb {border-bottom: double;}
+  //   td.b {border-bottom: solid 1px;}
+  //
+  //   .input-field {
+  //     line-height: 1rem;
+  //     font-size: 10px;
+  //     border: 0px;
+  //     border-bottom: solid 1px lightgray;
+  //     width: 100%;
+  //     background-color: transparent;
+  //   }
+  // }
 
   #header3 {
     display: flex;
