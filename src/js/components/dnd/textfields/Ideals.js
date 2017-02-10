@@ -1,23 +1,15 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
+import ZText from './ZText'
 
-export default class Ideals extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-    field: PropTypes.string,
-    change: PropTypes.func,
-  }
-
-  _onChange(e) {
-    let value = e.target.value, {change, field} = this.props;
-    change({value, field});
-  }
-
-  render() {
-    return (
-      <div id='ideals'>
-        <textarea rows='4' cols='33' value={this.props.text} id='proficiencies' onChange={::this._onChange}/>
-        Ideals
-      </div>
-    )
-  }
-}
+const text = ({text, field, change}) => (
+  <ZText
+    id='ideals'
+    text={text}
+    field={field}
+    change={change}
+    rows='4'
+    cols='33'
+    string='Ideals'
+    />
+)
+export default text

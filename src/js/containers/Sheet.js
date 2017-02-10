@@ -54,7 +54,7 @@ class Sheet extends Component {
                 <Skills {...skills} change={changeScore}/>
               </div>
               <PassiveWisdom passiveWisdom={skills.passiveWisdom} change={changeScore}/>
-              <ProficienciesAndLanguages text={textfields.otherProficienciesAndLanguages} field='otherProficienciesAndLanguages' change={change}/>
+              {ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change})}
             </div>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
@@ -64,11 +64,11 @@ class Sheet extends Component {
             </div>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
-              <PersonalityTraits text={textfields.personalityTraits} field='personalityTraits' change={change}/>
-              <Ideals text={textfields.ideals} field='ideals' change={change}/>
-              <Bonds text={textfields.bonds} field='bonds' change={change}/>
-              <Flaws text={textfields.flaws} field='flaws' change={change}/>
-              <FeaturesAndTraits text={textfields.featuresAndTraits} field='featuresAndTraits' change={change}/>
+              {PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change})}
+              {Ideals({text:textfields.ideals, field:'ideals', change})}
+              {Bonds({text:textfields.bonds, field:'bonds', change})}
+              {Flaws({text:textfields.flaws, field:'flaws', change})}
+              {FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change})}
             </div>
 
           </div>
@@ -81,14 +81,14 @@ class Sheet extends Component {
 
           <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
             <div style={{flexDirection:'column', width:'30%'}}>
-              <CharacterApperance text={textfields.characterApperance} field='characterApperance' change={change}/>
-              <CharacterBackstory text={textfields.characterBackstory} field='characterBackstory' change={change}/>
+              {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
+              {CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change})}
             </div>
 
             <div style={{flexDirection:'column', width:'65%'}}>
-              <Allies text={textfields.allies} field='allies' change={change}/>
-              <Treasure text={textfields.treasure} field='treasure' change={change}/>
-              <AddlFeaturesAndTraits text={textfields.additionalFeaturesAndTraits} field='additionalFeaturesAndTraits' change={change}/>
+              {Allies({text: textfields.allies, field:'allies', change})}
+              {Treasure({text: textfields.treasure, field:'treasure', change})}
+              {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
             </div>
           </div>
 
