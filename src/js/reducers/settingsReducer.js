@@ -3,6 +3,7 @@ import {CHANGE_SETTING, HYDRATE,} from '../constants'
 const initial = {
   combined: false,
   character: true,
+  loading: false,
 }
 
 const settingsReducer = (state=initial, action) => {

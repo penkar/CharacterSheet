@@ -1,14 +1,14 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
+const Loading = (bool) => {
+  if(!bool) return null;
 
-export default class Loading extends Component {
-  render() {
-    return (
-      <div id='loading'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    )
-  }
+  return (
+    <div id='loading'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  )
 }
+export default Loading
