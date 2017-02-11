@@ -8,7 +8,7 @@ const text = ({text, field, change}) => (
     field={field}
     change={change}
     rows='12'
-    cols='66'
+    cols='40'
     string='Treasure'
     />
 )

@@ -10,6 +10,7 @@ import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
 import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
 import {magicComponent} from '../components/dnd/magic'
+import Loading from './Loading'
 
 const mapStateToProps = (state)=>{
   return ({
@@ -98,6 +99,7 @@ class Sheet extends Component {
 
           {magicComponent(magic, changeMagic)}
         </div>
+        <Loading />
       </div>
     )
   }
