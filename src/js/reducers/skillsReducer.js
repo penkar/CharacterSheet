@@ -1,4 +1,4 @@
-import {SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE, ABILITY_SCORE,} from '../constants'
+import {SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE, ABILITY_SCORE, HYDRATE} from '../constants'
 
 const initial = {
   passiveWisdom: {value: 0,placeholder: 0,},
@@ -48,6 +48,8 @@ const skillsReducer = (state=initial, action) => {
       field.checked = action.checked;
       obj[action.field] = field;
       return Object.assign({}, state, obj);
+    case HYDRATE:
+      return action.hasOwnProperty(action.skillsReducer) ? action.skillsReducer : state;
     default:
       return state;
   }

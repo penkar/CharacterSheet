@@ -1,4 +1,4 @@
-import {ABILITY_SCORE, } from '../constants';
+import {ABILITY_SCORE, HYDRATE,} from '../constants';
 
 const initial = {
   strength: {value: 0, modifier: 0},
@@ -16,6 +16,8 @@ const abilityReducer = (state=initial, action) => {
       let {field, value, modifier} = action;
       nstate[field] = {value, modifier}
       return Object.assign({}, state, nstate);
+    case HYDRATE:
+      return action.hasOwnProperty(action.abilityReducer) ? action.abilityReducer : state;
     default:
       return state;
   }

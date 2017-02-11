@@ -1,4 +1,4 @@
-import {BIO_STRING, BIO_INT,} from '../constants'
+import {BIO_STRING, BIO_INT, HYDRATE,} from '../constants'
 
 import {WRITING} from '../constants'
 
@@ -40,6 +40,8 @@ const characterBioReducer = (state=initial, action) => {
     case BIO_INT:
       nstate[action.field] = parseInt(action.value);
       return Object.assign({}, state, {gold: nstate});
+    case HYDRATE:
+      return action.hasOwnProperty(action.characterBioReducer) ? action.characterBioReducer : state;
     default:
       return state;
   }

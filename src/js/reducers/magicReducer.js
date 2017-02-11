@@ -1,4 +1,4 @@
-import {SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED,} from '../constants'
+import {SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED, HYDRATE,} from '../constants'
 
 const initial = {
   spellcastingClass:'',
@@ -52,6 +52,8 @@ const magicReducer = (state = initial, action) => {
       arr[action.i].prepared = action.prepared;// = arr[action.i].prepared = action.prepared;
       nstate[action.level] = [...arr];
       return Object.assign({}, state, nstate);
+    case HYDRATE:
+      return action.hasOwnProperty(action.magicReducer) ? action.magicReducer : state;
     default:
       return state;
   }
