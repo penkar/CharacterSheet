@@ -4,6 +4,7 @@ const initial = {
   combined: false,
   character: true,
   loading: false,
+  hash: '',
 }
 
 const settingsReducer = (state=initial, action) => {
