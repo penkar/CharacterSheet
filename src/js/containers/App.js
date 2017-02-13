@@ -9,6 +9,11 @@ import {settingsChange} from '../actions'
 
 require('../../style/Base.scss')
 
+const mapDispatchToProps = (dispatch)=>{
+  return ({
+    dispatch,
+  })
+}
 
 const mapStateToProps = (state)=>{
   return ({
@@ -39,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

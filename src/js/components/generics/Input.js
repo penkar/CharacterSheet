@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react'
-import cn from 'classnames'
 
 export default class Input extends Component {
   static propTypes = {
@@ -20,7 +19,7 @@ export default class Input extends Component {
     let {specific, placeholder, value} = this.props;
     return (
       <input
-        className={cn('input-field', specific)}
+        className={`input-field ${specific}`}
         placeholder={placeholder}
         value={value}
         onChange={::this._change}

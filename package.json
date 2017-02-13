@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "purecss": "^0.6.2",
     "react": "^15.1.0",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0"
