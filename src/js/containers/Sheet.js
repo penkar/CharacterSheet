@@ -45,6 +45,7 @@ class Sheet extends Component {
         {Header1(characterNameReducer, change)}
 
         <div className='pure-g'>
+          <div className='pure-u-1 pure-u-lg-1-24' />
           <div className='pure-u-1 pure-u-lg-2-24'>
             <Abilities {...abilities} change={changeScore}/>
           </div>

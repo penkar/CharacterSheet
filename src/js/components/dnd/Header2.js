@@ -3,14 +3,16 @@ import {Input} from '../generics'
 
 const Header2 = (props, change) => (
   <div id='header2' className='pure-g'>
-    <div className='pure-u-1 pure-u-lg-1-4'>
+    <div className='pure-u-1 pure-u-lg-2-24' />
+
+    <div className='pure-u-1 pure-u-lg-5-24'>
       <div className='ll t b'>
         <Input placeholder='Character Name' value={props.characterName} specific='' field='characterName' change={change}/>
       </div>
       <div>Character Name</div>
     </div>
 
-    <div className='pure-u-1 pure-u-lg-1-4'>
+    <div className='pure-u-1 pure-u-lg-5-24'>
       <div className='ll t'>
         <Input placeholder='Age' value={props.age || ''} specific='' field='age' change={change}/>
       </div>
@@ -21,7 +23,7 @@ const Header2 = (props, change) => (
       <div className='ll b'>Eyes</div>
     </div>
 
-    <div className='pure-u-1 pure-u-lg-1-4'>
+    <div className='pure-u-1 pure-u-lg-5-24'>
       <div className='t'>
         <Input placeholder='Height' value={props.height || ''} specific='' field='height' change={change}/>
       </div>
@@ -32,7 +34,7 @@ const Header2 = (props, change) => (
       <div className='b'>Skin</div>
     </div>
 
-    <div className='pure-u-1 pure-u-lg-1-4'>
+    <div className='pure-u-1 pure-u-lg-5-24'>
       <div className='rr t'>
         <Input placeholder='Weight' value={props.weight || ''} specific='' field='weight' change={change}/>
       </div>
