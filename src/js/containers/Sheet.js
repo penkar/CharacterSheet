@@ -42,13 +42,18 @@ class Sheet extends Component {
     return (
       <div style={{flexDirection:'column'}}>
 
-
-
         {Header1(characterNameReducer, change)}
+
+        <div className='pure-g'>
+          <div className='pure-u-1 pure-u-lg-2-24'>
+            <Abilities {...abilities} change={changeScore}/>
+          </div>
+          <div className='pure-u-1 pure-u-lg-4-24'>
+            <Skills {...skills} change={changeScore}/>
+          </div>
+        </div>
+
         {Header2(characterNameReducer,change)}
-
-
-        <Header3 change={changeMagic} magic={magic}/>
 
         <div className='pure-g'>
           {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
@@ -63,13 +68,14 @@ class Sheet extends Component {
           {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
         </div>
 
+        <Header3 change={changeMagic} magic={magic}/>
+
         {magicComponent(magic, changeMagic)}
       </div>
     )
   }
 }
-// <br/>
-//
+
 // <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-between'}}>
 //
 //   <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>

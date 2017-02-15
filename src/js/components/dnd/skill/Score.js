@@ -11,8 +11,8 @@ export default class Score extends Component {
   }
 
   shouldComponentUpdate(next) {
-    let {obj, mod} = this.props;
-    if(JSON.stringify(obj) === JSON.stringify(next.obj) && mod === next.mod) {
+    let {obj, mod, pro} = this.props;
+    if(JSON.stringify(obj) === JSON.stringify(next.obj) && mod === next.mod && next.pro === pro) {
       return false;
     }
     return true;
@@ -29,9 +29,9 @@ export default class Score extends Component {
   }
 
   render() {
-    let {obj, name, mod} = this.props;
+    let {obj, name, mod, pro} = this.props;
     let placeholder = obj.placeholder + mod;
-    if(obj.checked) placeholder += 2;
+    if(obj.checked) placeholder += pro;
     return (
       <div className='score'>
         <input

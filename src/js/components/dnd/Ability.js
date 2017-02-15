@@ -17,9 +17,10 @@ export default class Ability extends Component {
   render() {
     let {field, placeholder, value, modifier} = this.props;
     return (
-      <div key={`${field}_ability`} className='ability'>
+      <div key={`${field}_ability`} className='ability pure-u-1'>
         <div>
           <span className='clearfix'>{field}</span>
+          <br/>
           <input className='score'
             value={value}
             ref={(el)=>(this.scr = el)}
