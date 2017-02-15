@@ -17,19 +17,13 @@ export default class SpellLevel extends Component {
 
   _cantrip(level) {
     if(level === '0') {
-      return(
-        <div className='spelllevel' key={level}>
-          <div className='lvl'>{level}</div>
-          <div>CANTRIP</div>
-          <span>&nbsp;</span>
-        </div>
-      )
+      return <div className='spelllevel' key={level}>CANTRIPS</div>
     } else {
       return(
         <div className='spelllevel' key={level}>
-          <div className='lvl'>{level}</div>
-          <div><input placeholder='Spell Total' onChange={::this._total} className='total'/></div>,
-          <div><input placeholder='Spell Expended' className='expended'/></div>
+          Level {level}
+          <input placeholder='Total' onChange={::this._total} className='total'/>&nbsp;
+          <input placeholder='Spell Expended' className='expended'/>
         </div>
       )
     }
@@ -38,20 +32,10 @@ export default class SpellLevel extends Component {
   render() {
     let {level, spells, stock, change,} = this.props;
     return (
-      <div>
-        {::this._cantrip(level)}
-        <div className='spells'>
-          <div className='spell descriptor'>
-            <div>Prepared</div>&nbsp;
-            <div>Spell Name</div>
-          </div>
-          <div>
-            {spells.map((x, i)=> (<Spell key={i} i={i} spell={x} change={change} level={level}/>))}
-          </div>
-          <div>
-            <NewSpell key='new' change={change} level={level}/>
-          </div>
-        </div>
+      <div className='level pure-u-1 pure-u-lg-1-4'>
+        { ::this._cantrip(level) }
+        {spells.map((x, i)=> (<Spell key={i} i={i} spell={x} change={change} level={level}/>))}
+        <NewSpell key='new' change={change} level={level}/>
       </div>
     )
   }

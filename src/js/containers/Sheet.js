@@ -45,6 +45,8 @@ class Sheet extends Component {
           {Header1(characterNameReducer, change)}
           {Header2(characterNameReducer,change)}
           <Header3 change={changeMagic} magic={magic}/>
+        
+          {magicComponent(magic, changeMagic)}
         </div>
       </div>
     )
@@ -100,7 +102,7 @@ class Sheet extends Component {
 // <br/>
 //
 //
-// {magicComponent(magic, changeMagic)}
+//
 
 
 export default connect(mapStateToProps, mapDispatchToActions)(Sheet)

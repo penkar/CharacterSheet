@@ -23,10 +23,8 @@ export default class Spell extends Component {
     return (
       <div className='spell'>
         <input type='checkbox' checked={false}/>
-        <div>
-          <input ref={(el)=>(this.in = el)} placeholder='Spell Name' onKeyPress={::this._keypress}/>
-          <span style={{color:'green', fontSize:'1rem'}} onClick={::this._enter}>+</span>
-        </div>
+        <input ref={(el)=>(this.in = el)} placeholder='Spell Name' onKeyPress={::this._keypress}/>
+        <span style={{color:'green', fontSize:'1rem'}} onClick={::this._enter}>+</span>
       </div>
     )
   }

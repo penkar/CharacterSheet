@@ -1,9 +1,16 @@
 html, body {
   margin: 0px;
 }
+
+input {
+  background-color: rgba(211, 211, 211, 0.25);
+  border: 0px;
+}
 @import 'pure-min';
 @import 'pure-resp-min';
 @import 'Headers';
+@import 'Magic';
+
 // @import 'Loading';
 // @import 'Ability';
 // @import 'Attacks';
@@ -11,7 +18,6 @@ html, body {
 // @import 'Sheet';
 // @import 'Skills';
 // @import 'TextField';
-// @import 'Magic';
 // @import 'Root';
 
 // #deathsaves, #hitdie, #backstory, #allies, #addl, #treasure, #attacks, #equiptment, #featuresandtraits, #flaws, #personalitytraits, #ideals, #bonds, #proficienciesandlanguages {
