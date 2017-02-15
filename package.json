@@ -1,7 +1,7 @@
 {
   "name": "char_sheet",
   "version": "1.0.0",
-  "description": "\"A character sheet.\"",
+  "description": "\"A character sheet using React, Redux, Webpack and PureCSS\"",
   "main": "index.js",
   "scripts": {
     "start": "webpack",
@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "purecss": "^0.6.2",
     "react": "^15.1.0",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0"
