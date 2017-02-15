@@ -6,7 +6,7 @@
   #header1, #header2 {
     font-size: 8px;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
 
     .input-field {
       line-height: 1rem;
@@ -42,6 +42,11 @@
     .r {border-right: solid 1px;}
     .bb {border-bottom: double;}
     .b {border-bottom: solid 1px;}
+  }
+
+  #header1 >div:first-of-type {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   #header3 {

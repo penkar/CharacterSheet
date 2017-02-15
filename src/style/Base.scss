@@ -2,20 +2,21 @@ html, body {
   margin: 0px;
 }
 @import 'pure-min';
+@import 'pure-resp-min';
 @import 'Headers';
-@import 'Loading';
-@import 'Ability';
-@import 'Attacks';
-@import 'Equiptment';
-@import 'Sheet';
-@import 'Skills';
-@import 'TextField';
-@import 'Magic';
-@import 'Root';
+// @import 'Loading';
+// @import 'Ability';
+// @import 'Attacks';
+// @import 'Equiptment';
+// @import 'Sheet';
+// @import 'Skills';
+// @import 'TextField';
+// @import 'Magic';
+// @import 'Root';
 
-#deathsaves, #hitdie, #backstory, #allies, #addl, #treasure, #attacks, #equiptment, #featuresandtraits, #flaws, #personalitytraits, #ideals, #bonds, #proficienciesandlanguages {
-  border: solid 1px black;
-  border-left: double;
-  border-right: double;
-  padding: 1px;
-}
+// #deathsaves, #hitdie, #backstory, #allies, #addl, #treasure, #attacks, #equiptment, #featuresandtraits, #flaws, #personalitytraits, #ideals, #bonds, #proficienciesandlanguages {
+//   border: solid 1px black;
+//   border-left: double;
+//   border-right: double;
+//   padding: 1px;
+// }

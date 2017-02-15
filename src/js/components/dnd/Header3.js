@@ -14,23 +14,26 @@ export default class Header3 extends Component {
   }
 
   render() {
-    let {change} = this.props;
+    let {change, magic} = this.props;
     return (
-      <div id='header3'>
-        <div>
-          <input ref={(el)=>this.a = el} onChange={::this._change} placeholder='Spell Casting Class'></input>
+      <div id='header3' className='pure-g'>
+        <div className='pure-u-1 pure-u-lg-1-4'>
+          <input ref={(el)=>this.a = el} onChange={::this._change} placeholder='Spell Casting Class' value={magic.spellcastingClass} />
           <div>Spell Casting Class</div>
         </div>
-        <div>
-          <input ref={(el)=>this.b = el} onChange={::this._change} placeholder='Spell Casting Ability'></input>
+
+        <div className='pure-u-1 pure-u-lg-1-4'>
+          <input ref={(el)=>this.b = el} onChange={::this._change} placeholder='Spell Casting Ability' value={magic.spellcastingAbility}/>
           <div>Spell Casting Ability</div>
         </div>
-        <div>
-          <input ref={(el)=>this.c = el} onChange={::this._change} placeholder='Spell Save DC'></input>
+
+        <div className='pure-u-1 pure-u-lg-1-4'>
+          <input ref={(el)=>this.c = el} onChange={::this._change} placeholder='Spell Save DC' value={magic.spellSaveDC}/>
           <div>Spell Save DC</div>
         </div>
-        <div>
-          <input ref={(el)=>this.d = el} onChange={::this._change} placeholder='Spell Attack Bonus'></input>
+
+        <div className='pure-u-1 pure-u-lg-1-4'>
+          <input ref={(el)=>this.d = el} onChange={::this._change} placeholder='Spell Attack Bonus' value={magic.spellSaveBonus}/>
           <div>Spell Attack Bonus</div>
         </div>
       </div>
