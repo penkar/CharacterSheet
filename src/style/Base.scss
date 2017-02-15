@@ -1,10 +1,12 @@
 html, body {
   margin: 0px;
+  font-size: 12px;
 }
 
 input, textarea {
   background-color: rgba(211, 211, 211, 0.25);
   border: 0px;
+  font-size: 12px;
 }
 
 @import 'base-min';
@@ -14,13 +16,13 @@ input, textarea {
 @import 'Headers';
 @import 'Magic';
 @import 'ZText';
+@import 'Ability';
+@import 'Skills';
 
 // @import 'Loading';
-// @import 'Ability';
 // @import 'Attacks';
 // @import 'Equiptment';
 // @import 'Sheet';
-// @import 'Skills';
 // @import 'TextField';
 // @import 'Root';
 
