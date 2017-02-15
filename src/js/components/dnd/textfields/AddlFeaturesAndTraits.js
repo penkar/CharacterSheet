@@ -7,9 +7,10 @@ const text = ({text, field, change}) => (
     text={text}
     field={field}
     change={change}
-    rows='12'
+    rows='6'
     cols='40'
     string='ADDITIONAL FEATURES & TRAITS'
+    klass='pure-u-1 pure-u-lg-3-5'
     />
 )
 export default text

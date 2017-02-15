@@ -40,14 +40,30 @@ class Sheet extends Component {
     let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
-      <div id='sheet'>
-        <div style={{flexDirection:'column'}}>
-          {Header1(characterNameReducer, change)}
-          {Header2(characterNameReducer,change)}
-          <Header3 change={changeMagic} magic={magic}/>
-        
-          {magicComponent(magic, changeMagic)}
+      <div style={{flexDirection:'column'}}>
+
+
+
+        {Header1(characterNameReducer, change)}
+        {Header2(characterNameReducer,change)}
+
+
+        <Header3 change={changeMagic} magic={magic}/>
+
+        <div className='pure-g'>
+          {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
+          {Treasure({text: textfields.treasure, field:'treasure', change})}
         </div>
+        <div className='pure-g'>
+          {CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change})}
+          {Allies({text: textfields.allies, field:'allies', change})}
+        </div>
+        <div className='pure-g'>
+          <div className='pure-u-1 pure-u-lg-1-5'></div>
+          {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
+        </div>
+
+        {magicComponent(magic, changeMagic)}
       </div>
     )
   }
@@ -82,27 +98,6 @@ class Sheet extends Component {
 // </div>
 //
 // <br/>
-//
-//
-// <br/>
-//
-// <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-around'}}>
-//   <div style={{flexDirection:'column'}}>
-//     {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
-//     {CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change})}
-//   </div>
-//
-//   <div style={{flexDirection:'column'}}>
-//     {Allies({text: textfields.allies, field:'allies', change})}
-//     {Treasure({text: textfields.treasure, field:'treasure', change})}
-//     {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
-//   </div>
-// </div>
-//
-// <br/>
-//
-//
-//
 
 
 export default connect(mapStateToProps, mapDispatchToActions)(Sheet)

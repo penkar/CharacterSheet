@@ -17,10 +17,11 @@ export default class Treasure extends Component {
   }
 
   render() {
-    let {rows, cols, text, id, string,} = this.props;
+    let {rows, cols, text, id, string, klass} = this.props;
     return (
-      <div id={id}>
+      <div id={id} className={`ztext ${klass || ''}`}>
         <textarea rows={rows} cols={cols} value={text} onChange={::this._onChange}/>
+        <br/>
         {string}
       </div>
     )

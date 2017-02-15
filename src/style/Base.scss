@@ -2,14 +2,18 @@ html, body {
   margin: 0px;
 }
 
-input {
+input, textarea {
   background-color: rgba(211, 211, 211, 0.25);
   border: 0px;
 }
-@import 'pure-min';
-@import 'pure-resp-min';
+
+@import 'base-min';
+@import 'grids-min';
+@import 'grids-responsive-min';
+
 @import 'Headers';
 @import 'Magic';
+@import 'ZText';
 
 // @import 'Loading';
 // @import 'Ability';
