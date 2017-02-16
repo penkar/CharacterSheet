@@ -7,7 +7,7 @@ const text = ({text, field, change}) => (
     text={text}
     field={field}
     change={change}
-    rows='13'
+    rows='6'
     cols='20'
     string='OTHER PROFICIENCIES & LANGUAGES'
     />

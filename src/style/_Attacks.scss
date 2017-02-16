@@ -16,15 +16,25 @@
 
 #health {
   font-size: 9px;
+  border-bottom: 1px solid black;
 
   #deathsaves {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    >div{
+      display: flex;
+      align-items: center;
+    }
   }
 
   #hitdie {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 
     input {
       width: 1rem;

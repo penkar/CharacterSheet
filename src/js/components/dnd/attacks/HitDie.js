@@ -31,7 +31,7 @@ export default class HitDie extends Component {
           Total: <input value={hitDie} onChange={::this._changeH}/>
         </div>
         <textarea rows='5' cols='10' value={hitDieTotal} onChange={::this._changeT}/>
-        <span>HIT DICE</span>
+        <span className='bold'>HIT DICE</span>
       </div>
     )
   }

@@ -3,6 +3,10 @@ html, body {
   font-size: 12px;
 }
 
+.bold {
+  font-weight: 900;
+}
+
 input, textarea {
   background-color: rgba(211, 211, 211, 0.25);
   border: 0px;
@@ -19,9 +23,9 @@ input, textarea {
 @import 'Ability';
 @import 'Skills';
 @import 'Loading';
+@import 'Attacks';
+@import 'Equiptment';
 
-// @import 'Attacks';
-// @import 'Equiptment';
 // @import 'Sheet';
 // @import 'TextField';
 // @import 'Root';

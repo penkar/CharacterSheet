@@ -3,7 +3,7 @@ import {Input} from '../generics'
 
 const Header1 = (props, change) => (
   <div id='header1' className='pure-g'>
-    <div className='pure-u-1 pure-u-lg-2-24' />
+    <div className='pure-u-1-2 pure-u-lg-2-24' />
 
     <div className='pure-u-1 pure-u-lg-4-24'>
       <div className='ll t b'>
@@ -12,7 +12,7 @@ const Header1 = (props, change) => (
       <div>Character Name</div>
     </div>
 
-    <div className='pure-u-1 pure-u-lg-4-24'>
+    <div className='pure-u-1-2 pure-u-lg-4-24'>
       <div className='ll t'>
         <Input placeholder='Class' value={props.class} specific='' field='class' change={change}/>
       </div>
@@ -23,7 +23,7 @@ const Header1 = (props, change) => (
       <div className='ll b'>Race</div>
     </div>
 
-    <div className='pure-u-1 pure-u-lg-4-24'>
+    <div className='pure-u-1-2 pure-u-lg-4-24'>
       <div className='t'>
         <Input placeholder='Background' value={props.background} specific='' field='background' change={change}/>
       </div>
@@ -35,7 +35,7 @@ const Header1 = (props, change) => (
     </div>
 
 
-    <div className='pure-u-1 pure-u-lg-4-24'>
+    <div className='pure-u-1-2 pure-u-lg-4-24'>
       <div className='t'>
         <Input placeholder='Player Name' value={props.playerName} specific='' field='playerName' change={change}/>
       </div>
@@ -47,7 +47,7 @@ const Header1 = (props, change) => (
     </div>
 
 
-    <div className='pure-u-1 pure-u-lg-4-24'>
+    <div className='pure-u-1-2 pure-u-lg-4-24'>
       <div className='rr t'>
         <Input placeholder='Faction' value={props.faction} specific='' field='faction' change={change}/>
       </div>

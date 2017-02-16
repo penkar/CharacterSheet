@@ -28,7 +28,7 @@ export default class AttacksAndSpellcasting extends Component {
         <Attack field='attack2' value={att2} change={change}/>
         <Attack field='attack3' value={att3} change={change}/>
 
-        <textarea value={att} rows='18' onChange={::this._onChange} />
+        <textarea value={att} rows='6' onChange={::this._onChange} />
         Attacks & Spellcasting
       </div>
     )

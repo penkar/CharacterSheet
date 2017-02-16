@@ -43,7 +43,7 @@ export default class DeathSaves extends Component {
           <input type='radio' checked={failures > 2} value='3' onChange={::this._fail}/>
         </div>
 
-        <div>DeathSaves</div>
+        <div className='bold'>DeathSaves</div>
       </div>
     )
   }

@@ -24,7 +24,7 @@ export default class Equiptment extends Component {
           <Cash cash={currency.gp} change={change} name='GP' field='gp'/>
           <Cash cash={currency.pp} change={change} name='PP' field='pp'/>
         </div>
-        <textarea value={text} cols='20' rows='15' onChange={::this._onChange}/>
+        <textarea value={text} cols='20' rows='6' onChange={::this._onChange}/>
       </div>
     )
   }
