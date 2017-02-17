@@ -27,7 +27,7 @@ export default class SavingThrows extends Component {
         <Score {...stuff} field='intelligenceSaving' name='Intelligence' obj={props.intelligenceSaving}  mod={getModifier(abi, 'int')}/>
         <Score {...stuff} field='wisdomSaving' name='Wisdom' obj={props.wisdomSaving}  mod={getModifier(abi, 'wis')}/>
         <Score {...stuff} field='charismaSaving' name='Charisma' obj={props.charismaSaving}  mod={getModifier(abi, 'cha')}/>
-        SavingThrows
+        <span className='bold'>Saving Throws</span>
       </div>
     )
   }

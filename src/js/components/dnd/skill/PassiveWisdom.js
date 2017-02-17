@@ -23,7 +23,7 @@ export default class PassiveWisdom extends Component {
     return (
       <div id='passivewisdom'>
         <input placeholder={passiveWisdom.placeholder} value={passiveWisdom.value} onChange={::this._change}/>
-        <span>Passive Wisdom (Perception)</span>
+        <span className='bold'>Passive Wisdom (Perception)</span>
       </div>
     )
   }

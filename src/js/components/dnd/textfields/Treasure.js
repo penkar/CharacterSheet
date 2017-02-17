@@ -9,7 +9,7 @@ const text = ({text, field, change}) => (
     change={change}
     rows='6'
     cols='40'
-    string='Treasure'
+    string='TREASURES'
     klass='pure-u-1 pure-u-lg-3-5'
     />
 )

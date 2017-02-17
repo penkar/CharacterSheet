@@ -22,7 +22,7 @@ export default class Treasure extends Component {
       <div id={id} className={`ztext ${klass || ''}`}>
         <textarea rows={rows} cols={cols} value={text} onChange={::this._onChange}/>
         <br/>
-        {string}
+        <span className='bold'>{string}</span>
       </div>
     )
   }

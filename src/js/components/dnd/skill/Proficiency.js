@@ -24,7 +24,7 @@ export default class Proficiency extends Component {
     let {placeholder, value,}  = this.props;
     return (
       <div id='proficiency'>
-        <input placeholder={placeholder} value={value || ''} onChange={::this._change}/><span>Proficiency</span>
+        <input placeholder={placeholder} value={value || ''} onChange={::this._change}/><span className='bold'>Proficiency</span>
       </div>
     )
   }

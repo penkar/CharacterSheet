@@ -52,7 +52,7 @@ export default class SkillScores extends Component {
         <Score {...stuff} field='sleightOfHand' name='Sleight of Hand (Dex)' obj={this.props.sleightOfHand} mod={getModifier(abi, 'dex')}/>
         <Score {...stuff} field='stealth' name='Stealth (Dex)' obj={this.props.stealth} mod={getModifier(abi, 'dex')}/>
         <Score {...stuff} field='survival' name='Survival (Wis)' obj={this.props.survival} mod={getModifier(abi, 'wis')}/>
-        Skills
+        <span className='bold'>Skills</span>
       </div>
     )
   }

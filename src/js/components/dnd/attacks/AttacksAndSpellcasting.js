@@ -19,7 +19,7 @@ export default class AttacksAndSpellcasting extends Component {
     let {att, att1, att2, att3, change, } = this.props;
     return (
       <div id='attacks'>
-        <div className='attack'>
+        <div className='attack bold'>
           <div>Name</div>
           <div>Atk Bonus</div>
           <div>Damage/Type</div>
@@ -29,7 +29,7 @@ export default class AttacksAndSpellcasting extends Component {
         <Attack field='attack3' value={att3} change={change}/>
 
         <textarea value={att} rows='6' onChange={::this._onChange} />
-        Attacks & Spellcasting
+        <span className='bold'>Attacks & Spellcasting</span>
       </div>
     )
   }

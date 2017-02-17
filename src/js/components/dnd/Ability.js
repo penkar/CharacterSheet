@@ -19,7 +19,7 @@ export default class Ability extends Component {
     return (
       <div key={`${field}_ability`} className='ability pure-u-1'>
         <div>
-          <span className='clearfix'>{field}</span>
+          <span className='clearfix bold'>{field}</span>
           <br/>
           <input className='score'
             value={value}

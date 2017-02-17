@@ -24,7 +24,7 @@ export default class Inspiration extends Component {
     let {placeholder, value,}  = this.props;
     return (
       <div id='inspiration'>
-        <input placeholder={placeholder} value={value || ''} onChange={::this._change}/><span>Inspriation</span>
+        <input placeholder={placeholder} value={value || ''} onChange={::this._change}/><span className='bold'>Inspriation</span>
       </div>
     )
   }

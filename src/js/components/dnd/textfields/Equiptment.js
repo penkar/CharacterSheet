@@ -25,6 +25,7 @@ export default class Equiptment extends Component {
           <Cash cash={currency.pp} change={change} name='PP' field='pp'/>
         </div>
         <textarea value={text} cols='20' rows='6' onChange={::this._onChange}/>
+        <span className='bold'>EQUIPTMENT</span>
       </div>
     )
   }

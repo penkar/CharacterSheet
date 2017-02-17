@@ -9,7 +9,7 @@ const text = ({text, field, change}) => (
     change={change}
     rows='4'
     cols='20'
-    string='Bonds'
+    string='BONDS'
     />
 )
 export default text
