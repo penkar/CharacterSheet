@@ -1,4 +1,4 @@
-import {CHANGE_SETTING, CHANGE_LOADING} from '../constants'
+import {CHANGE_SETTING, CHANGE_LOADING, CHANGE_MODAL} from '../constants'
 
 export const settingsChange = ({loading, setting, value,}) => {
   if(loading) {
@@ -12,4 +12,12 @@ export const settingsChange = ({loading, setting, value,}) => {
       value,
     })
   }
+}
+
+export const modalChange = ({setting, modalType}) => {
+  return ({
+    type: CHANGE_MODAL,
+    setting,
+    modalType,
+  })
 }

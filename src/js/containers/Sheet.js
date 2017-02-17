@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import * as constants from '../constants'
 import {change, changeScore, magicChange} from '../actions'
 
-import {MenuContainer, Menu} from '../components/menu'
 
 import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
@@ -43,8 +42,6 @@ class Sheet extends Component {
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div style={{flexDirection:'column'}}>
-        <MenuContainer />
-        <hr/>
         {Header1(characterNameReducer, change)}
         <hr/>
 
@@ -123,20 +120,5 @@ class Sheet extends Component {
     )
   }
 }
-
-// <div style={{flexDirection:'row', display:'flex', justifyContent: 'space-between'}}>
-//
-//   <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start'}}>
-//     {PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change})}
-//     {Ideals({text:textfields.ideals, field:'ideals', change})}
-//     {Bonds({text:textfields.bonds, field:'bonds', change})}
-//     {Flaws({text:textfields.flaws, field:'flaws', change})}
-//     {FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change})}
-//   </div>
-//
-// </div>
-//
-// <br/>
-
 
 export default connect(mapStateToProps, mapDispatchToActions)(Sheet)
