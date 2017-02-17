@@ -1,4 +1,7 @@
 #menu-container {
+  display: flex;
+  flex-direction: row-reverse;
+
   padding: 0.25rem;
   border: 1px solid black;
   position: fixed;
@@ -17,9 +20,25 @@
     font-size: 4rem;
   }
 
+  &.open .equiv{
+    margin-left:1rem;
+  }
+
+  &.closed {
+    >div {
+      display: none;
+    }
+  }
+
+  >div {
+    text-align: right;
+    color: slateblue;
+  }
+
   #menu {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 
     a {
       color: slategray;

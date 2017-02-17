@@ -5,6 +5,7 @@ import Loading from './Loading';
 
 import Error from '../components/Error';
 import Root from '../components/Root'
+import Modal from '../components/Modal'
 import {settingsChange} from '../actions'
 
 require('../../style/Base.scss')
@@ -23,21 +24,18 @@ const mapStateToProps = (state)=>{
 
 class App extends Component {
   _content() {
-    let {hash} = window.location;
-    hash = hash.substr(1,hash.length);
-    if(!hash){
-      return <Root />
-    } else if (hash === 'error'){
-      return <Error/>
-    } else {
-      return <Sheet />
-    }
+    // <Root />
+    // <Sheet />
+    return null;
   }
 
   render() {
     return (
       <div>
-        {::this._content()}
+        <Sheet />
+        <Modal>
+
+        </Modal>
         {Loading(this.props.loading)}
       </div>
     )
