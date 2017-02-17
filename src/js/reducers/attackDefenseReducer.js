@@ -30,7 +30,8 @@ const attackDefenseReducer = (state=initial, action) => {
       nstate[action.field] = action.value;
       return Object.assign({}, state, nstate);
     case HYDRATE:
-      return action.hasOwnProperty(action.attackDefenseReducer) ? action.attackDefenseReducer : state;
+      if( !action.hasOwnProperty('attackDefenseReducer') ) return state;
+      return Object.assign({}, state, action.attackDefenseReducer)
     default:
       return state;
   }

@@ -49,7 +49,8 @@ const skillsReducer = (state=initial, action) => {
       obj[action.field] = field;
       return Object.assign({}, state, obj);
     case HYDRATE:
-      return action.hasOwnProperty(action.skillsReducer) ? action.skillsReducer : state;
+      if( !action.hasOwnProperty('skillsReducer') ) return state;
+      return Object.assign({}, state, action.skillsReducer)
     default:
       return state;
   }

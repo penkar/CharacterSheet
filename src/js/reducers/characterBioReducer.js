@@ -41,7 +41,8 @@ const characterBioReducer = (state=initial, action) => {
       nstate[action.field] = parseInt(action.value);
       return Object.assign({}, state, {gold: nstate});
     case HYDRATE:
-      return action.hasOwnProperty(action.characterBioReducer) ? action.characterBioReducer : state;
+      if( !action.hasOwnProperty('characterBioReducer') ) return state;
+      return Object.assign({}, state, action.characterBioReducer)
     default:
       return state;
   }

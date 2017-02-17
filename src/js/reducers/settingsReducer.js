@@ -16,7 +16,8 @@ const settingsReducer = (state=initial, action) => {
     case CHANGE_MODAL:
       return Object.assign({}, state, {modal: action.setting, modalType: action.modalType});
     case HYDRATE:
-      return action.hasOwnProperty(action.settingsReducer) ? action.settingsReducer : state;
+      if( !action.hasOwnProperty('settingsReducer') ) return state;
+      return Object.assign({}, state, action.settingsReducer)
     default:
       return state
   }
