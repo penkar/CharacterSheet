@@ -11,6 +11,9 @@ input, textarea {
   background-color: rgba(211, 211, 211, 0.25);
   border: 0px;
   font-size: 12px;
+  border-bottom: solid 1px black;
+  border-right: solid 1px black;
+  margin: 0px 2px 2px;
 }
 
 @import 'base-min';
@@ -25,14 +28,4 @@ input, textarea {
 @import 'Loading';
 @import 'Attacks';
 @import 'Equiptment';
-
-// @import 'Sheet';
-// @import 'TextField';
-// @import 'Root';
-
-// #deathsaves, #hitdie, #backstory, #allies, #addl, #treasure, #attacks, #equiptment, #featuresandtraits, #flaws, #personalitytraits, #ideals, #bonds, #proficienciesandlanguages {
-//   border: solid 1px black;
-//   border-left: double;
-//   border-right: double;
-//   padding: 1px;
-// }
+@import 'Menu';

@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as constants from '../constants'
 import {change, changeScore, magicChange} from '../actions'
 
+import {MenuContainer, Menu} from '../components/menu'
+
 import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
@@ -41,6 +43,7 @@ class Sheet extends Component {
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div style={{flexDirection:'column'}}>
+        <MenuContainer />
         <hr/>
         {Header1(characterNameReducer, change)}
         <hr/>
