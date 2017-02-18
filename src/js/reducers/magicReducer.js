@@ -54,7 +54,7 @@ const magicReducer = (state = initial, action) => {
       return Object.assign({}, state, nstate);
     case HYDRATE:
       if( !action.hasOwnProperty('magicReducer') ) return state;
-      return Object.assign({}, state, action.magicReducer)
+      return Object.assign({}, initial, action.magicReducer)
     default:
       return state;
   }

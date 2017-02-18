@@ -42,7 +42,7 @@ const characterBioReducer = (state=initial, action) => {
       return Object.assign({}, state, {gold: nstate});
     case HYDRATE:
       if( !action.hasOwnProperty('characterBioReducer') ) return state;
-      return Object.assign({}, state, action.characterBioReducer)
+      return Object.assign({}, initial, action.characterBioReducer)
     default:
       return state;
   }

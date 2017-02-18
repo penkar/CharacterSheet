@@ -18,7 +18,7 @@ const abilityReducer = (state=initial, action) => {
       return Object.assign({}, state, nstate);
     case HYDRATE:
       if( !action.hasOwnProperty('abilityReducer') ) return state;
-      return Object.assign({}, state, action.abilityReducer)
+      return Object.assign({}, initial, action.abilityReducer)
     default:
       return state;
   }

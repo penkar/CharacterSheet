@@ -30,7 +30,7 @@ const characterNameReducer = (state=initial, action) => {
       return Object.assign({}, state, nstate);
     case HYDRATE:
       if( !action.hasOwnProperty('characterNameReducer') ) return state;
-      return Object.assign({}, state, action.characterNameReducer)
+      return Object.assign({}, initial, action.characterNameReducer)
     default:
       return state;
   }
