@@ -13,13 +13,15 @@ import {MenuContainer, Menu} from '../components/menu'
 require('../../style/Base.scss')
 
 const mapDispatchToProps = (dispatch)=>{
+  window.dispatch = dispatch;
   return ({
     modalSetting: bindActionCreators(modalChange, dispatch),
     dispatch,
   })
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
+  window.state = state;
   return ({
     modal: state.settingsReducer.modal,
     type: state.settingsReducer.modalType,
@@ -28,6 +30,11 @@ const mapStateToProps = (state)=>{
 }
 
 class App extends Component {
+  componentDidMount() {
+    let {hash} = window.location;
+    
+  }
+
   _content(type) {
     switch (type) {
       case 'find':

@@ -1,2 +1,7 @@
 /node_modules/*
-/dist/*
+/dist/bundle.js
+database.rules.json
+.firebaserc
+firebase.json
+
+npm-debug.log
