@@ -1,4 +1,4 @@
-import {CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR} from '../constants'
+import {CHANGE_VIEW, CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR} from '../constants'
 
 const initial = {
   combined: false,
@@ -8,10 +8,13 @@ const initial = {
   modal: false,
   modalType: '',
   error: '',
+  view: 'all',
 }
 
 const settingsReducer = (state=initial, action) => {
   switch (action.type) {
+    case CHANGE_VIEW:
+      return Object.assign({}, state, {view: action.view});
     case ERROR:
       return Object.assign({}, state, {error: action.error, modal: true, loading: false, modalType:'error'});
     case CHANGE_LOADING:

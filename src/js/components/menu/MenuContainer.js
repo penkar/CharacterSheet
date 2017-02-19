@@ -1,9 +1,11 @@
 import React, {Component, PropTypes} from 'react'
 import Menu from './Menu'
+import View from './View'
 
 export default class MenuContainer extends Component {
   static propTypes = {
     modalCB: PropTypes.func,
+    viewCB: PropTypes.func,
   }
 
   constructor() {
@@ -22,11 +24,19 @@ export default class MenuContainer extends Component {
   }
 
   _openBookmarks() {
+    ::this._changeSection('bookmark');
+  }
+
+  _openViews() {
+    ::this._changeSection('views');
+  }
+
+  _changeSection(sect) {
     let {section} = this.state;
-    if(section === 'bookmark') {
+    if(section === sect) {
       this.setState({section: false});
     } else {
-      this.setState({section: 'bookmark'});
+      this.setState({section: sect})
     }
   }
 
@@ -39,7 +49,7 @@ export default class MenuContainer extends Component {
   }
 
   render() {
-    let {open, section} = this.state;
+    let {open, section, view} = this.state, {viewCB} = this.props;
     return (
       <div id='menu-container' className={open ? 'open' : 'closed'}>
         <span onClick={::this._toggle} className='equiv'>&prod;</span>
@@ -47,7 +57,9 @@ export default class MenuContainer extends Component {
           <div><a onClick={::this._modalCharacter}>Create Character</a></div>
           <div><a onClick={::this._modalFind}>Find Character</a></div>
           <div><a onClick={::this._openBookmarks}>Book Marks:</a></div>
+          <div><a onClick={::this._openViews}>Change View:</a></div>
           <span onClick={::this._toggle}>
+            {section === 'views' &&  View(viewCB)}
             {section === 'bookmark' &&  Menu()}
           </span>
         </div>

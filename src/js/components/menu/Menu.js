@@ -1,34 +1,34 @@
 import React from 'react'
 
-const Menu = () => {
-  return (
-    <div id='menu'>
-      <a href='#header1'>Header 1</a>
-      <a href='#inspiration'>Inspiration</a>
-      <a href='#ability'>Abilities</a>
-      <a href='#skills'>Skills</a>
-      <a href='#armorClass'>AC / Initiative / Speed</a>
-      <a href='#hitPoints'>Hit Points</a>
-      <a href='#hitdie'>Hit Die / Saves</a>
-      <a href='#attacks'>Attacks</a>
-      <a href='#equiptment'>Equiptment</a>
-      <a href='#personalitytraits'>Personality Traits</a>
-      <a href='#ideals'>Ideals</a>
-      <a href='#bonds'>Bonds</a>
-      <a href='#flaws'>Flaws</a>
-      <a href='#featuresandtraits'>Feats and Traits</a>
-      <a href='#passivewisdom'>Passive Wisdom</a>
-      <a href='#proficienciesandlanguages'>Profs and Langs</a>
-      <a href='#header2'>Header</a>
-      <a href='#appearance'>Appearance</a>
-      <a href='#treasure'>Treasure</a>
-      <a href='#backstory'>Backstory</a>
-      <a href='#allies'>Allies</a>
-      <a href='#addl'>Addl Feats and Traits</a>
-      <a href='#header3'>Header 3</a>
-      <a href='#magic'>Magic</a>
-    </div>
-  )
-}
+const func = (id) => (document.getElementById(id).scrollIntoView());
+
+const Menu = () => (
+  <div id='menu'>
+    <a onClick={()=>{func('header1')}}>Header 1</a>
+    <a onClick={()=>{func('inspiration')}}>Inspiration</a>
+    <a onClick={()=>{func('ability')}}>Abilities</a>
+    <a onClick={()=>{func('skills')}}>Skills</a>
+    <a onClick={()=>{func('armorClass')}}>AC / Initiative / Speed</a>
+    <a onClick={()=>{func('hitPoints')}}>Hit Points</a>
+    <a onClick={()=>{func('hitdie')}}>Hit Die / Saves</a>
+    <a onClick={()=>{func('attacks')}}>Attacks</a>
+    <a onClick={()=>{func('equiptment')}}>Equiptment</a>
+    <a onClick={()=>{func('personalitytraits')}}>Personality Traits</a>
+    <a onClick={()=>{func('ideals')}}>Ideals</a>
+    <a onClick={()=>{func('bonds')}}>Bonds</a>
+    <a onClick={()=>{func('flaws')}}>Flaws</a>
+    <a onClick={()=>{func('featuresandtraits')}}>Feats and Traits</a>
+    <a onClick={()=>{func('passivewisdom')}}>Passive Wisdom</a>
+    <a onClick={()=>{func('proficienciesandlanguages')}}>Profs and Langs</a>
+    <a onClick={()=>{func('header2')}}>Header</a>
+    <a onClick={()=>{func('appearance')}}>Appearance</a>
+    <a onClick={()=>{func('treasure')}}>Treasure</a>
+    <a onClick={()=>{func('backstory')}}>Backstory</a>
+    <a onClick={()=>{func('allies')}}>Allies</a>
+    <a onClick={()=>{func('addl')}}>Addl Feats and Traits</a>
+    <a onClick={()=>{func('header3')}}>Header 3</a>
+    <a onClick={()=>{func('magic')}}>Magic</a>
+  </div>
+)
 
 export default Menu
