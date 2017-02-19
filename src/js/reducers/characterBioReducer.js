@@ -38,6 +38,7 @@ const characterBioReducer = (state=initial, action) => {
       nstate[action.field] = action.value;
       return Object.assign({}, state, nstate);
     case BIO_INT:
+      nstate = Object.assign({}, state.gold)
       nstate[action.field] = parseInt(action.value);
       return Object.assign({}, state, {gold: nstate});
     case HYDRATE:
