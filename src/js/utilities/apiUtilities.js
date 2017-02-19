@@ -1,14 +1,19 @@
-import * as firebase from "firebase";
-var config = {
-  apiKey: "<API_KEY>",
-  authDomain: "<PROJECT_ID>.firebaseapp.com",
-  databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-  storageBucket: "<BUCKET>.appspot.com",
-};
-firebase.initializeApp(config);
+import {HYDRATE, CHANGE_LOADING, ERROR} from '../constants'
 
-export const fetchUser = () => {
+export const fetchUser = (userID, dispatch) => {
+  // if(!userID.match(/^\d{9}$/)) return {}
 
+  fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`)
+    .then((user) => ( user.json()))
+    .then((data) => {
+      if( data ) {
+        return dispatch( Object.assign({type:HYDRATE}, data) )
+      } else {
+        return dispatch( {type: ERROR, error:'Account ID not found.'} )
+      }
+    })
+    .catch((error) => ( dispatch( {type: ERROR, error} )))
+  return ({type:CHANGE_LOADING, loading: true})
 }
 
 export const updateUser = () => {

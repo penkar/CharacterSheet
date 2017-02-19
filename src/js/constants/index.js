@@ -2,6 +2,7 @@
 export const CHANGE_SETTING = 'CHANGE_SETTING'
 export const CHANGE_LOADING = 'CHANGE_LOADING'
 export const CHANGE_MODAL = 'CHANGE_MODAL'
+export const ERROR = 'ERROR'
 
 // CHARACTER CONSTANTS
 export const WRITING = 'WRITING';

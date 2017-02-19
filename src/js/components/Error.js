@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Error = () => (
+const Error = (error) => (
   <div id='root'>
-    <div className='title'>ERROR!</div>
+    <div className='title error'>ERROR!</div>
     <div className='content'>
       <div>
-        <div>The Character you are searching for does not seem to exist.</div>
+        <div>{error}</div>
       </div>
     </div>
   </div>
