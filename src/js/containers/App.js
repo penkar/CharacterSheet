@@ -1,7 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
-import Sheet from './Sheet.js';
+
+import Sheet from './Sheet';
+import BackgroundSheet from './BackgroundSheet';
+
 import Loading from './Loading';
 
 import Error from '../components/Error';
@@ -58,6 +61,8 @@ class App extends Component {
 
   _mainDisplay(view) {
     switch (view) {
+      case 'bkgd':
+        return <BackgroundSheet />
       case 'all':
       default:
         return <Sheet />;
@@ -65,10 +70,10 @@ class App extends Component {
   }
 
   render() {
-    let {viewSwitch, modalSetting, modal, type, } = this.props;
+    let {viewSwitch, modalSetting, modal, type, view, } = this.props;
     return (
       <div>
-        { ::this._mainDisplay() }
+        { ::this._mainDisplay(view) }
 
         <MenuContainer modalCB={modalSetting} viewCB={viewSwitch}/>
 
