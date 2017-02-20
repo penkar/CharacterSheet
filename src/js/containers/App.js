@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 
 import Sheet from './Sheet';
+import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
 import Loading from './Loading';
@@ -61,6 +62,8 @@ class App extends Component {
 
   _mainDisplay(view) {
     switch (view) {
+      case 'attack':
+        return <AttackSheet />
       case 'bkgd':
         return <BackgroundSheet />
       case 'all':
