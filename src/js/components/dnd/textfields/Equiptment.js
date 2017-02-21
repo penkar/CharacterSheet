@@ -2,7 +2,7 @@ import React from 'react'
 import Cash from './Cash'
 
 const Equiptment = ({change, text, currency}) => (
-  <div id='equiptment'>
+  <div id='equiptment' className='sectional'>
     <div className='currency'>
       <Cash cash={currency.cp} change={change} name='CP' field='cp'/>
       <Cash cash={currency.sp} change={change} name='SP' field='sp'/>

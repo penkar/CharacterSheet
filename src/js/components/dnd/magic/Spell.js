@@ -24,7 +24,7 @@ export default class Spell extends Component {
       <div className='spell'>
         <input type='checkbox' checked={prepared} onChange={::this._click} />
         <div>{name}</div>
-        <span style={{color:'red', fontSize:'1.5rem'}} onClick={::this._remove}>&nbsp;-</span>
+        <span style={{color:'red', fontSize:'2rem', cursor:'pointer'}} onClick={::this._remove}>&nbsp;-</span>
       </div>
     )
   }

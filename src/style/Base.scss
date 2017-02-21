@@ -1,14 +1,25 @@
 html, body {
   margin: 0px;
   font-size: 12px;
+  background-color: ghostwhite;
 }
 
 .bold {
   font-weight: 900;
 }
 
+.sectional {
+  border: solid 2px black;
+  border-radius: 8px;
+
+  margin: 14px;
+  margin-top: 28px;
+  padding: 5px;
+  background-color: white;
+}
+
 input, textarea {
-  background-color: rgba(211, 211, 211, 0.25);
+  background-color: rgba(211, 211, 211, 0.75);
   border: 0px;
   font-size: 12px;
   border-bottom: solid 1px black;

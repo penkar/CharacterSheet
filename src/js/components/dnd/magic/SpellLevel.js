@@ -32,7 +32,7 @@ export default class SpellLevel extends Component {
   render() {
     let {level, spells, stock, change,} = this.props;
     return (
-      <div className='level pure-u-1 pure-u-lg-1-4'>
+      <div className='level sectional pure-u-1 pure-u-lg-1-4'>
         { ::this._cantrip(level) }
         {spells.map((x, i)=> (<Spell key={i} i={i} spell={x} change={change} level={level}/>))}
         <NewSpell key='new' change={change} level={level}/>

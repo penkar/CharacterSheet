@@ -2,7 +2,7 @@ import React from 'react'
 import {Input} from '../generics'
 
 const Header1 = (props, change) => (
-  <div id='header1' className='pure-g'>
+  <div id='header1' className='pure-g sectional'>
     <div className='pure-u-1-2 pure-u-lg-2-24' />
 
     <div className='pure-u-1 pure-u-lg-4-24'>

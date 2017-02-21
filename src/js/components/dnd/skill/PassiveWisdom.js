@@ -21,7 +21,7 @@ export default class PassiveWisdom extends Component {
   render() {
     let {passiveWisdom} = this.props;
     return (
-      <div id='passivewisdom'>
+      <div id='passivewisdom' className='sectional'>
         <input placeholder={passiveWisdom.placeholder} value={passiveWisdom.value} onChange={::this._change}/>
         <span className='bold'>Passive Wisdom (Perception)</span>
       </div>

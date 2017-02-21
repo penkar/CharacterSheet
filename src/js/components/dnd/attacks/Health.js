@@ -29,7 +29,7 @@ export default class Health extends Component {
   render() {
     let {props} = this, {change} = this.props;
     return (
-      <div id='health'>
+      <div id='health' className='sectional'>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
           <Field field='armorClass' value={props.armorClass} name='Armor Class' change={change}/>
           <Field field='initiative' value={props.initiative} name='Initiative' change={change}/>

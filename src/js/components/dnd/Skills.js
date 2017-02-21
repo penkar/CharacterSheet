@@ -50,7 +50,7 @@ class Skills extends Component {
     let pro = proficiencyBonus.value || proficiencyBonus.placeholder;
 
     return (
-      <div id='skills'>
+      <div id='skills' className='sectional'>
         <Inspiration {...inspiration} change={change}/>
         <Proficiency {...proficiencyBonus} change={change}/>
         <SavingThrows {...saving} change={change} pro={pro} abi={abi}/>

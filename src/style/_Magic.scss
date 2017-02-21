@@ -8,15 +8,23 @@
   .spell {
     display: flex;
     align-items: center;
+    
+    input:nth-of-type(2) {
+      width: 85%;
+    }
+
+    div {
+      width: 85%;
+    }
   }
 
   .spelllevel {
 
     input {
-      width: 60px;
+      width: 90px;
     }
     input:first-of-type {
-      width: 20px;
+      width: 30px;
     }
   }
 }

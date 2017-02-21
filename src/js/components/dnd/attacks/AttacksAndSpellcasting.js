@@ -18,7 +18,7 @@ export default class AttacksAndSpellcasting extends Component {
   render() {
     let {att, att1, att2, att3, change, } = this.props;
     return (
-      <div id='attacks'>
+      <div id='attacks' className='sectional'>
         <div className='attack bold'>
           <div>Name</div>
           <div>Atk Bonus</div>

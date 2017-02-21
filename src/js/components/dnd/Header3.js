@@ -16,7 +16,7 @@ export default class Header3 extends Component {
   render() {
     let {change, magic} = this.props;
     return (
-      <div id='header3' className='pure-g'>
+      <div id='header3' className='pure-g sectional'>
         <div className='pure-u-1 pure-u-lg-2-24' />
 
         <div className='pure-u-1-2 pure-u-lg-5-24'>

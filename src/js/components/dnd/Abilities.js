@@ -15,7 +15,7 @@ export default class Abilities extends Component {
   render() {
     let {strength, dexterity, constitution, intelligence, wisdom, charisma, change} = this.props;
     return (
-      <div id='ability' className='pure-g'>
+      <div id='ability' className='pure-g sectional'>
         <Ability {...strength} field='strength' change={change}/>
         <Ability {...dexterity} field='dexterity' change={change}/>
         <Ability {...constitution} field='constitution' change={change}/>

@@ -19,7 +19,7 @@ export default class Treasure extends Component {
   render() {
     let {rows, cols, text, id, string, klass} = this.props;
     return (
-      <div id={id} className={`ztext ${klass || ''}`}>
+      <div id={id} className={`ztext sectional ${klass || ''}`}>
         <textarea rows={rows} cols={cols} value={text} onChange={::this._onChange}/>
         <br/>
         <span className='bold'>{string}</span>
