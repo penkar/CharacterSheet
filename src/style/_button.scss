@@ -1,0 +1,31 @@
+button {
+  display: inline-block;
+  zoom: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  box-sizing: border-box;
+  font-size: 100%;
+  padding: .5em 1em;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 2px;
+  color: white;
+  font-weight: 900;
+
+  &.secondary {
+    background: rgb(66, 184, 221);
+  }
+
+  &.success {
+    background-color: rgb(28, 184, 65);
+    color: white;
+  }
+
+  &.primary {
+    background-color: #0078e7;
+    color: white;
+  }
+}

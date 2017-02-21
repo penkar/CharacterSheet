@@ -14,12 +14,10 @@ import Modal from '../components/Modal'
 import {settingsChange, modalChange, settingsView,} from '../actions'
 import {MenuContainer, Menu, } from '../components/menu'
 import {fetchUser, } from '../utilities/apiUtilities'
-// import * as firebase from 'firebase'
 
 require('../../style/Base.scss')
 
 const mapDispatchToProps = (dispatch)=>{
-  // window.dispatch = dispatch;
   return ({
     viewSwitch: bindActionCreators(settingsView, dispatch),
     modalSetting: bindActionCreators(modalChange, dispatch),
@@ -29,7 +27,6 @@ const mapDispatchToProps = (dispatch)=>{
 }
 
 const mapStateToProps = (state) => {
-  // window.state = state;
   return ({
     view: state.settingsReducer.view,
     error: state.settingsReducer.error,
@@ -44,14 +41,12 @@ class App extends Component {
     let {getUser, dispatch} = this.props;
     let {hash} = window.location;
     hash = hash.substr(1, hash.length)
-    getUser(hash, dispatch);
-    // window.firebase = firebase
+    if(hash) return getUser(hash, dispatch);
   }
 
   _content(type) {
     switch (type) {
-      case 'find':
-      case 'character':
+      case 'char':
         return <Root />
       case 'error':
         return Error(this.props.error);

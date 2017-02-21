@@ -50,7 +50,7 @@ class Sheet extends Component {
 
           <div className='pure-u-1 pure-u-lg-6-24'>
             <div className='pure-u-1-3 pure-u-lg-8-24'>
-              <Abilities {...abilities} change={changeScore}/>
+              { Abilities(abilities, changeScore) }
             </div>
 
             <div className='pure-u-2-3 pure-u-lg-16-24'>
@@ -58,7 +58,7 @@ class Sheet extends Component {
             </div>
 
             <div className='pure-u-1 pure-u-lg-24-24'>
-              <PassiveWisdom passiveWisdom={skills.passiveWisdom} change={changeScore}/>
+              {PassiveWisdom(skills.passiveWisdom, changeScore)}
               <hr/>
               {ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change})}
             </div>

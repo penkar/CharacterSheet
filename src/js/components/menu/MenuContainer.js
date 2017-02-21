@@ -41,11 +41,8 @@ export default class MenuContainer extends Component {
   }
 
   _modalCharacter() {
-    this.props.modalCB({setting: true, modalType:'character'});
-  }
-
-  _modalFind() {
-    this.props.modalCB({setting: true, modalType:'find'});
+    this.setState({section: false, open: false});
+    this.props.modalCB({setting: true, modalType:'char'});
   }
 
   render() {
@@ -53,11 +50,10 @@ export default class MenuContainer extends Component {
     return (
       <div id='menu-container' className={open ? 'open' : 'closed'}>
         <span onClick={::this._toggle} className='equiv'>&prod;</span>
-        <div>
-          <div><a onClick={::this._modalCharacter}>Create Character</a></div>
-          <div><a onClick={::this._modalFind}>Find Character</a></div>
-          <div><a onClick={::this._openBookmarks}>Book Marks:</a></div>
-          <div><a onClick={::this._openViews}>Change View:</a></div>
+        <div className='menu-buttons'>
+          <button className='success' onClick={::this._modalCharacter}>Characters</button>
+          <button className='primary' onClick={::this._openBookmarks}>Book Marks:</button>
+          <button className='primary' onClick={::this._openViews}>Change View:</button>
           <span onClick={::this._toggle}>
             {section === 'views' &&  View(viewCB)}
             {section === 'bookmark' &&  Menu()}

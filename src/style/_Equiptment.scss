@@ -13,15 +13,13 @@
   .currency {
     display: flex;
     flex-direction: column;
-    width: 50px;
+    width: 58px;
 
     .cash {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       line-height: 1.5rem;
-      font-size: 10px;
-
-      textarea {
-
-      }
 
       input {
         line-height: 1rem;
