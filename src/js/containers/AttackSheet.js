@@ -53,15 +53,16 @@ class Sheet extends Component {
 
           <div className='pure-u-1 pure-u-lg-1-24' />
 
-          <div className='pure-u-1 pure-u-lg-6-24'>
+          <div className='pure-u-1 pure-u-lg-15-24'>
             <Health {...attacks} change={change}/>
             <hr/>
             <AttacksAndSpellcasting {...atcks} change={change}/>
             <hr/>
             {PassiveWisdom(skills.passiveWisdom, changeScore)}
           </div>
-
-          {magicComponent(magic, changeMagic)}
+          <div className='pure-u-1'>
+            {magicComponent(magic, changeMagic)}
+          </div>
         </div>
 
       </div>
