@@ -8,6 +8,7 @@ const initial = {
   hitPoints:0,
   currentHitPoints:0,
   temporaryHitPoints:0,
+  exhaustion:0,
 
   hitDie:0,
   hitDieTotal:'',

@@ -36,9 +36,15 @@ export default class Health extends Component {
           <Field field='speed' value={props.speed} name='Speed' change={change}/>
         </div>
 
+        <br/>
         <Field field='hitPoints' value={props.hitPoints} name='Hit Point Maximum' change={change}/>
+        <br/>
+        <Field field='exhaustion' value={props.exhaustion} name='Exhaustion' change={change}/>
+        <br/>
         <Field field='currentHitPoints' value={props.currentHitPoints} name='Current Hit Points' change={change}/>
+        <br/>
         <Field field='temporaryHitPoints' value={props.temporaryHitPoints} name='Temporary Hit Points' change={change}/>
+        <br/>
 
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
           <HitDie hitDie={props.hitDie} hitDieTotal={props.hitDieTotal} change={change}/>

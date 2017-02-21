@@ -1,10 +1,19 @@
 #equiptment {
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
+
+  >div {
+    display: flex;
+    flex-direction: row;
+    >textarea {
+      width:100%;
+    }
+  }
 
   .currency {
     display: flex;
     flex-direction: column;
+    width: 50px;
 
     .cash {
       line-height: 1.5rem;

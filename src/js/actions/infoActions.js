@@ -14,7 +14,7 @@ export const change = ({field, value}) => {
     type = BIO_STRING;
   } else if ('attack1' === field || 'attack2' === field || 'attack3' === field || field === 'hitDieTotal' || 'hitDieTotal' === field) {
     type = ATT_DEF_STRING;
-  } else if ('failures' === field || 'successes' === field || 'armorClass' === field || 'initiative' === field || 'speed' === field || 'hitPoints' === field || 'currentHitPoints' === field || 'temporaryHitPoints' === field || 'hitDie' === field) {
+  } else if ('failures' === field || 'successes' === field || 'armorClass' === field || 'initiative' === field || 'speed' === field || 'hitPoints' === field || 'currentHitPoints' === field || 'temporaryHitPoints' === field || 'hitDie' === field || 'exhaustion' === field) {
     type = ATT_DEF_INT;
     value = value.replace(/\D/, '');
   }
