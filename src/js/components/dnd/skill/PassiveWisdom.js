@@ -1,30 +1,13 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 
-export default class PassiveWisdom extends Component {
-  static propTypes = {
-    passiveWisdom: PropTypes.object,
-  }
+const PassiveWisdom = ({placeholder, value}, change) => (
+  <div id='passivewisdom' className='sectional'>
+    <input
+      placeholder={placeholder}
+      value={value}
+      onChange={(e)=>(change({field:'passiveWisdom', value, affiliate:true}))}/>
+    <span className='bold'>Passive Wisdom (Perception)</span>
+  </div>
+)
 
-  shouldComponentUpdate(next) {
-    let {value, placeholder} = this.props.passiveWisdom;
-    if(next.passiveWisdom.value === value && placeholder === next.passiveWisdom.placeholder) {
-      return false;
-    }
-    return true;
-  }
-
-  _change(e) {
-    let {change} = this.props, value = e.target.value;
-    change({field:'passiveWisdom', value, affiliate:true});
-  }
-
-  render() {
-    let {passiveWisdom} = this.props;
-    return (
-      <div id='passivewisdom' className='sectional'>
-        <input placeholder={passiveWisdom.placeholder} value={passiveWisdom.value} onChange={::this._change}/>
-        <span className='bold'>Passive Wisdom (Perception)</span>
-      </div>
-    )
-  }
-}
+export default PassiveWisdom

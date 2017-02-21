@@ -1,31 +1,13 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 
-export default class Inspiration extends Component {
-  static propTypes = {
-    placeholder: PropTypes.number,
-    value: PropTypes.number,
-    change: PropTypes.func,
-  }
+const Inspriation = ({placeholder, value}, change) => (
+  <div id='inspiration'>
+    <input
+      placeholder={placeholder}
+      value={value || ''}
+      onChange={(e)=>(change({field:'inspiration', value:e.target.value, affiliate:true}))}/>
+    <span className='bold'>Inspriation</span>
+  </div>
+);
 
-  shouldComponentUpdate(next) {
-    let {value, placeholder} = this.props;
-    if(next.value === value && placeholder === next.placeholder) {
-      return false;
-    }
-    return true;
-  }
-
-  _change(e) {
-    let {change} = this.props, value = e.target.value;
-    change({field:'inspiration', value, affiliate:true});
-  }
-
-  render() {
-    let {placeholder, value,}  = this.props;
-    return (
-      <div id='inspiration'>
-        <input placeholder={placeholder} value={value || ''} onChange={::this._change}/><span className='bold'>Inspriation</span>
-      </div>
-    )
-  }
-}
+export default Inspriation;

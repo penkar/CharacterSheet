@@ -48,12 +48,11 @@ class Skills extends Component {
     let skillset = {acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuation, religion, sleightOfHand, stealth, survival};
 
     let pro = proficiencyBonus.value || proficiencyBonus.placeholder;
-
     return (
       <div id='skills' className='sectional'>
-        <Inspiration {...inspiration} change={change}/>
-        <Proficiency {...proficiencyBonus} change={change}/>
-        <SavingThrows {...saving} change={change} pro={pro} abi={abi}/>
+        { Inspiration(inspiration, change) }
+        { Proficiency(proficiencyBonus, change) }
+        { SavingThrows(saving, change, pro, abi) }
         <SkillScores {...skillset} change={change} pro={pro} abi={abi}/>
       </div>
     )

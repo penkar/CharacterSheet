@@ -3,7 +3,7 @@ import React from 'react'
 const Cash = ({cash, change, field, name}) => {
   return (
     <div className='cash' key={field}>
-      {field}
+      <span>{field}</span>
       <input
         value={cash || ''}
         onChange={(event)=>(change({field, value:event.target.value}))}
