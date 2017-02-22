@@ -4,7 +4,7 @@
 
   padding: 0.25rem;
   padding-top: 0rem;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   position: fixed;
   background-color: white;
   z-index: 2000;
@@ -53,7 +53,7 @@
 
   #menu-list {
     position: fixed;
-    top: 4.4rem;
+    top: 4.3rem;
     left: 0rem;
     display: flex;
     flex-direction: column;

@@ -54,9 +54,9 @@ class Sheet extends Component {
           <div className='pure-u-1 pure-u-lg-1-24' />
 
           <div className='pure-u-1 pure-u-lg-15-24'>
-            <Health {...attacks} change={change}/>
+            {Health(attacks, change)}
             <hr/>
-            <AttacksAndSpellcasting {...atcks} change={change}/>
+            {AttacksAndSpellcasting(atcks, change)}
             <hr/>
             {PassiveWisdom(skills.passiveWisdom, changeScore)}
           </div>

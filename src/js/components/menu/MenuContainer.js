@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import View from './View'
+import Firebase from 'firebase'
 import Menu from 'react-icons/lib/md/menu'
 
 export default class MenuContainer extends Component {

@@ -53,7 +53,7 @@ class Skills extends Component {
         { Inspiration(inspiration, change) }
         { Proficiency(proficiencyBonus, change) }
         { SavingThrows(saving, change, pro, abi) }
-        <SkillScores {...skillset} change={change} pro={pro} abi={abi}/>
+        { SkillScores(skillset, change, pro, abi) }
       </div>
     )
   }

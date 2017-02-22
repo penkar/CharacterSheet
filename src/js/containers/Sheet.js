@@ -68,9 +68,9 @@ class Sheet extends Component {
           <div className='pure-u-1 pure-u-lg-1-24' />
 
           <div className='pure-u-1 pure-u-lg-6-24'>
-            <Health {...attacks} change={change}/>
+            {Health(attacks, change)}
             <hr/>
-            <AttacksAndSpellcasting {...atcks} change={change}/>
+            {AttacksAndSpellcasting(atcks, change)}
             <hr/>
             <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} change={change}/>
           </div>
