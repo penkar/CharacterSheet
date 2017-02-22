@@ -70,10 +70,10 @@ class App extends Component {
   render() {
     let {viewSwitch, modalSetting, modal, type, view, } = this.props;
     return (
-      <div>
-        { ::this._mainDisplay(view) }
-
+      <div id='app'>
         <MenuContainer modalCB={modalSetting} viewCB={viewSwitch}/>
+
+        { ::this._mainDisplay(view) }
 
         <Modal modalCB={modalSetting} open={modal}>
           { type && ::this._content(type) }
