@@ -26,6 +26,9 @@ input, textarea {
   border-bottom: solid 1px black;
   border-right: solid 1px black;
   margin: 0px 2px 2px;
+  border-radius: 2px;
+  padding: 3px;
+  background: rgba(125, 125, 125, 0.12);
 }
 
 @import 'base-min';
