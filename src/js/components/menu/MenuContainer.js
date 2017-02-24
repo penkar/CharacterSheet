@@ -1,10 +1,11 @@
 import React, {Component, PropTypes} from 'react'
 import View from './View'
-import Firebase from 'firebase'
 import Menu from 'react-icons/lib/md/menu'
+import AuthBegin from './AuthBegin'
 
 export default class MenuContainer extends Component {
   static propTypes = {
+    user: PropTypes.object,
     modalCB: PropTypes.func,
     viewCB: PropTypes.func,
   }
@@ -16,6 +17,7 @@ export default class MenuContainer extends Component {
     }
   }
 
+
   _toggle() {
     this.setState({
       open: !this.state.open,
@@ -23,10 +25,11 @@ export default class MenuContainer extends Component {
   }
 
   render() {
-    let {open, section, view} = this.state, {viewCB} = this.props;
+    let {open, section, view} = this.state, {viewCB, user} = this.props;
     return (
       <div id='menu-container'>
         <Menu id='menu' onClick={::this._toggle}/>
+        <AuthBegin />
         <span onClick={::this._toggle} >
           {open && View(viewCB)}
         </span>
