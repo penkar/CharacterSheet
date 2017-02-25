@@ -1,7 +1,6 @@
 import {HYDRATE, CHANGE_LOADING, ERROR, CLEAN} from '../constants'
 import bareUser from './bareUser'
 
-
 export const fetchUser = (userID, dispatch) => {
   dispatch({type:CLEAN});
   fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`)
@@ -17,14 +16,14 @@ export const fetchUser = (userID, dispatch) => {
   return ({type:CHANGE_LOADING, loading: true})
 }
 
-export const updateUser = (userID, dispatch) => {
+export const updateUser = (userID, dispatch, user = bareUser) => {
   fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     method:'PUT',
-    body: JSON.stringify(bareUser),
+    body: JSON.stringify(user),
   })
     .then((user) => ( user.json()))
     .then((data) => {

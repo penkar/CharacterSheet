@@ -1,6 +1,7 @@
-import {CHANGE_VIEW, CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR} from '../constants'
+import {CHANGE_VIEW, CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR, CLEAN} from '../constants'
 
 const initial = {
+  pending: false,
   combined: false,
   character: true,
   loading: false,
@@ -24,6 +25,7 @@ const settingsReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('settingsReducer') ) return state;
       return Object.assign({}, state, action.settingsReducer, {loading: false})
+    case CLEAN:
     case CHANGE_SETTING:
     default:
       return state

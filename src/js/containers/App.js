@@ -6,7 +6,8 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import Update from '../components/Update'
 
 import Error from '../components/Error';
 import Root from '../components/Root'
@@ -17,25 +18,22 @@ import {fetchUser, updateUser, } from '../utilities/apiUtilities'
 
 require('../../style/Base.scss')
 
-const mapDispatchToProps = (dispatch)=>{
-  return ({
-    viewSwitch: bindActionCreators(settingsView, dispatch),
-    modalSetting: bindActionCreators(modalChange, dispatch),
-    getUser: bindActionCreators(fetchUser, dispatch),
-    postUser: bindActionCreators(updateUser, dispatch),
-    dispatch,
-  })
-}
+const mapDispatchToProps = (dispatch)=> ({
+  viewSwitch: bindActionCreators(settingsView, dispatch),
+  modalSetting: bindActionCreators(modalChange, dispatch),
+  getUser: bindActionCreators(fetchUser, dispatch),
+  postUser: bindActionCreators(updateUser, dispatch),
+  dispatch,
+});
 
-const mapStateToProps = (state) => {
-  return ({
-    view: state.settingsReducer.view,
-    error: state.settingsReducer.error,
-    modal: state.settingsReducer.modal,
-    type: state.settingsReducer.modalType,
-    loading: state.settingsReducer.loading,
-  });
-}
+const mapStateToProps = (state) => ({
+  view: state.settingsReducer.view,
+  error: state.settingsReducer.error,
+  modal: state.settingsReducer.modal,
+  type: state.settingsReducer.modalType,
+  loading: state.settingsReducer.loading,
+  pending: state.settingsReducer.pending,
+});
 
 class App extends Component {
   componentDidMount() {
@@ -79,7 +77,7 @@ class App extends Component {
   }
 
   render() {
-    let {viewSwitch, modalSetting, modal, type, view, user,} = this.props;
+    let {viewSwitch, modalSetting, modal, type, view, user, pending, updateUser} = this.props;
     return (
       <div id='app'>
         <MenuContainer modalCB={modalSetting} viewCB={viewSwitch} user={user}/>
@@ -90,6 +88,7 @@ class App extends Component {
           { type && ::this._content(type) }
         </Modal>
 
+        <Update />
         { Loading(this.props.loading) }
       </div>
     )
