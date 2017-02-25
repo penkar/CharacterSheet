@@ -25,7 +25,7 @@ const attackDefenseReducer = (state=initial, action) => {
   let nstate = {}
   switch (action.type) {
     case ATT_DEF_INT:
-      nstate[action.field] = parseInt(action.value);
+      nstate[action.field] = parseInt(action.value) || 0;
       return Object.assign({}, state, nstate);
     case ATT_DEF_STRING:
       nstate[action.field] = action.value;

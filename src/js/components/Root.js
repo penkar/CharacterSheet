@@ -1,12 +1,20 @@
 import React, {Component, PropTypes} from 'react'
 
 export default class Root extends Component {
+  static propTypes = {
+    createUser: PropTypes.func,
+    createChar: PropTypes.func,
+    dispatch: PropTypes.func,
+  }
+
   _searchClick() {
 
   }
 
   _newClick() {
-    console.log(15);
+    let {dispatch, createUser} = this.props;
+    let id = (new Date).getTime()
+    createUser(id, dispatch)
   }
 
   render() {

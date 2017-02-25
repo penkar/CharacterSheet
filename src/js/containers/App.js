@@ -13,7 +13,7 @@ import Root from '../components/Root'
 import Modal from '../components/Modal'
 import {settingsChange, modalChange, settingsView, userSettingAction, userSignoutAction,} from '../actions'
 import {MenuContainer, Menu, } from '../components/menu'
-import {fetchUser, } from '../utilities/apiUtilities'
+import {fetchUser, updateUser, } from '../utilities/apiUtilities'
 
 require('../../style/Base.scss')
 
@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch)=>{
     viewSwitch: bindActionCreators(settingsView, dispatch),
     modalSetting: bindActionCreators(modalChange, dispatch),
     getUser: bindActionCreators(fetchUser, dispatch),
+    postUser: bindActionCreators(updateUser, dispatch),
     userSetting: bindActionCreators(userSettingAction, dispatch),
     signout: bindActionCreators(userSignoutAction, dispatch),
     dispatch,
@@ -41,16 +42,26 @@ const mapStateToProps = (state) => {
 
 class App extends Component {
   componentDidMount() {
+    window.addEventListener('hashchange', ::this._hashChange)
+
     let {getUser, dispatch, userSetting} = this.props;
-    let {hash} = window.location;
-    hash = hash.substr(1, hash.length)
-    if(hash) return getUser(hash, dispatch);
+    let hash = window.location.hash.substr(1, window.location.hash.length)
+    if(hash) ::this._hashGrab(hash)
+  }
+
+  _hashGrab(hash) {
+    return this.props.getUser(hash, this.props.dispatch);
+  }
+
+  _hashChange() {
+    let hash = window.location.hash.substr(1, window.location.hash.length)
+    if(hash) ::this._hashGrab(hash)
   }
 
   _content(type) {
     switch (type) {
       case 'root':
-        return <Root />
+        return <Root createUser={this.props.postUser} dispatch={this.props.dispatch} />
       case 'error':
         return Error(this.props.error);
       default:
@@ -74,7 +85,7 @@ class App extends Component {
     let {viewSwitch, modalSetting, modal, type, view, user,} = this.props;
     return (
       <div id='app'>
-        <MenuContainer modalCB={modalSetting} viewCB={viewSwitch} user={user} signout={::this._signout}/>
+        <MenuContainer modalCB={modalSetting} viewCB={viewSwitch} user={user}/>
 
         { ::this._mainDisplay(view) }
 
