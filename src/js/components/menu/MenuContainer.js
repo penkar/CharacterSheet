@@ -2,11 +2,13 @@ import React, {Component, PropTypes} from 'react'
 import View from './View'
 import Menu from 'react-icons/lib/md/menu'
 import AuthBegin from './AuthBegin'
+import AuthIn from './AuthIn'
 
 export default class MenuContainer extends Component {
   static propTypes = {
     user: PropTypes.object,
     modalCB: PropTypes.func,
+    signout: PropTypes.func,
     viewCB: PropTypes.func,
   }
 
@@ -25,13 +27,12 @@ export default class MenuContainer extends Component {
   }
 
   render() {
-    let {open, section, view} = this.state, {viewCB, user} = this.props;
+    let {open, section, view} = this.state, {viewCB, user, signout, modalCB,} = this.props;
     return (
       <div id='menu-container'>
         <Menu id='menu' onClick={::this._toggle}/>
-        <AuthBegin />
         <span onClick={::this._toggle} >
-          {open && View(viewCB)}
+          {open && View(viewCB, modalCB)}
         </span>
       </div>
     )

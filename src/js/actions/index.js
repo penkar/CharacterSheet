@@ -2,6 +2,8 @@ import {change} from './infoActions'
 import {changeScore} from './scoreActions'
 import {magicChange} from './magicActions'
 import {settingsChange, modalChange, settingsView} from './settingsAction'
-import {userSettingAction} from './signinActions'
+import {userSettingAction, userSignoutAction} from './signinActions'
 
-export {userSettingAction, change, changeScore, magicChange, settingsChange, modalChange, settingsView}
+export {userSettingAction, userSignoutAction,
+  change, changeScore, magicChange,
+  settingsChange, modalChange, settingsView, }
