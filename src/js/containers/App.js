@@ -11,7 +11,7 @@ import Loading from './Loading';
 import Error from '../components/Error';
 import Root from '../components/Root'
 import Modal from '../components/Modal'
-import {settingsChange, modalChange, settingsView, userSettingAction, userSignoutAction,} from '../actions'
+import {settingsChange, modalChange, settingsView, } from '../actions'
 import {MenuContainer, Menu, } from '../components/menu'
 import {fetchUser, updateUser, } from '../utilities/apiUtilities'
 
@@ -23,8 +23,6 @@ const mapDispatchToProps = (dispatch)=>{
     modalSetting: bindActionCreators(modalChange, dispatch),
     getUser: bindActionCreators(fetchUser, dispatch),
     postUser: bindActionCreators(updateUser, dispatch),
-    userSetting: bindActionCreators(userSettingAction, dispatch),
-    signout: bindActionCreators(userSignoutAction, dispatch),
     dispatch,
   })
 }
@@ -36,7 +34,6 @@ const mapStateToProps = (state) => {
     modal: state.settingsReducer.modal,
     type: state.settingsReducer.modalType,
     loading: state.settingsReducer.loading,
-    user: state.userReducer,
   });
 }
 

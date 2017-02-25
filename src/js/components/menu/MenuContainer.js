@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import View from './View'
 import Menu from 'react-icons/lib/md/menu'
-import AuthBegin from './AuthBegin'
-import AuthIn from './AuthIn'
 
 export default class MenuContainer extends Component {
   static propTypes = {
