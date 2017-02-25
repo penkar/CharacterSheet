@@ -7,7 +7,6 @@ const View = (viewCB, modalSetting) => (
     <a onClick={()=>(viewCB('bkgd'))}>See Background</a>
     <a onClick={()=>(modalSetting({setting:true, modalType:'root'}))}>Find a Character</a>
     <a onClick={()=>(modalSetting({setting:true, modalType:'root'}))}>Create a Character</a>
-    <a onClick={()=>(console.log('update'))}>Update Character</a>
   </div>
 )
 

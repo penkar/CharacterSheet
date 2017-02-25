@@ -23,7 +23,7 @@ class Update extends Component {
   _update() {
     let hash = window.location.hash.substr(1, window.location.hash.length);
     let {update, dispatch, user} = this.props;
-    update(hash, dispatch, user);
+    if(hash) return update(hash, dispatch, user);
   }
 
   render() {
