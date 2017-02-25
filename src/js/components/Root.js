@@ -6,6 +6,7 @@ export default class Root extends Component {
     createUser: PropTypes.func,
     createChar: PropTypes.func,
     dispatch: PropTypes.func,
+    modalSetting: PropTypes.func,
   }
 
   constructor(props) {
@@ -20,7 +21,8 @@ export default class Root extends Component {
   }
 
   _searchClick() {
-
+    window.location.hash = `#${this.in.value}`
+    this.props.modalSetting({setting: false, modalType: ''});
   }
 
   _newClick() {
@@ -30,6 +32,7 @@ export default class Root extends Component {
   }
 
   render() {
+    console.log(this.props);
     let {tos} = this.state;
     return (
       <div id='root'>
@@ -54,7 +57,7 @@ export default class Root extends Component {
           </div>
 
           <div className='pure-u-1 pure-u-lg-1-2' style={{textAlign:'right'}}>
-            <input placeholder='Identifier' ref={(el)=>(this.in=el)}/>
+            <input placeholder='Identifier' ref={(el)=>(this.in=el)} />
           </div>
 
           <div style={{lineHeight:'1.5rem'}} className='pure-u-1'>&nbsp;</div>
@@ -65,8 +68,8 @@ export default class Root extends Component {
             <button onClick={::this._searchClick} className='primary'>Search</button>
           </div>
 
-
         </div>
+
         <p>Developer Notes:</p>
         <p>CharSheet-3EBFD is a  completely free to use application connected to <a href='https://www.firebase.com/'>Google Firebase</a> and like wise hosted through <a href='https://firebase.google.com/docs/hosting/'>Firebase</a></p>
         <p>There are no accounts associated with a character sheet, and no authentication. Anyone can view any character sheet, and anyone can modify it.</p>

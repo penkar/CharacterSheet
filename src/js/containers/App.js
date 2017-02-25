@@ -40,7 +40,7 @@ class App extends Component {
     window.addEventListener('hashchange', ::this._hashChange)
     let {getUser, dispatch, userSetting} = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
     if(hash) {
-      ::this._hashGrab(ouhash);
+      ::this._hashGrab(hash);
     } else {
       this.props.modalSetting({setting:true, modalType:'root'});
    }
@@ -55,10 +55,10 @@ class App extends Component {
     if(hash) ::this._hashGrab(hash);
   }
 
-  _content(type) {
+  _content(type, modalSetting) {
     switch (type) {
       case 'root':
-        return <Root createUser={this.props.postUser} dispatch={this.props.dispatch} />
+        return <Root createUser={this.props.postUser} dispatch={this.props.dispatch} modalSetting={modalSetting}/>
       case 'error':
         return Error(this.props.error);
       default:
@@ -87,7 +87,7 @@ class App extends Component {
         { ::this._mainDisplay(view) }
 
         <Modal modalCB={modalSetting} open={modal}>
-          { type && ::this._content(type) }
+          { type && ::this._content(type, modalSetting) }
         </Modal>
 
         <Update />
