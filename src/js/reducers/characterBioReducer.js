@@ -1,4 +1,4 @@
-import {BIO_STRING, BIO_INT, HYDRATE,} from '../constants'
+import {BIO_STRING, BIO_INT, HYDRATE, CLEAN,} from '../constants'
 
 import {WRITING} from '../constants'
 
@@ -44,6 +44,8 @@ const characterBioReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('characterBioReducer') ) return state;
       return Object.assign({}, initial, action.characterBioReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }

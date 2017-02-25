@@ -1,4 +1,4 @@
-import {SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE, ABILITY_SCORE, HYDRATE} from '../constants'
+import {SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE, ABILITY_SCORE, HYDRATE, CLEAN} from '../constants'
 
 const initial = {
   passiveWisdom: {value: 0,placeholder: 0,},
@@ -51,6 +51,8 @@ const skillsReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('skillsReducer') ) return state;
       return Object.assign({}, initial, action.skillsReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import {SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED, HYDRATE,} from '../constants'
+import {SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED, HYDRATE, CLEAN,} from '../constants'
 
 const initial = {
   spellcastingClass:'',
@@ -55,6 +55,8 @@ const magicReducer = (state = initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('magicReducer') ) return state;
       return Object.assign({}, initial, action.magicReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import {CHAR_NAME_STRING, CHAR_NAME_INT, HYDRATE,} from '../constants'
+import {CHAR_NAME_STRING, CHAR_NAME_INT, HYDRATE, CLEAN,} from '../constants'
 
 const initial = {
   class:'',
@@ -31,6 +31,8 @@ const characterNameReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('characterNameReducer') ) return state;
       return Object.assign({}, initial, action.characterNameReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }

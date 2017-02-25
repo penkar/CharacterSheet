@@ -1,4 +1,4 @@
-import {ABILITY_SCORE, HYDRATE,} from '../constants';
+import {ABILITY_SCORE, HYDRATE, CLEAN} from '../constants';
 
 const initial = {
   strength: {value: 0, modifier: 0},
@@ -19,6 +19,8 @@ const abilityReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('abilityReducer') ) return state;
       return Object.assign({}, initial, action.abilityReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }

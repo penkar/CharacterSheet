@@ -1,13 +1,10 @@
-export const USER_SETTING = 'USER_SETTING'
-export const USER_SIGNOUT = 'USER_SIGNOUT'
-export const USER_SIGNIN = 'USER_SIGNIN'
-
 // SETTINGS CONSTANTS
 export const CHANGE_SETTING = 'CHANGE_SETTING'
 export const CHANGE_LOADING = 'CHANGE_LOADING'
 export const CHANGE_MODAL = 'CHANGE_MODAL'
 export const CHANGE_VIEW = 'CHANGE_VIEW'
 export const ERROR = 'ERROR'
+export const CLEAN = 'CLEAN'
 
 // CHARACTER CONSTANTS
 export const WRITING = 'WRITING';

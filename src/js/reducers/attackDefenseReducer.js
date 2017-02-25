@@ -1,4 +1,4 @@
-import {ATT_DEF_STRING, ATT_DEF_INT, HYDRATE,} from '../constants'
+import {ATT_DEF_STRING, ATT_DEF_INT, HYDRATE, CLEAN,} from '../constants'
 
 const initial = {
   armorClass:0,
@@ -33,6 +33,8 @@ const attackDefenseReducer = (state=initial, action) => {
     case HYDRATE:
       if( !action.hasOwnProperty('attackDefenseReducer') ) return state;
       return Object.assign({}, initial, action.attackDefenseReducer)
+    case CLEAN:
+      return {...initial}
     default:
       return state;
   }
