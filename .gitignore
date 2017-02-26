@@ -1,8 +1,5 @@
 /node_modules/*
 /dist/bundle.js
 /src/js/actions/signinActions.js
-database.rules.json
-.firebaserc
-firebase.json
 
 npm-debug.log
