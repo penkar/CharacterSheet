@@ -90,7 +90,7 @@ class App extends Component {
           { type && ::this._content(type, modalSetting) }
         </Modal>
 
-        <Update />
+        { pending && <Update />}
         { Loading(this.props.loading) }
       </div>
     )

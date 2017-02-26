@@ -45,6 +45,7 @@
   }
 
   #menu {
+    cursor:pointer;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
     font-size: 3rem;
@@ -64,6 +65,7 @@
     border-radius: 2px;
 
     >a {
+      cursor: pointer;
       margin: 1rem;
       font-weight: 900;
       font-size: 1.5rem;
