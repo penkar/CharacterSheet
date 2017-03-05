@@ -41,6 +41,19 @@ export const deleteUser = () => {
 
 }
 
-export const createUser = () => {
-
+export const createUser = (userID, dispatch, user = bareUser) => {
+  fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method:'PUT',
+    body: JSON.stringify(user),
+  })
+    .then((user) => ( user.json()))
+    .then((data) => {
+      setTimeout( ()=>(window.location.href = `/#${userID}`),250 );
+    })
+    .catch((error) => ( dispatch( {type: ERROR, error} )))
+  return ({type:CHANGE_LOADING, loading: true})
 }

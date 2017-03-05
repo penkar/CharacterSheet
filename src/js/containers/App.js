@@ -14,7 +14,7 @@ import Root from '../components/Root'
 import Modal from '../components/Modal'
 import {settingsChange, modalChange, settingsView, } from '../actions'
 import {MenuContainer, Menu, } from '../components/menu'
-import {fetchUser, updateUser, } from '../utilities/apiUtilities'
+import {fetchUser, updateUser, createUser, } from '../utilities/apiUtilities'
 
 require('../../style/Base.scss')
 
@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch)=> ({
   viewSwitch: bindActionCreators(settingsView, dispatch),
   modalSetting: bindActionCreators(modalChange, dispatch),
   getUser: bindActionCreators(fetchUser, dispatch),
+  cUser: bindActionCreators(createUser, dispatch),
   postUser: bindActionCreators(updateUser, dispatch),
   dispatch,
 });
@@ -58,7 +59,7 @@ class App extends Component {
   _content(type, modalSetting) {
     switch (type) {
       case 'root':
-        return <Root createUser={this.props.postUser} dispatch={this.props.dispatch} modalSetting={modalSetting}/>
+        return <Root createUser={this.props.cUser} dispatch={this.props.dispatch} modalSetting={modalSetting}/>
       case 'error':
         return Error(this.props.error);
       default:
