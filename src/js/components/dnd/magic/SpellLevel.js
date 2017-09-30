@@ -1,42 +1,32 @@
-import React, {PropTypes, Component} from 'react'
+import React from 'react'
 import Spell from './Spell'
 import NewSpell from './NewSpell'
 
-export default class SpellLevel extends Component {
-  static propTypes = {
-    level: PropTypes.string,
-    spells: PropTypes.array,
-    stock: PropTypes.string,
-    change: PropTypes.func,
+const SpellLevel = ({level, spells, stock, change}) => {
+  function total(e) {
+    change({level, total:true, value: e.target.value});
   }
-
-  _total(e) {
-    let {change, level} = this.props, {value} = e.target;
-    change({level, total:true, value});
-  }
-
-  _cantrip(level) {
+  function cantrip(level) {
     if(level === '0') {
       return <div className='spelllevel' key={level}>CANTRIPS</div>
     } else {
       return(
         <div className='spelllevel' key={level}>
           Level {level}
-          <input placeholder='Total' onChange={::this._total} className='total'/>&nbsp;
+          <input placeholder='Total' onChange={total} className='total'/>&nbsp;
           <input placeholder='Spell Expended' className='expended'/>
         </div>
-      )
+      );
     }
   }
 
-  render() {
-    let {level, spells, stock, change,} = this.props;
-    return (
-      <div className='level sectional pure-u-1 pure-u-lg-1-4'>
-        { ::this._cantrip(level) }
-        {spells.map((x, i)=> (<Spell key={i} i={i} spell={x} change={change} level={level}/>))}
-        <NewSpell key='new' change={change} level={level}/>
-      </div>
-    )
-  }
+  return (
+    <div className='level sectional pure-u-1 pure-u-lg-1-4'>
+      { cantrip(level) }
+      {spells.map((x, i)=> ( Spell({key:i, i, spell:x, change, level}) )) }
+      { NewSpell({change, level, i: spells.length + 2}) }
+    </div>
+  );
 }
+
+export default SpellLevel

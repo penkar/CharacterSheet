@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as constants from '../constants'
-import {change, changeScore, magicChange} from '../actions'
-
+import * as actions from '../actions'
 
 import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
@@ -26,23 +25,19 @@ const mapStateToProps = (state)=>{
 const mapDispatchToActions = (dispatch) => {
   return {
     dispatch,
-    change: bindActionCreators(change, dispatch),
-    changeScore: bindActionCreators(changeScore, dispatch),
-    changeMagic: bindActionCreators(magicChange, dispatch),
+    change: bindActionCreators(actions.change, dispatch),
+    changeScore: bindActionCreators(actions.changeScore, dispatch),
+    changeMagic: bindActionCreators(actions.magicChange, dispatch),
   }
 }
 
 class Sheet extends Component {
-  static PropTypes = {
-
-  }
-
   render() {
     let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
       <div style={{flexDirection:'column'}}>
-        {Header1(characterNameReducer, change)}
+        { Header1(characterNameReducer, change) }
         <hr/>
 
         <div className='pure-g'>
@@ -58,9 +53,9 @@ class Sheet extends Component {
             </div>
 
             <div className='pure-u-1 pure-u-lg-24-24'>
-              {PassiveWisdom(skills.passiveWisdom, changeScore)}
+              { PassiveWisdom(skills.passiveWisdom, changeScore) }
               <hr/>
-              {ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change})}
+              { ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change}) }
             </div>
           </div>
 
@@ -68,9 +63,9 @@ class Sheet extends Component {
           <div className='pure-u-1 pure-u-lg-1-24' />
 
           <div className='pure-u-1 pure-u-lg-6-24'>
-            {Health(attacks, change)}
+            { Health(attacks, change) }
             <hr/>
-            {AttacksAndSpellcasting(atcks, change)}
+            { AttacksAndSpellcasting(atcks, change) }
             <hr/>
             <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} change={change}/>
           </div>
@@ -78,15 +73,15 @@ class Sheet extends Component {
           <div className='pure-u-1 pure-u-lg-1-24' />
 
           <div className='pure-u-1 pure-u-lg-6-24'>
-            {PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change})}
+            { PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change}) }
             <hr/>
-            {Ideals({text:textfields.ideals, field:'ideals', change})}
+            { Ideals({text:textfields.ideals, field:'ideals', change}) }
             <hr/>
-            {Bonds({text:textfields.bonds, field:'bonds', change})}
+            { Bonds({text:textfields.bonds, field:'bonds', change}) }
             <hr/>
-            {Flaws({text:textfields.flaws, field:'flaws', change})}
+            { Flaws({text:textfields.flaws, field:'flaws', change}) }
             <hr/>
-            {FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change})}
+            { FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change}) }
             <hr/>
           </div>
 
@@ -96,30 +91,30 @@ class Sheet extends Component {
         </div>
 
         <hr/>
-        {Header2(characterNameReducer,change)}
+        { Header2(characterNameReducer,change) }
         <hr/>
 
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
-          {CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change})}
-          {Treasure({text: textfields.treasure, field:'treasure', change})}
+          { CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change}) }
+          { Treasure({text: textfields.treasure, field:'treasure', change}) }
         </div>
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
-          {CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change})}
-          {Allies({text: textfields.allies, field:'allies', change})}
+          { CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change}) }
+          { Allies({text: textfields.allies, field:'allies', change}) }
         </div>
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
           <div className='pure-u-1 pure-u-lg-1-5' style={{marginLeft: '40px'}} />
-          {AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change})}
+          { AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change}) }
         </div>
 
         <hr/>
         <Header3 change={changeMagic} magic={magic}/>
         <hr/>
 
-        {magicComponent(magic, changeMagic)}
+        { magicComponent(magic, changeMagic) }
       </div>
     )
   }

@@ -1,31 +1,20 @@
-import React, {PropTypes, Component} from 'react'
+import React from 'react'
 
-export default class Spell extends Component {
-  static PropTypes = {
-    change: PropTypes.func,
-    level: PropTypes.string,
+const Spell = ({change, level, i}) => {
+  let string = '';
+  function enter() {
+    if(!string) return null;
+    change({level, newspell:true, value:string});
   }
-
-  _keypress(e) {
-    if (e.target.code == 'Enter' || e.target.key == 'Enter') {
-      ::this._enter();
-    }
+  function keypress(e) {
+    string = e.target.value;
   }
-
-  _enter() {
-    let {value} = this.in, {change, level} = this.props
-    if(!value) return null;
-    change({level, newspell:true, value});
-    this.in.value = '';
-  }
-
-  render() {
-    return (
-      <div className='spell'>
-        <input type='checkbox' checked={false}/>
-        <input ref={(el)=>(this.in = el)} placeholder='Spell Name' onKeyPress={::this._keypress}/>
-        <span style={{color:'green', fontSize:'2.5rem', cursor:'pointer'}} onClick={::this._enter}>+</span>
-      </div>
-    )
-  }
+  return (
+    <div className='spell' key={`${i}_new`}>
+      <input type='checkbox' checked={false}/>
+      <input placeholder='Spell Name' onChange={keypress}/>
+      <span style={{color:'green', fontSize:'2.5rem', cursor:'pointer'}} onClick={enter}>+</span>
+    </div>
+  );
 }
+export default Spell

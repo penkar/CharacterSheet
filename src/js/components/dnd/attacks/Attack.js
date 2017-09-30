@@ -1,31 +1,17 @@
-import React, {PropTypes, Component} from 'react'
-
-export default class Attack extends Component {
-  static propTypes = {
-    field: PropTypes.string,
-    value: PropTypes.object,
+import React from 'react'
+const Attack = ({field, change, value}) => {
+  function changeattack(e) {
+    let attr = e.target.getAttribute('data'), val = e.target.value;
+    let values = Object.assign({}, value, {[attr]: val});
+    change({value:values, field});
   }
 
-  shouldComponentUpdate(next) {
-    let {name, bonus, dmg} = this.props.value;
-    if(name === next.value.name && bonus === next.value.bonus && dmg === next.value.dmg) return false;
-    return true;
-  }
-
-  _change(e) {
-    let {field, change} = this.props;
-    let value = {name: this.el1.value, dmg: this.el3.value, bonus: this.el2.value}
-    change({value, field});
-  }
-
-  render() {
-    let {value} = this.props;
-    return (
-      <div className='attack'>
-        <input key='name' value={value.name} ref={(el1)=>(this.el1 = el1)} onChange={::this._change}/>
-        <input key='bonus' value={value.bonus} ref={(el2)=>(this.el2 = el2)} onChange={::this._change}/>
-        <input key='dmg' value={value.dmg} ref={(el3)=>(this.el3 = el3)} onChange={::this._change}/>
-      </div>
-    )
-  }
+  return (
+    <div className='attack'>
+      <input data='name' value={value.name} onChange={changeattack}/>
+      <input data='bonus' value={value.bonus} onChange={changeattack}/>
+      <input data='dmg' value={value.dmg} onChange={changeattack}/>
+    </div>
+  )
 }
+export default Attack

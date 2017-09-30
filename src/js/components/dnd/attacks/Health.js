@@ -22,10 +22,12 @@ const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaus
     <br/>
 
     <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
-      <HitDie hitDie={hitDie} hitDieTotal={hitDieTotal} change={change}/>
-      <DeathSaves failures={failures} successes={successes} change={change}/>
+      { HitDie({hitDie, hitDieTotal, change}) }
+      { DeathSaves({failures, successes, change}) }
     </div>
   </div>
 )
+
+// <DeathSaves failures={failures} successes={successes} change={change}/>
 
 export default Health;
