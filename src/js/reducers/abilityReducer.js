@@ -9,7 +9,7 @@ const initial = {
   charisma: {value: 0, modifier: 0},
 }
 
-const abilityReducer = (state=initial, action) => {console.log(action);
+const abilityReducer = (state=initial, action) => {
   let nstate = {};
   switch (action.type) {
     case ABILITY_SCORE:

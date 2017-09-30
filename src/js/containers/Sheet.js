@@ -111,7 +111,7 @@ class Sheet extends Component {
         </div>
 
         <hr/>
-        <Header3 change={changeMagic} magic={magic}/>
+        { Header3({change:changeMagic, magic}) }
         <hr/>
 
         { magicComponent(magic, changeMagic) }
