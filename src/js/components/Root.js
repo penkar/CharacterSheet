@@ -32,7 +32,6 @@ export default class Root extends Component {
   }
 
   render() {
-    console.log(this.props);
     let {tos} = this.state;
     return (
       <div id='root'>

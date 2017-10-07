@@ -60,4 +60,4 @@ const Header1 = (props, change) => (
   </div>
 );
 
-export default Header1
+export {Header1}

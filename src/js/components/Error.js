@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Error = (error) => (
   <div id='root'>
     <div className='title error'>ERROR!</div>

@@ -34,4 +34,4 @@ const Header3 = ({change, magic}) => {
     </div>
   )
 }
-export default Header3
+export {Header3}
