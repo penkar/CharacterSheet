@@ -1,3 +1,1 @@
-import Input from './Input.js'
-
-export {Input}
+export * from './Input.js'
