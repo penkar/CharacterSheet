@@ -5,11 +5,29 @@ import { bindActionCreators } from 'redux';
 import * as constants from '../constants'
 import * as actions from '../actions'
 
-import {Header1, Header2, Header3, Abilities, Skills, } from '../components/dnd'
-import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
-import {PassiveWisdom,} from '../components/dnd/skill'
-import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
-import {magicComponent} from '../components/dnd/magic'
+import {
+  PassiveWisdom,
+  AttacksAndSpellcasting,
+  Health,
+  Header1,
+  Header2,
+  Header3,
+  Abilities,
+  Skills,
+  magicComponent } from '../components/dnd';
+import {
+  Equiptment,
+  Allies,
+  Treasure,
+  AddlFeaturesAndTraits,
+  CharacterBackstory,
+  CharacterApperance,
+  Bonds,
+  Flaws,
+  Ideals,
+  PersonalityTraits,
+  ProficienciesAndLanguages,
+  FeaturesAndTraits } from '../components/dnd/textfields';
 
 const mapStateToProps = (state)=>{
   return ({
@@ -67,7 +85,7 @@ class Sheet extends Component {
             <hr/>
             { AttacksAndSpellcasting(atcks, change) }
             <hr/>
-            <Equiptment currency={textfields.gold} field='equiptment' text={textfields.equiptment} change={change}/>
+            { Equiptment({currency:textfields.gold, field:'equiptment', text:textfields.equiptment, change}) }
           </div>
 
           <div className='pure-u-1 pure-u-lg-1-24' />
