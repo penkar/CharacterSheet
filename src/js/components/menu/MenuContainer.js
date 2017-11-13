@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react'
-import View from './View'
+import {View} from './View'
 import Menu from 'react-icons/lib/md/menu'
 
-export default class MenuContainer extends Component {
+class MenuContainer extends Component {
   static propTypes = {
     user: PropTypes.object,
     modalCB: PropTypes.func,
@@ -10,13 +10,12 @@ export default class MenuContainer extends Component {
     viewCB: PropTypes.func,
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       open: false,
     }
   }
-
 
   _toggle() {
     this.setState({
@@ -36,3 +35,4 @@ export default class MenuContainer extends Component {
     )
   }
 }
+export {MenuContainer}

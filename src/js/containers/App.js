@@ -6,11 +6,8 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-// import Update from '../components/Update'
+import {MenuContainer, Menu, Update, Loading, Error, Root, Modal} from '../components';
 
-import {Update, Loading, Error, Root, Modal} from '../components';
-
-import {MenuContainer, Menu, } from '../components/menu'
 import * as actions from '../actions'
 import * as apiUtilities from '../utilities/apiUtilities'
 

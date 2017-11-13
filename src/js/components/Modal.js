@@ -1,10 +1,5 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
 class Modal extends Component {
-  static propTypes = {
-    modalCB: PropTypes.func,
-    open: PropTypes.bool,
-  }
-
   _modalClick(event) {
     event.stopPropagation();
   }
@@ -24,4 +19,5 @@ class Modal extends Component {
     )
   }
 }
+
 export {Modal}

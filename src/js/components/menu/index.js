@@ -1,4 +1,2 @@
-import Menu from './Menu'
-import MenuContainer from './MenuContainer'
-
-export {Menu, MenuContainer}
+export * from './Menu'
+export * from './MenuContainer'

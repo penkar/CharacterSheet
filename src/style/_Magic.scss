@@ -8,6 +8,8 @@
   .spell {
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
 
     input:nth-of-type(2) {
       width: 85%;
@@ -19,11 +21,11 @@
   }
 
   .spelllevel {
-    input {
-      width: 90px;
-    }
-    input:first-of-type {
-      width: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .ct {
+      width: 30%;
     }
   }
 }

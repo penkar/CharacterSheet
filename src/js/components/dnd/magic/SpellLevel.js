@@ -12,9 +12,9 @@ const SpellLevel = ({level, spells, stock, change}) => {
     } else {
       return(
         <div className='spelllevel' key={level}>
-          Level {level}
-          <input placeholder='Total' onChange={total} className='total'/>&nbsp;
-          <input placeholder='Spell Expended' className='expended'/>
+          <span className='ct'>Level {level}</span>
+          <input placeholder='Total' onChange={total} className='total ct'/>
+          <input placeholder='Spell Expended' className='expended ct'/>
         </div>
       );
     }

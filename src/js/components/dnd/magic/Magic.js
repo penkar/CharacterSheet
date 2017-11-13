@@ -24,12 +24,7 @@ const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLeve
       </div>
       <div id='magic' className='pure-g'>
         <div className='pure-u-1 pure-u-lg-1-24' />
-        <span className='tip-highlighter'>
-          { SpellLevel({level:'9', change:func, stock:stock['9'], spells:spellLevel9}) }
-          <span className='tip'>
-            Text That should appear in a tooltip
-          </span>
-        </span>
+        { SpellLevel({level:'9', change:func, stock:stock['9'], spells:spellLevel9}) }
       </div>
     </div>
   );
