@@ -1,7 +1,5 @@
-import Inspiration from './Inspiration'
-import PassiveWisdom from './PassiveWisdom'
-import Proficiency from './Proficiency'
-import SavingThrows from './SavingThrows'
-import SkillScores from './SkillScores'
-
-export {Inspiration, PassiveWisdom, Proficiency, SavingThrows, SkillScores,}
+export * from './Inspiration'
+export * from './PassiveWisdom'
+export * from './Proficiency'
+export * from './SavingThrows'
+export * from './SkillScores'

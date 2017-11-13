@@ -36,7 +36,17 @@
     border: 1px solid black;
   }
 
+  .score:nth-child(odd) + .score {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
   .score {
+    display: flex;
+    align-items: center;
+
+    .title {
+      text-align: center;
+      width: calc(100% - 28px);
+    }
     input {
       width: 1rem;
       line-height: 1rem;
