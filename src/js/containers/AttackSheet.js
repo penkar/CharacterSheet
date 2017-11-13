@@ -2,12 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {change, changeScore, magicChange} from '../actions'
+import * as actions from '../actions'
 
 import {Abilities, Skills, } from '../components/dnd'
 import {AttacksAndSpellcasting, Health,} from '../components/dnd/attacks'
 import {PassiveWisdom,} from '../components/dnd/skill'
-import {Equiptment, Allies, Treasure, AddlFeaturesAndTraits, CharacterBackstory, CharacterApperance, Bonds, Flaws, Ideals, PersonalityTraits, ProficienciesAndLanguages, FeaturesAndTraits,} from '../components/dnd/textfields'
 import {magicComponent} from '../components/dnd/magic'
 
 const mapStateToProps = (state)=>{
@@ -24,9 +23,9 @@ const mapStateToProps = (state)=>{
 const mapDispatchToActions = (dispatch) => {
   return {
     dispatch,
-    change: bindActionCreators(change, dispatch),
-    changeScore: bindActionCreators(changeScore, dispatch),
-    changeMagic: bindActionCreators(magicChange, dispatch),
+    change: bindActionCreators(actions.change, dispatch),
+    changeScore: bindActionCreators(actions.changeScore, dispatch),
+    changeMagic: bindActionCreators(actions.magicChange, dispatch),
   }
 }
 
