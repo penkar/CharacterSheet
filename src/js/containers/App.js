@@ -6,24 +6,21 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-import Loading from '../components/Loading';
-import Update from '../components/Update'
+// import Update from '../components/Update'
 
-import Error from '../components/Error';
-import Root from '../components/Root'
-import Modal from '../components/Modal'
-import {settingsChange, modalChange, settingsView, } from '../actions'
+import {Update, Loading, Error, Root, Modal} from '../components';
+
 import {MenuContainer, Menu, } from '../components/menu'
-import {fetchUser, updateUser, createUser, } from '../utilities/apiUtilities'
+import * as actions from '../actions'
+import * as apiUtilities from '../utilities/apiUtilities'
 
 require('../../style/Base.scss')
 
 const mapDispatchToProps = (dispatch)=> ({
-  viewSwitch: bindActionCreators(settingsView, dispatch),
-  modalSetting: bindActionCreators(modalChange, dispatch),
-  getUser: bindActionCreators(fetchUser, dispatch),
-  cUser: bindActionCreators(createUser, dispatch),
-  postUser: bindActionCreators(updateUser, dispatch),
+  settingsView: bindActionCreators(actions.settingsView, dispatch),
+  modalChange: bindActionCreators(actions.modalChange, dispatch),
+  fetchUser: bindActionCreators(apiUtilities.fetchUser, dispatch),
+  createUser: bindActionCreators(apiUtilities.createUser, dispatch),
   dispatch,
 });
 
@@ -39,16 +36,16 @@ const mapStateToProps = (state) => ({
 class App extends Component {
   componentDidMount() {
     window.addEventListener('hashchange', ::this._hashChange)
-    let {getUser, dispatch, userSetting} = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
+    let {fetchUser,} = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
     if(hash) {
       ::this._hashGrab(hash);
     } else {
-      this.props.modalSetting({setting:true, modalType:'root'});
+      this.props.modalChange({setting:true, modalType:'root'});
    }
   }
 
   _hashGrab(hash) {
-    return this.props.getUser(hash, this.props.dispatch);
+    return this.props.fetchUser(hash, this.props.dispatch);
   }
 
   _hashChange() {
@@ -56,10 +53,10 @@ class App extends Component {
     if(hash) ::this._hashGrab(hash);
   }
 
-  _content(type, modalSetting) {
+  _content(type, modalChange) {
     switch (type) {
       case 'root':
-        return <Root createUser={this.props.cUser} dispatch={this.props.dispatch} modalSetting={modalSetting}/>
+        return Root({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange})
       case 'error':
         return Error(this.props.error);
       default:
@@ -80,19 +77,19 @@ class App extends Component {
   }
 
   render() {
-    let {viewSwitch, modalSetting, modal, type, view, user, pending, updateUser} = this.props;
+    let {settingsView, modalChange, modal, type, view, user, pending, loading} = this.props;
     return (
       <div id='app'>
-        <MenuContainer modalCB={modalSetting} viewCB={viewSwitch} user={user}/>
+        <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user}/>
 
         { ::this._mainDisplay(view) }
 
-        <Modal modalCB={modalSetting} open={modal}>
-          { type && ::this._content(type, modalSetting) }
+        <Modal modalCB={modalChange} open={modal}>
+          { type && ::this._content(type, modalChange) }
         </Modal>
 
-        { pending && <Update />}
-        { Loading(this.props.loading) }
+        { pending && <Update /> }
+        { loading && Loading(loading) }
       </div>
     )
   }

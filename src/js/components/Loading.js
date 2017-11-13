@@ -1,6 +1,5 @@
 import React from 'react'
-const Loading = (bool) => {
-  if(!bool) return null;
+export function Loading(bool) {
   return (
     <div id='loading'>
       <span></span>
@@ -8,6 +7,5 @@ const Loading = (bool) => {
       <span></span>
       <span></span>
     </div>
-  )
+  );
 }
-export default Loading

@@ -1,0 +1,12 @@
+.tip-highlighter {
+
+  >.tip {
+    zoom: 0;
+  }
+
+  &:hover {
+    >.tip {
+      zoom:1;
+    }
+  }
+}

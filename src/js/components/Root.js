@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function Root ({createUser, dispatch, modalSetting}) {
+export function Root ({createUser, dispatch, modalChange}) {
   function searchClick() {
     window.location.hash = `#${document.getElementsByName('identifier')[0].value}`
-    modalSetting({setting: false, modalType: ''});
+    modalChange({setting: false, modalType: ''});
   }
 
   function newClick() {

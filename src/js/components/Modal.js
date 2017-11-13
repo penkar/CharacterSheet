@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react'
-
-export default class Modal extends Component {
+class Modal extends Component {
   static propTypes = {
     modalCB: PropTypes.func,
     open: PropTypes.bool,
@@ -25,3 +24,4 @@ export default class Modal extends Component {
     )
   }
 }
+export {Modal}

@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
   }
 })
 
-class Update extends Component {
+class UpdateComponent extends Component {
   _update() {
     let hash = window.location.hash.substr(1, window.location.hash.length);
     let {update, dispatch, user} = this.props;
@@ -27,9 +27,8 @@ class Update extends Component {
   }
 
   render() {
-    return(
-      <Sync id='update' onClick={::this._update}/>
-    )
+    return <Sync id='update' onClick={::this._update}/>
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Update)
+const Update = connect(mapStateToProps, mapDispatchToProps)(UpdateComponent);
+export {Update}
