@@ -1,8 +1,7 @@
 import React from 'react'
-import Spell from './Spell'
-import NewSpell from './NewSpell'
-
-const SpellLevel = ({level, spells, stock, change}) => {
+import {Spell} from './Spell'
+import {NewSpell} from './NewSpell'
+export function SpellLevel({level, spells, stock, change}) {
   function total(e) {
     change({level, total:true, value: e.target.value});
   }
@@ -28,5 +27,3 @@ const SpellLevel = ({level, spells, stock, change}) => {
     </div>
   );
 }
-
-export default SpellLevel

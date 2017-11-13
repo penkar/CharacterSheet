@@ -1,6 +1,5 @@
 import React from 'react'
-
-const Spell = ({change, level, i}) => {
+export function NewSpell({change, level, i}) {
   let string = '';
   function enter() {
     if(!string) return null;
@@ -17,4 +16,3 @@ const Spell = ({change, level, i}) => {
     </div>
   );
 }
-export default Spell

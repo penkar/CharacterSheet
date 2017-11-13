@@ -1,5 +1,5 @@
 import React from 'react'
-import SpellLevel from './SpellLevel'
+import {SpellLevel} from './SpellLevel'
 
 const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLevel3, spellLevel4, spellLevel5, spellLevel6, spellLevel7, spellLevel8, spellLevel9}, func) => {
   return (
@@ -30,4 +30,4 @@ const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLeve
   );
 }
 
-export default magicComponent
+export {magicComponent}

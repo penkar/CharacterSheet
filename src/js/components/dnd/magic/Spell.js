@@ -1,5 +1,5 @@
 import React from 'react'
-const Spell = ({key, i, spell, change, level}) => {
+export function Spell({key, i, spell, change, level}) {
   function click() {
     change({level, i, prepared: !spell.prepared});
   }
@@ -15,4 +15,3 @@ const Spell = ({key, i, spell, change, level}) => {
     </div>
   )
 }
-export default Spell
