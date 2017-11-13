@@ -6,7 +6,8 @@ import * as constants from '../constants'
 import * as actions from '../actions'
 
 import * as dnd from '../components/dnd';
-import * as textfields from '../components/dnd/textfields';
+import {Skills} from '../components/dnd';
+import * as tf from '../components/dnd/textfields';
 
 const mapStateToProps = (state)=>{
   return ({
@@ -52,7 +53,7 @@ class Sheet extends Component {
             <div className='pure-u-1 pure-u-lg-24-24'>
               { dnd.PassiveWisdom(skills.passiveWisdom, changeScore) }
               <hr/>
-              { textfields.ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change}) }
+              { tf.ProficienciesAndLanguages({text: textfields.otherProficienciesAndLanguages, field:'otherProficienciesAndLanguages', change}) }
             </div>
           </div>
 
@@ -64,21 +65,21 @@ class Sheet extends Component {
             <hr/>
             { dnd.AttacksAndSpellcasting(atcks, change) }
             <hr/>
-            { textfields.Equiptment({currency:textfields.gold, field:'equiptment', text:textfields.equiptment, change}) }
+            { tf.Equiptment({currency:textfields.gold, field:'equiptment', text:textfields.equiptment, change}) }
           </div>
 
           <div className='pure-u-1 pure-u-lg-1-24' />
 
           <div className='pure-u-1 pure-u-lg-6-24'>
-            { textfields.PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change}) }
+            { tf.PersonalityTraits({text:textfields.personalityTraits, field:'personalityTraits', change}) }
             <hr/>
-            { textfields.Ideals({text:textfields.ideals, field:'ideals', change}) }
+            { tf.Ideals({text:textfields.ideals, field:'ideals', change}) }
             <hr/>
-            { textfields.Bonds({text:textfields.bonds, field:'bonds', change}) }
+            { tf.Bonds({text:textfields.bonds, field:'bonds', change}) }
             <hr/>
-            { textfields.Flaws({text:textfields.flaws, field:'flaws', change}) }
+            { tf.Flaws({text:textfields.flaws, field:'flaws', change}) }
             <hr/>
-            { textfields.FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change}) }
+            { tf.FeaturesAndTraits({text:textfields.featuresAndTraits, field:'featuresAndTraits', change}) }
             <hr/>
           </div>
 
@@ -93,18 +94,18 @@ class Sheet extends Component {
 
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
-          { textfields.CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change}) }
-          { textfields.Treasure({text: textfields.treasure, field:'treasure', change}) }
+          { tf.CharacterApperance({text: textfields.characterApperance, field:'characterApperance', change}) }
+          { tf.Treasure({text: textfields.treasure, field:'treasure', change}) }
         </div>
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
-          { textfields.CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change}) }
-          { textfields.Allies({text: textfields.allies, field:'allies', change}) }
+          { tf.CharacterBackstory({text: textfields.characterBackstory, field:'characterBackstory', change}) }
+          { tf.Allies({text: textfields.allies, field:'allies', change}) }
         </div>
         <div className='pure-g'>
           <div className='pure-u-1 pure-u-lg-1-24' />
           <div className='pure-u-1 pure-u-lg-1-5' style={{marginLeft: '40px'}} />
-          { textfields.AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change}) }
+          { tf.AddlFeaturesAndTraits({text: textfields.additionalFeaturesAndTraits, field:'additionalFeaturesAndTraits', change}) }
         </div>
 
         <hr/>
