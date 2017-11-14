@@ -14,7 +14,7 @@
   }
 
   input {
-    width: 1rem;
+    width: 1.2rem;
     border: 2px solid black;
     padding: 5px;
   }
@@ -23,7 +23,7 @@
 #ability {
   text-align: left;
   flex-direction: column;
-  width: 10%;
+  width: 80%;
   min-width: 65px;
 
   input {
@@ -33,7 +33,7 @@
   .ability {
     flex-direction: column;
     text-align: center;
-    border: solid 1px black;
+    border: solid 1px rgba(0, 0, 0, 0.4);
 
     span {
       text-transform: uppercase;;

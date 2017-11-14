@@ -1,5 +1,5 @@
 import React from 'react'
-import Score from './Score'
+import {Score} from './Score'
 import {getModifier} from '../../../utilities/scoreutilities'
 
 const SkillScores = ({acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuation, religion, sleightOfHand, stealth, survival}, change, pro, abi) => {

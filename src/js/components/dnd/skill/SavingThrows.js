@@ -1,5 +1,5 @@
 import React from 'react'
-import Score from './Score'
+import {Score} from './Score'
 import {getModifier} from '../../../utilities/scoreutilities'
 
 const SavingThrows = ({strengthSaving, dexteritySaving, constitutionSaving, intelligenceSaving, wisdomSaving, charismaSaving,}, change, pro, abi) => {
