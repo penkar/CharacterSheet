@@ -12,8 +12,8 @@ export function SpellLevel({level, spells, stock, change}) {
       return(
         <div className='spelllevel' key={level}>
           <span className='ct'>Level {level}</span>
-          <input placeholder='Total' onChange={total} className='total ct'/>
-          <input placeholder='Spell Expended' className='expended ct'/>
+          <input placeholder='Total' onChange={total} className='total ct' value={stock}/>
+          <input placeholder='Spell Expended' className='expended ct' value={stock}/>
         </div>
       );
     }

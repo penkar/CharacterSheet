@@ -6,43 +6,29 @@ const Header2 = (props, change) => (
     <div className='pure-u-1 pure-u-lg-2-24' />
 
     <div className='pure-u-1 pure-u-lg-5-24'>
-      <div className='ll t b'>
-        { Input({placeholder:'Character Name', value:props.characterName, specific:'', field:'characterName', change}) }
-      </div>
+      { Input({placeholder:'Character Name', value:props.characterName, specific:'', field:'characterName', change}) }
       <div>Character Name</div>
     </div>
 
     <div className='pure-u-1-2 pure-u-lg-5-24'>
-      <div className='ll t'>
-        { Input({placeholder:'Age', value:props.age || '', specific:'', field:'age', change}) }
-      </div>
-      <div className='ll'>Age</div>
-      <div>
-        { Input({placeholder:'Eyes', value:props.eyes || '', specific:'', field:'eyes', change}) }
-      </div>
-      <div className='ll b'>Eyes</div>
+      { Input({placeholder:'Age', value:props.age || '', specific:'', field:'age', change}) }
+      <div>Age</div>
+      { Input({placeholder:'Eyes', value:props.eyes || '', specific:'', field:'eyes', change}) }
+      <div>Eyes</div>
     </div>
 
     <div className='pure-u-1-2 pure-u-lg-5-24'>
-      <div className='t'>
-        { Input({placeholder:'Height', value:props.height || '', specific:'', field:'height', change}) }
-      </div>
+      { Input({placeholder:'Height', value:props.height || '', specific:'', field:'height', change}) }
       <div>Height</div>
-      <div>
-        { Input({placeholder:'Skin', value:props.skin || '', specific:'', field:'skin', change}) }
-      </div>
-      <div className='b'>Skin</div>
+      { Input({placeholder:'Skin', value:props.skin || '', specific:'', field:'skin', change}) }
+      <div>Skin</div>
     </div>
 
     <div className='pure-u-1-2 pure-u-lg-5-24'>
-      <div className='rr t'>
-        { Input({placeholder:'Weight', value:props.weight || '', specific:'', field:'weight', change}) }
-      </div>
-      <div className='rr'>Weight</div>
-      <div className='rr'>
-        { Input({placeholder:'Hair', value:props.hair || '', specific:'', field:'hair', change}) }
-      </div>
-      <div className='rr b'>Hair</div>
+      { Input({placeholder:'Weight', value:props.weight || '', specific:'', field:'weight', change}) }
+      <div>Weight</div>
+      { Input({placeholder:'Hair', value:props.hair || '', specific:'', field:'hair', change}) }
+      <div>Hair</div>
     </div>
   </div>
 )
