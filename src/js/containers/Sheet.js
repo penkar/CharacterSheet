@@ -6,7 +6,6 @@ import * as constants from '../constants'
 import * as actions from '../actions'
 
 import * as dnd from '../components/dnd';
-import {Skills} from '../components/dnd';
 import * as tf from '../components/dnd/textfields';
 
 const mapStateToProps = (state)=>{
@@ -47,7 +46,7 @@ class Sheet extends Component {
             </div>
 
             <div className='pure-u-2-3 pure-u-lg-16-24'>
-              <Skills {...skills} change={changeScore}/>
+              {dnd.Skills({...skills}, changeScore, abilities)}
             </div>
 
             <div className='pure-u-1 pure-u-lg-24-24'>

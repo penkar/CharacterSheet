@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {change} from '../actions'
+import * as actions from '../actions'
 import * as tf from '../components/dnd/textfields'
 
 const mapStateToProps = (state)=>{
@@ -12,11 +12,11 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToActions = (dispatch) => {
   return {
-    change: bindActionCreators(change, dispatch),
+    change: bindActionCreators(actions.change, dispatch),
   }
 }
 
-class Sheet extends Component {
+class Sheet extends React.Component {
   render() {
     let { textfields } = this.props;
     return (
