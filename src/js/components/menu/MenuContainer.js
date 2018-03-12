@@ -17,7 +17,7 @@ class MenuContainer extends Component {
     }
   }
 
-  _toggle() {
+  _toggle = () => {
     this.setState({
       open: !this.state.open,
     });
@@ -27,8 +27,8 @@ class MenuContainer extends Component {
     let {open, section, view} = this.state, {viewCB, user, signout, modalCB,} = this.props;
     return (
       <div id='menu-container'>
-        <Menu id='menu' onClick={::this._toggle}/>
-        <span onClick={::this._toggle} >
+        <Menu id='menu' onClick={this._toggle}/>
+        <span onClick={this._toggle} >
           {open && View(viewCB, modalCB)}
         </span>
       </div>

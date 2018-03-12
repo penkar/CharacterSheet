@@ -11,7 +11,7 @@ export default class Treasure extends Component {
     string: PropTypes.string,
   }
 
-  _onChange(e) {
+  _onChange = (e) => {
     let value = e.target.value, {change, field} = this.props;
     change({value, field});
   }
@@ -20,7 +20,7 @@ export default class Treasure extends Component {
     let {rows, cols, text, id, string, klass} = this.props;
     return (
       <div id={id} className={`ztext sectional ${klass || ''}`}>
-        <textarea rows={rows} cols={cols} value={text} onChange={::this._onChange}/>
+        <textarea rows={rows} cols={cols} value={text} onChange={this._onChange}/>
         <br/>
         <span className='bold'>{string}</span>
       </div>

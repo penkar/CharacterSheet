@@ -18,7 +18,7 @@ const mapDispatchToActions = (dispatch) => {
 
 class Sheet extends React.Component {
   render() {
-    let { textfields } = this.props;
+    let { textfields, change } = this.props;
     return (
       <div style={{flexDirection:'column'}}>
         <div className='pure-g'>
