@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class Treasure extends Component {
+export default class Treasure extends React.Component {
   _onChange = (e) => {
     let value = e.target.value, {change, field} = this.props;
     change({value, field});

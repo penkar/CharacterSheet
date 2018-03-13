@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {View} from './View'
 import Menu from 'react-icons/lib/md/menu'
 
-class MenuContainer extends Component {
+class MenuContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

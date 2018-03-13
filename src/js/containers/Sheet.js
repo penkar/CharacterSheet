@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -28,7 +28,7 @@ const mapDispatchToActions = (dispatch) => {
   }
 }
 
-class Sheet extends Component {
+class Sheet extends React.Component {
   render() {
     let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}

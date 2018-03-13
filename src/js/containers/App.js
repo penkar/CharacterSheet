@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => ({
   pending: state.settingsReducer.pending,
 });
 
-class App extends Component {
+class App extends React.Component {
   componentDidMount() {
     window.addEventListener('hashchange', this._hashChange)
     let {fetchUser,} = this.props, hash = window.location.hash.substr(1, window.location.hash.length);

@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 import Sync from 'react-icons/lib/md/sync'
-import {updateUser} from '../utilities/apiUtilities'
+import * as actions from '../utilities/apiUtilities'
 
 const mapDispatchToProps = (dispatch) => ({
-  update: bindActionCreators(updateUser, dispatch),
+  updateUser: bindActionCreators(actions.updateUser, dispatch),
   dispatch,
 })
 const mapStateToProps = (state) => ({
@@ -19,16 +19,14 @@ const mapStateToProps = (state) => ({
   }
 })
 
-class UpdateComponent extends Component {
+class UpdateComponent extends React.Component {
   _update = () => {
     let hash = window.location.hash.substr(1, window.location.hash.length);
-    let {update, dispatch, user} = this.props;
-    if(hash) return update(hash, dispatch, user);
+    let {updateUser, dispatch, user} = this.props;
+    if(hash) return updateUser(hash, dispatch, user);
   }
 
-  render() {
-    return <Sync id='update' onClick={this._update}/>
-  }
+  render = () => <Sync id='update' onClick={this._update}/>
 }
 const Update = connect(mapStateToProps, mapDispatchToProps)(UpdateComponent);
 export {Update}

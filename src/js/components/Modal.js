@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-class Modal extends Component {
+import React from 'react'
+class Modal extends React.Component {
   _modalClick = (event) => {
     event.stopPropagation();
   }
