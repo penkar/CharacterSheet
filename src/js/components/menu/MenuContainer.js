@@ -1,15 +1,8 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
 import {View} from './View'
 import Menu from 'react-icons/lib/md/menu'
 
 class MenuContainer extends Component {
-  static propTypes = {
-    user: PropTypes.object,
-    modalCB: PropTypes.func,
-    signout: PropTypes.func,
-    viewCB: PropTypes.func,
-  }
-
   constructor(props) {
     super(props);
     this.state = {

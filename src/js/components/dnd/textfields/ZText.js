@@ -1,16 +1,6 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
 
 export default class Treasure extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-    field: PropTypes.string,
-    change: PropTypes.func,
-    id: PropTypes.string,
-    rows: PropTypes.string,
-    cols: PropTypes.string,
-    string: PropTypes.string,
-  }
-
   _onChange = (e) => {
     let value = e.target.value, {change, field} = this.props;
     change({value, field});
