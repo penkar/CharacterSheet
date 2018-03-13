@@ -1,11 +1,2 @@
 import React from 'react'
-export function Loading(bool) {
-  return (
-    <div id='loading'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  );
-}
+export const Loading = (bool) => <div id='loading'><span/><span/><span/><span/></div>;

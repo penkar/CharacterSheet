@@ -38,7 +38,6 @@ export const updateUser = (userID, dispatch, user = bareUser) => {
 }
 
 export const deleteUser = () => {
-
 }
 
 export const createUser = (userID, dispatch, user = bareUser) => {
