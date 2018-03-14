@@ -1,10 +1,8 @@
 import React from 'react'
-
 const HitDie = ({hitDie, hitDieTotal, change}) => {
-  function changeH(e) {
+  let changeH = function(e) {
     change({field:'hitDie', value:e.target.value});
-  };
-  function changeT(e) {
+  }, changeT = function(e) {
     change({field:'hitDieTotal', value:e.target.value});
   };
 

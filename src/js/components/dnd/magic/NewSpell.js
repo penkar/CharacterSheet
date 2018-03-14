@@ -1,11 +1,10 @@
 import React from 'react'
 export function NewSpell({change, level, i}) {
   let string = '';
-  function enter() {
+  let enter = () => {
     if(!string) return null;
     change({level, newspell:true, value:string});
-  }
-  function keypress(e) {
+  }, keypress = (e) => {
     string = e.target.value;
   }
   return (

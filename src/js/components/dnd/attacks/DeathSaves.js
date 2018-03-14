@@ -1,13 +1,10 @@
 import React from 'react'
-
 const DeathSaves = ({failures, successes, change}) => {
-  function success(e) {
+  let success = function(e) {
     let value = e.target.value;
     if(successes == value) value = '0';
     change({field:'successes', value});
-  }
-
-  function fail(e) {console.log(10);
+  }, fail = function(e) {
     let value = e.target.value;
     if(failures == value) value = '0';
     change({field:'failures', value});

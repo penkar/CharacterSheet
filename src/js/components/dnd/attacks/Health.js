@@ -28,6 +28,4 @@ const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaus
   </div>
 )
 
-// <DeathSaves failures={failures} successes={successes} change={change}/>
-
 export default Health;
