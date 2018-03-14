@@ -1,20 +1,8 @@
 import React from 'react'
-const HitDie = ({hitDie, hitDieTotal, change}) => {
-  let changeH = function(e) {
-    change({field:'hitDie', value:e.target.value});
-  }, changeT = function(e) {
-    change({field:'hitDieTotal', value:e.target.value});
-  };
-
-  return(
-    <div id='hitdie'>
-      <div>
-        Total: <input value={hitDie} onChange={changeH}/>
-      </div>
-      <textarea rows='5' cols='10' value={hitDieTotal} onChange={changeT}/>
-      <span className='bold'>HIT DICE</span>
-    </div>
-  );
-}
-
-export default HitDie
+export const HitDie = ({hitDie, hitDieTotal, change}) => (
+  <div id='hitdie'>
+    <div>Total: <input value={hitDie} onChange={(e) => change({field:'hitDie', value:e.target.value})}/></div>
+    <textarea rows='5' cols='10' value={hitDieTotal} onChange={(e) => change({field:'hitDieTotal', value:e.target.value})}/>
+    <span className='bold'>HIT DICE</span>
+  </div>
+);

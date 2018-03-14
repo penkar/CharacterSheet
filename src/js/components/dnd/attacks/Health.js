@@ -1,7 +1,7 @@
 import React from 'react'
-import Field from './Field';
-import DeathSaves from './DeathSaves';
-import HitDie from './HitDie';
+import {Field} from './Field';
+import {DeathSaves} from './DeathSaves';
+import {HitDie} from './HitDie';
 
 const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaustion, initiative, speed, hitPoints, currentHitPoints, temporaryHitPoints, hitDie, hitDieTotal, failures, successes}, change) => (
   <div id='health' className='sectional'>
