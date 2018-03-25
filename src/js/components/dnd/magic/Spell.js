@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {CBox} from '../../generics/CBox';
+
 export function Spell({key, i, spell, change, level}) {
   function click() {
     change({level, i, prepared: !spell.prepared});
@@ -9,9 +11,11 @@ export function Spell({key, i, spell, change, level}) {
   let {prepared, name} = spell;
   return (
     <div className='spell' key={i+'spell'}>
-      <input type='checkbox' checked={prepared} onChange={click} />
-      <div>{name}</div>
-      <span style={{color:'red', fontSize:'2rem', cursor:'pointer'}} onClick={remove}>&nbsp;-</span>
+      { CBox({click, checked:prepared}) }
+      <div className='name'>{name}</div>
+      <span
+        className='minus'
+        onClick={remove} />
     </div>
   )
 }

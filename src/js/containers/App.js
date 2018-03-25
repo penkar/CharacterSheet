@@ -14,6 +14,7 @@ import * as apiUtilities from '../utilities/apiUtilities'
 require('../../style/Base.scss')
 
 const mapDispatchToProps = (dispatch)=> ({
+  changeMenu: bindActionCreators(actions.changeMenu, dispatch),
   settingsView: bindActionCreators(actions.settingsView, dispatch),
   modalChange: bindActionCreators(actions.modalChange, dispatch),
   fetchUser: bindActionCreators(apiUtilities.fetchUser, dispatch),
@@ -28,6 +29,7 @@ const mapStateToProps = (state) => ({
   type: state.settingsReducer.modalType,
   loading: state.settingsReducer.loading,
   pending: state.settingsReducer.pending,
+  menuOpen: state.settingsReducer.menuOpen,
 });
 
 class App extends React.Component {
@@ -74,10 +76,10 @@ class App extends React.Component {
   }
 
   render() {
-    let {settingsView, modalChange, modal, type, view, user, pending, loading} = this.props;
+    let {settingsView, modalChange, modal, type, view, user, pending, loading, menuOpen, changeMenu} = this.props;
     return (
       <div id='app'>
-        <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user}/>
+        <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user} open={menuOpen} changeMenu={changeMenu}/>
 
         { this._mainDisplay(view) }
 

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {CBox} from '../../generics/CBox';
 export function NewSpell({change, level, i}) {
   let string = '';
   let enter = () => {
@@ -9,9 +10,14 @@ export function NewSpell({change, level, i}) {
   }
   return (
     <div className='spell' key={`${i}_new`}>
-      <input type='checkbox' checked={false}/>
-      <input placeholder='Spell Name' onChange={keypress}/>
-      <span style={{color:'green', fontSize:'2.5rem', cursor:'pointer'}} onClick={enter}>+</span>
+      { CBox({checked:false}) }
+      <input
+        className='name'
+        placeholder='Spell Name'
+        onChange={keypress}/>
+      <span
+        className="plus"
+        onClick={enter}/>
     </div>
   );
 }

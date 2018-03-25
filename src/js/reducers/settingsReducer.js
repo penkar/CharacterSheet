@@ -1,4 +1,4 @@
-import {CHANGE_VIEW, CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR, CLEAN,} from '../constants'
+import {CHANGE_MENU, CHANGE_VIEW, CHANGE_LOADING, CHANGE_SETTING, CHANGE_MODAL, HYDRATE, ERROR, CLEAN,} from '../constants'
 import {ABILITY_SCORE, ATT_DEF_STRING, ATT_DEF_INT, BIO_STRING, BIO_INT, CHAR_NAME_STRING, CHAR_NAME_INT, SPELL_STRINGS, SPELL_ADD, SPELL_REMOVE, SPELL_STOCK, SPELL_PREPARED, SKILL_CHECK, SKILL_SCORE, SKILL_AFFILIATE,} from '../constants'
 
 const initial = {
@@ -11,6 +11,7 @@ const initial = {
   modalType: '',
   error: '',
   view: 'all',
+  menuOpen:false,
 }
 
 const settingsReducer = (state=initial, action) => {
@@ -44,6 +45,8 @@ const settingsReducer = (state=initial, action) => {
       return Object.assign({}, state, {pending: true});
     case CLEAN:
     case CHANGE_SETTING:
+    case CHANGE_MENU:
+      return Object.assign({}, state, {menuOpen: !state.menuOpen});
     default:
       return state
   }

@@ -1,7 +1,8 @@
 import React from 'react';
-export function View(viewCB, modalSetting) {
+import cn from 'classnames'
+export function View(viewCB, modalSetting, open) {
   return (
-    <div id='menu-list'>
+    <div id='menu-list' className={cn({open:!open})}>
       <a onClick={()=>(viewCB('all'))}>See All</a>
       <a onClick={()=>(viewCB('attack'))}>See Attack</a>
       <a onClick={()=>(viewCB('bkgd'))}>See Background</a>

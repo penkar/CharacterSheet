@@ -5,6 +5,7 @@ export const CHANGE_MODAL = 'CHANGE_MODAL'
 export const CHANGE_VIEW = 'CHANGE_VIEW'
 export const ERROR = 'ERROR'
 export const CLEAN = 'CLEAN'
+export const CHANGE_MENU = 'CHANGE_MENU'
 
 // CHARACTER CONSTANTS
 export const WRITING = 'WRITING';

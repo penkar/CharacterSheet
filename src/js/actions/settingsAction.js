@@ -1,4 +1,8 @@
-import {CHANGE_VIEW, CHANGE_SETTING, CHANGE_LOADING, CHANGE_MODAL} from '../constants'
+import {CHANGE_MENU, CHANGE_VIEW, CHANGE_SETTING, CHANGE_LOADING, CHANGE_MODAL} from '../constants'
+
+export const changeMenu = () => {
+  return ({type:CHANGE_MENU});
+}
 
 export const settingsView = (view) => {
   return ({

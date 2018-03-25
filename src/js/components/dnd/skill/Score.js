@@ -1,4 +1,5 @@
 import React from 'react'
+import {CBox} from '../../generics/CBox';
 export function Score ({value, field, obj, name, mod, pro, change}) {
   function onChange(e) {
     let {value} = e.target;
@@ -6,16 +7,13 @@ export function Score ({value, field, obj, name, mod, pro, change}) {
   }
   function onChangeRadio(e) {
     let {checked} = e.target;
-    change({field, checked, radio:true,});
+    change({field, checked:!obj.checked, radio:true,});
   }
   let placeholder = obj.placeholder + mod;
   if(obj.checked) placeholder += pro;
   return (
     <div className='score'>
-      <input
-        onChange={onChangeRadio}
-        checked={obj.checked}
-        type='checkbox' />
+      { CBox({click:onChangeRadio, checked:obj.checked}) }
       <input
         onChange={onChange}
         placeholder={placeholder}

@@ -29,3 +29,18 @@ button {
     color: white;
   }
 }
+
+.cbox {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: transparent;
+  position: relative;
+  margin:0.125rem;
+
+  &.checked {
+    background-color: rgb(0, 188, 212);
+    border: 1px solid rgb(0, 188, 212);
+  }
+}

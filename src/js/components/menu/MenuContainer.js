@@ -17,12 +17,12 @@ class MenuContainer extends React.Component {
   }
 
   render() {
-    let {open, section, view} = this.state, {viewCB, user, signout, modalCB,} = this.props;
+    let {open, viewCB, user, signout, modalCB, changeMenu} = this.props;
     return (
       <div id='menu-container'>
-        <Menu id='menu' onClick={this._toggle}/>
+        <Menu id='menu' onClick={changeMenu}/>
         <span onClick={this._toggle} >
-          {open && View(viewCB, modalCB)}
+          { View(viewCB, modalCB, open) }
         </span>
       </div>
     )
