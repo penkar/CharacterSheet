@@ -5,9 +5,7 @@ export function NewSpell({change, level, i}) {
   let enter = () => {
     if(!string) return null;
     change({level, newspell:true, value:string});
-  }, keypress = (e) => {
-    string = e.target.value;
-  }
+  }, keypress = (e) => (string = e.target.value);
   return (
     <div className='spell' key={`${i}_new`}>
       { CBox({checked:false}) }

@@ -22,7 +22,7 @@ export function SpellLevel({level, spells, stock, change}) {
   return (
     <div className='level sectional pure-u-1 pure-u-lg-1-4'>
       { cantrip(level) }
-      {spells.map((x, i)=> ( Spell({key:i, i, spell:x, change, level}) )) }
+      { spells.map((x, i)=> Spell({key:i, i, spell:x, change, level}) ) }
       { NewSpell({change, level, i: spells.length + 2}) }
     </div>
   );
