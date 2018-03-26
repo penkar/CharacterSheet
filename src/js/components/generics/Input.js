@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 export function Input ({change, placeholder = '', value, specific = '', field = ''}) {
   function changeEvent(e) {
     change({field, value:e.target.value});

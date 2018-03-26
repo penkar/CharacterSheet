@@ -28,7 +28,6 @@ const mapStateToProps = (state) => ({
   modal: state.settingsReducer.modal,
   type: state.settingsReducer.modalType,
   loading: state.settingsReducer.loading,
-  pending: state.settingsReducer.pending,
   menuOpen: state.settingsReducer.menuOpen,
 });
 
@@ -76,7 +75,7 @@ class App extends React.Component {
   }
 
   render() {
-    let {settingsView, modalChange, modal, type, view, user, pending, loading, menuOpen, changeMenu} = this.props;
+    let {settingsView, modalChange, modal, type, view, user, loading, menuOpen, changeMenu} = this.props;
     return (
       <div id='app'>
         <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user} open={menuOpen} changeMenu={changeMenu}/>
@@ -86,9 +85,9 @@ class App extends React.Component {
         <Modal modalCB={modalChange} open={modal}>
           { type && this._content(type, modalChange) }
         </Modal>
+        <Update />
 
-        { pending && <Update /> }
-        { loading && Loading(loading) }
+        { loading && Loading() }
       </div>
     )
   }

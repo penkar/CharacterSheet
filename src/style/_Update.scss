@@ -3,5 +3,9 @@
   right: 1rem;
   bottom: 1rem;
   z-index: 2000;
-  font-size: 4rem;
+  font-size: 0rem;
+
+  &.pending {
+    font-size: 4rem;
+  }
 }

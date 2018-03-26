@@ -38,6 +38,11 @@ button {
   background-color: transparent;
   position: relative;
   margin:0.125rem;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: default;
+  }
 
   &.checked {
     background-color: rgb(0, 188, 212);
