@@ -1,6 +1,5 @@
 import React from 'react';
 import {CBox} from '../../generics/CBox';
-
 export function Spell({key, i, spell, change, level}) {
   let {prepared, name} = spell;
   var click = function () {

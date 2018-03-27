@@ -1,7 +1,6 @@
 import React from 'react'
 import {Score} from './Score'
 import {getModifier} from '../../../utilities/scoreutilities'
-
 export const SavingThrows = ({strengthSaving, dexteritySaving, constitutionSaving, intelligenceSaving, wisdomSaving, charismaSaving,}, change, pro, abi) => (
   <div id='savingthrows'>
     { Score({change, pro, field:'strengthSaving', name:'Strength', obj:strengthSaving, mod:getModifier(abi, 'str') }) }

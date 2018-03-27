@@ -1,7 +1,6 @@
 import React from 'react'
 import {SpellLevel} from './SpellLevel'
-
-const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLevel3, spellLevel4, spellLevel5, spellLevel6, spellLevel7, spellLevel8, spellLevel9}, change) => {
+export const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLevel3, spellLevel4, spellLevel5, spellLevel6, spellLevel7, spellLevel8, spellLevel9}, change) => {
   return (
     <div id='magic'>
       <div className='pure-g'>
@@ -29,5 +28,3 @@ const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLeve
     </div>
   );
 }
-
-export {magicComponent}

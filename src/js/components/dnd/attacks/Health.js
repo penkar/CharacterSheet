@@ -3,7 +3,7 @@ import {Field} from './Field';
 import {DeathSaves} from './DeathSaves';
 import {HitDie} from './HitDie';
 
-const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaustion, initiative, speed, hitPoints, currentHitPoints, temporaryHitPoints, hitDie, hitDieTotal, failures, successes}, change) => (
+export const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaustion, initiative, speed, hitPoints, currentHitPoints, temporaryHitPoints, hitDie, hitDieTotal, failures, successes}, change) => (
   <div id='health' className='sectional'>
     <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
       {Field('armorClass', armorClass, 'Armor Class', change)}
@@ -27,5 +27,3 @@ const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaus
     </div>
   </div>
 )
-
-export default Health;
