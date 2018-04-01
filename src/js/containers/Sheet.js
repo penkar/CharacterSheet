@@ -29,7 +29,7 @@ const mapDispatchToActions = (dispatch) => {
 }
 
 class Sheet extends React.Component {
-  render() {console.log(tf)
+  render() {
     let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
     return (
