@@ -1,19 +1,11 @@
 import React from 'react'
-
-export default class Treasure extends React.Component {
-  _onChange = (e) => {
-    let value = e.target.value, {change, field} = this.props;
-    change({value, field});
-  }
-
-  render() {
-    let {rows, cols, text, id, string, klass} = this.props;
-    return (
-      <div id={id} className={`ztext sectional ${klass || ''}`}>
-        <textarea rows={rows} cols={cols} value={text} onChange={this._onChange}/>
-        <br/>
-        <span className='bold'>{string}</span>
-      </div>
-    )
-  }
+export const ZText = ({rows, cols, text, id, string, klass, field, change}) => {
+  let changeFunc = ({target}) => change({value:target.value, field});
+  return (
+    <div id={id} className={`ztext sectional ${klass || ''}`}>
+      <textarea rows={rows} cols={cols} value={text} onChange={changeFunc}/>
+      <br/>
+      <span className='bold'>{string}</span>
+    </div>
+  )
 }
