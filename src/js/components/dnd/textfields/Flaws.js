@@ -1,7 +1,6 @@
 import React from 'react'
 import ZText from './ZText'
-
-const text = ({text, field, change}) => (
+export const Flaws = ({text, field, change}) => (
   <ZText
     id='flaws'
     text={text}
@@ -11,5 +10,4 @@ const text = ({text, field, change}) => (
     cols='20'
     string='FLAWS'
     />
-)
-export default text
+);

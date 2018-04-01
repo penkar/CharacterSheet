@@ -1,7 +1,6 @@
 import React from 'react'
-import Cash from './Cash'
-
-const Equiptment = ({change, text, currency}) => (
+import {Cash} from './Cash'
+export const Equiptment = ({change, text, currency}) => (
   <div id='equiptment' className='sectional'>
     <div>
       <div className='currency'>
@@ -15,5 +14,4 @@ const Equiptment = ({change, text, currency}) => (
     </div>
     <span className='bold'>EQUIPTMENT</span>
   </div>
-)
-export default Equiptment
+);

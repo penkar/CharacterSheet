@@ -1,7 +1,6 @@
 import React from 'react'
 import ZText from './ZText'
-
-const text = ({text, field, change}) => (
+export const CharacterApperance = ({text, field, change}) => (
   <ZText
     id='apperance'
     text={text}
@@ -12,5 +11,4 @@ const text = ({text, field, change}) => (
     string='CHARACTER APPEARANCE'
     klass='pure-u-1 pure-u-lg-1-5'
     />
-)
-export default text
+);

@@ -1,6 +1,5 @@
 import React from 'react'
-
-export default class Treasure extends React.Component {
+export default class ZText extends React.Component {
   _onChange = (e) => {
     let value = e.target.value, {change, field} = this.props;
     change({value, field});
