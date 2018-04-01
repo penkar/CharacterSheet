@@ -10,6 +10,7 @@ export const magicChange = ({value, level, i, prepared, newspell, total, oldspel
     return ({
       type: SPELL_STOCK,
       level,
+      value,
     });
   } else if ( newspell ) {
     return ({

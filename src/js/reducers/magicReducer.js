@@ -29,7 +29,7 @@ const initial = {
   spellLevel9:[],
 }
 
-const magicReducer = (state = initial, action) => {
+const magicReducer = (state = initial, action) => {console.log('action', action)
   let nstate = {}, arr;
   switch (action.type) {
     case SPELL_STRINGS:
@@ -44,9 +44,9 @@ const magicReducer = (state = initial, action) => {
       nstate[action.level] = [...arr];
       return Object.assign({}, state, nstate);
     case SPELL_STOCK:
-      nstate = Object.assign({}, state.action);
+      nstate = Object.assign({}, state.stock);
       nstate[action.level] = action.value;
-      return Object.assign({}, state, nstate);
+      return Object.assign({}, state, {stock:nstate});
     case SPELL_PREPARED:
       arr = [...state[action.level]];
       arr[action.i].prepared = action.prepared;// = arr[action.i].prepared = action.prepared;
