@@ -29,7 +29,7 @@ const initial = {
   spellLevel9:[],
 }
 
-const magicReducer = (state = initial, action) => {console.log('action', action)
+const magicReducer = (state = initial, action) => {
   let nstate = {}, arr;
   switch (action.type) {
     case SPELL_STRINGS:
