@@ -18,9 +18,5 @@ export const change = ({field, value}) => {
     type = ATT_DEF_INT;
     value = value.replace(/\D/, '');
   }
-  return ({
-    type,
-    field,
-    value,
-  });
+  return ({type, field, value,});
 }
