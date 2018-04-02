@@ -4,10 +4,10 @@ import {NewSpell} from './NewSpell'
 export function SpellLevel({level, spells, stock, change}) {
   const total = ({target}) => change({level, total:true, value:target.value});
   return (
-    <div className='level sectional pure-u-1 pure-u-lg-1-4'>
-      { level === '0' && <div className='spelllevel' key={level}>CANTRIPS</div> }
+    <div className='level sectional pure-u-1 pure-u-lg-1-4' key={level}>
+      { level === '0' && <div className='spelllevel'>CANTRIPS</div> }
 
-      { level !== '0' && <div className='spelllevel' key={level}>
+      { level !== '0' && <div className='spelllevel'>
           <span className='ct'>Level {level}</span>
           <input placeholder='Total' onChange={total} className='total ct' value={stock}/>
           <input placeholder='Spell Expended' className='expended ct' />

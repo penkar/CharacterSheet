@@ -1,6 +1,6 @@
 import React from 'react'
-var changeattack = (e, field, change, value) => {
-  let attr = e.target.getAttribute('data'), val = e.target.value;
+var changeattack = ({target}, field, change, value) => {
+  let attr = target.getAttribute('data'), val = target.value;
   let values = Object.assign({}, value, {[attr]: val});
   change({value:values, field});
 }

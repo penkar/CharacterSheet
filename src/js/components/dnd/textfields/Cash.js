@@ -5,7 +5,7 @@ export const Cash = ({cash, change, field, name}) => (
     <span>{field}</span>
     <input
       value={cash || ''}
-      onChange={(event)=>(change({field, value:event.target.value}))}
+      onChange={({target})=>(change({field, value:target.value}))}
       placeholder={name} />
   </div>
 )
