@@ -1,9 +1,8 @@
 import React from 'react'
 import {Input} from '../generics'
-
-const Header3 = ({change, magic}) => {
-  function changeMagic(e) {
-    let target = e.target, value = {spellcastingClass: magic.spellcastingClass, spellcastingAbility: magic.spellcastingAbility, spellSaveDC: magic.spellSaveDC, spellSaveBonus: magic.spellSaveBonus,}
+export const Header3 = ({change, magic}) => {
+  function changeMagic({target}) {
+    let value = {spellcastingClass: magic.spellcastingClass, spellcastingAbility: magic.spellcastingAbility, spellSaveDC: magic.spellSaveDC, spellSaveBonus: magic.spellSaveBonus,}
     value[target.getAttribute('data')] = target.value;
     change({strings:true, value});
   }
@@ -34,4 +33,3 @@ const Header3 = ({change, magic}) => {
     </div>
   )
 }
-export {Header3}
