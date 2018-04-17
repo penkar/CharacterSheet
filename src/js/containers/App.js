@@ -7,6 +7,7 @@ import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
 import {MenuContainer, Menu, Update, Loading, Error, Root, Modal} from '../components';
+import {Feats} from '../components/dnd/feats';
 
 import * as actions from '../actions'
 import * as apiUtilities from '../utilities/apiUtilities'
@@ -76,6 +77,7 @@ class App extends React.Component {
 
   render() {
     let {settingsView, modalChange, modal, type, view, user, loading, menuOpen, changeMenu} = this.props;
+    console.log(Feats);
     return (
       <div id='app'>
         <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user} open={menuOpen} changeMenu={changeMenu}/>
