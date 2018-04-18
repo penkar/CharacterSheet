@@ -10,12 +10,13 @@ import * as tf from '../components/dnd/textfields';
 
 const mapStateToProps = (state)=>{
   return ({
-    characterNameReducer: state.characterNameReducer,
-    abilities: state.abilityReducer,
-    skills: state.skillsReducer,
-    textfields: state.characterBioReducer,
-    attacks: state.attackDefenseReducer,
-    magic: state.magicReducer,
+    abilities:state.abilityReducer,
+    attacks:state.attackDefenseReducer,
+    characterNameReducer:state.characterNameReducer,
+    feats:state.featsReducer,
+    magic:state.magicReducer,
+    skills:state.skillsReducer,
+    textfields:state.characterBioReducer,
   });
 }
 
@@ -30,8 +31,8 @@ const mapDispatchToActions = (dispatch) => {
 
 class Sheet extends React.Component {
   render() {
-    let {characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
-    let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3}
+    let {feats, characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
+    let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3};
     return (
       <div style={{flexDirection:'column'}}>
         { dnd.Header1(characterNameReducer, change) }
@@ -112,6 +113,9 @@ class Sheet extends React.Component {
         <hr/>
 
         { dnd.magicComponent(magic, changeMagic) }
+        
+        <hr/>
+        { dnd.Feats({feats, change:changeScore}) }
       </div>
     )
   }

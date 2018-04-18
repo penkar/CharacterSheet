@@ -10,14 +10,15 @@ const mapDispatchToProps = (dispatch) => ({
   dispatch,
 })
 const mapStateToProps = (state) => ({
-  pending: state.settingsReducer.pending,
+  pending:state.settingsReducer.pending,
   user: {
-    abilityReducer: state.abilityReducer,
-    attackDefenseReducer: state.attackDefenseReducer,
-    characterNameReducer: state.characterNameReducer,
-    characterBioReducer: state.characterBioReducer,
-    magicReducer: state.magicReducer,
-    skillsReducer: state.skillsReducer,
+    abilityReducer:state.abilityReducer,
+    attackDefenseReducer:state.attackDefenseReducer,
+    characterNameReducer:state.characterNameReducer,
+    characterBioReducer:state.characterBioReducer,
+    featsReducer:state.featsReducer,
+    magicReducer:state.magicReducer,
+    skillsReducer:state.skillsReducer,
   }
 })
 

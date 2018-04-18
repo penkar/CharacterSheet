@@ -7,7 +7,6 @@ export function Root ({createUser, dispatch, modalChange}) {
   }
 
   function newClick() {
-    let {dispatch, createUser} = this.props;
     let id = (new Date).getTime()
     createUser(id, dispatch)
   }

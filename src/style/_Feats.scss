@@ -1,0 +1,13 @@
+#feats {
+
+  .feat-button {
+    &:before {
+      content: "Add ";
+    }
+    &.remove {
+      &:before {
+        content: "Remove ";
+      }
+    }
+  }
+}

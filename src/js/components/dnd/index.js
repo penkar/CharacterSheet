@@ -6,3 +6,4 @@ export * from './skill';
 export * from './Skills.js';
 export * from './attacks';
 export * from './magic';
+export * from './feats';

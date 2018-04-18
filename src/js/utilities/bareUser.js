@@ -50,6 +50,7 @@ const bareUser = {
     treasure:'',
     totalNonConsumableMagicItems:'',
   },
+  featsReducer:[],
   magicReducer:{
     spellcastingClass:'',
     spellcastingAbility:'',

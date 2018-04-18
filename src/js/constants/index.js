@@ -10,6 +10,9 @@ export const CHANGE_MENU = 'CHANGE_MENU'
 // CHARACTER CONSTANTS
 export const WRITING = 'WRITING';
 
+// FEAT CHANGE
+export const FEAT_CHANGE = 'FEAT_CHANGE';
+
 // Character name reducer actions
 export const CHAR_NAME_STRING = 'CHAR_NAME_STRING';
 export const CHAR_NAME_INT = 'CHAR_NAME_INT';
