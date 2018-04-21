@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 
 import FeatsSheet from './FeatsSheet';
+import SpellSheet from './SpellSheet';
 import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
@@ -16,6 +17,7 @@ require('../../style/Base.scss')
 
 const mapDispatchToProps = (dispatch)=> ({
   changeMenu: bindActionCreators(actions.changeMenu, dispatch),
+  changeSetting: bindActionCreators(actions.changeSetting, dispatch),
   settingsView: bindActionCreators(actions.settingsView, dispatch),
   modalChange: bindActionCreators(actions.modalChange, dispatch),
   fetchUser: bindActionCreators(apiUtilities.fetchUser, dispatch),
@@ -30,6 +32,7 @@ const mapStateToProps = (state) => ({
   type: state.settingsReducer.modalType,
   loading: state.settingsReducer.loading,
   menuOpen: state.settingsReducer.menuOpen,
+  spellFil: state.settingsReducer.spellFil,
 });
 
 class App extends React.Component {
@@ -65,6 +68,11 @@ class App extends React.Component {
 
   _mainDisplay = (view) => {
     switch (view) {
+      case 'magic':
+        return SpellSheet({
+          filter:this.props.spellFil,
+          change:this.props.changeSetting,
+        })
       case 'attack':
         return <AttackSheet />
       case 'bkgd':

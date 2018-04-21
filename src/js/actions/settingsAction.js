@@ -9,3 +9,4 @@ export const modalChange = ({setting, modalType}) => ({
   setting,
   modalType,
 })
+export const changeSetting = ({key, value}) => ({key, value, type:CHANGE_SETTING});

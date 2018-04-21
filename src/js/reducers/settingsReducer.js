@@ -12,6 +12,7 @@ const initial = {
   error: '',
   view: 'all',
   menuOpen:false,
+  spellFil:'',
 }
 
 const settingsReducer = (state=initial, action) => {
@@ -45,6 +46,7 @@ const settingsReducer = (state=initial, action) => {
       return Object.assign({}, state, {pending: true});
     case CLEAN:
     case CHANGE_SETTING:
+      return Object.assign({}, state, {[action.key]: action.value});
     case CHANGE_MENU:
       return Object.assign({}, state, {menuOpen: !state.menuOpen});
     default:

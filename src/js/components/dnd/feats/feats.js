@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import {Features} from './features.js';
 
-export const Feats = ({change, feats, open}) => {console.log(6, open)
+export const Feats = ({change, feats, open}) => {
   var featsList = Features;
   if(!open) featsList = featsList.filter( ({key}) => feats.includes(key) );
   return (
