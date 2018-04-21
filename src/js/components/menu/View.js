@@ -5,6 +5,7 @@ export const View = (viewCB, modalSetting, open) => (
     <a onClick={()=>(viewCB('all'))}>See All</a>
     <a onClick={()=>(viewCB('attack'))}>See Attack</a>
     <a onClick={()=>(viewCB('bkgd'))}>See Background</a>
+    <a onClick={()=>(viewCB('feat'))}>Add a Feat</a>
     <a onClick={()=>(modalSetting({setting:true, modalType:'root'}))}>Find a Character</a>
     <a onClick={()=>(modalSetting({setting:true, modalType:'root'}))}>Create a Character</a>
   </div>

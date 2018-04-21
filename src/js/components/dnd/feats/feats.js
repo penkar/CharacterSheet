@@ -2,16 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 import {Features} from './features.js';
 
-export const Feats = ({change, feats, open}) => {
+export const Feats = ({change, feats, open}) => {console.log(6, open)
   var featsList = Features;
-  if(open) featsList = featsList.filter( ({key}) => feats.includes(key) );
+  if(!open) featsList = featsList.filter( ({key}) => feats.includes(key) );
   return (
     <div className='pure-g' id='feats'>
-      <div key='button-row' className='pure-u-1 pure-u-lg-24-24'>
-        <span>See All Feats</span>
-      </div>
       { featsList.map(({key, description, prerequisite}) => (
-        <div key={key} className='pure-u-1 pure-u-lg-24-24'>
+        <div key={key} className='pure-u-1 pure-u-lg-24-24 sectional'>
           <div
             onClick={() => change({feat:key}) }
             className={ cn('feat-button', {remove: feats.includes(key)}) }>

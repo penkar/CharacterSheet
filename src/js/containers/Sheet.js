@@ -113,9 +113,9 @@ class Sheet extends React.Component {
         <hr/>
 
         { dnd.magicComponent(magic, changeMagic) }
-        
+
         <hr/>
-        { dnd.Feats({feats, change:changeScore}) }
+        { dnd.Feats({feats, change:changeScore, open:false}) }
       </div>
     )
   }

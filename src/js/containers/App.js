@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 
+import FeatsSheet from './FeatsSheet';
 import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
@@ -68,6 +69,8 @@ class App extends React.Component {
         return <AttackSheet />
       case 'bkgd':
         return <BackgroundSheet />
+      case 'feat':
+        return <FeatsSheet />
       case 'all':
       default:
         return <Sheet />;
