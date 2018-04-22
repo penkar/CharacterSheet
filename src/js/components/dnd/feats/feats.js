@@ -9,11 +9,12 @@ export const Feats = ({change, feats, open}) => {
     <div className='pure-g' id='feats'>
       { featsList.map(({key, description, prerequisite}) => (
         <div key={key} className='pure-u-1 pure-u-lg-24-24 sectional'>
-          <div
+          <button
+            style={{color:'black'}}
             onClick={() => change({feat:key}) }
             className={ cn('feat-button', {remove: feats.includes(key)}) }>
             {key}
-          </div>
+          </button>
           { prerequisite && <div>{prerequisite}</div> }
           <div>{description.map((item, i) => <div key={i}>{item}</div>)}</div>
         </div>
