@@ -12,13 +12,13 @@ const initial = {
   error: '',
   view: 'all',
   menuOpen:false,
-  spellFil:'',
+  filter:"",
 }
 
 const settingsReducer = (state=initial, action) => {
   switch (action.type) {
     case CHANGE_VIEW:
-      return Object.assign({}, state, {view: action.view});
+      return Object.assign({}, state, {view: action.view, filter:"", menuOpen:false});
     case ERROR:
       return Object.assign({}, state, {error: action.error, modal: true, loading: false, modalType:'error'});
     case CHANGE_LOADING:

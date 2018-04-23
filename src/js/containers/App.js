@@ -32,7 +32,7 @@ const mapStateToProps = (state) => ({
   type: state.settingsReducer.modalType,
   loading: state.settingsReducer.loading,
   menuOpen: state.settingsReducer.menuOpen,
-  spellFil: state.settingsReducer.spellFil,
+  filter: state.settingsReducer.filter,
 });
 
 class App extends React.Component {
@@ -70,7 +70,7 @@ class App extends React.Component {
     switch (view) {
       case 'magic':
         return SpellSheet({
-          filter:this.props.spellFil,
+          filter:this.props.filter,
           change:this.props.changeSetting,
         })
       case 'attack':
@@ -89,7 +89,7 @@ class App extends React.Component {
     let {settingsView, modalChange, modal, type, view, user, loading, menuOpen, changeMenu} = this.props;
     return (
       <div id='app'>
-        <MenuContainer modalCB={modalChange} viewCB={settingsView} user={user} open={menuOpen} changeMenu={changeMenu}/>
+        { MenuContainer({modalChange, settingsView, menuOpen, changeMenu}) }
 
         { this._mainDisplay(view) }
 
@@ -97,7 +97,7 @@ class App extends React.Component {
           { type && this._content(type, modalChange) }
         </Modal>
         <Update />
-
+        
         { loading && Loading() }
       </div>
     )
