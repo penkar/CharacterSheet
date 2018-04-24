@@ -1,7 +1,5 @@
 export * from './Error'
 export * from './Root'
 export * from './Modal'
-export * from './Loading'
 export * from './Update'
-export * from './menu'
 export * from './dnd'

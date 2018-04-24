@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux'
 
@@ -8,7 +9,8 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-import {MenuContainer, Menu, Update, Loading, Error, Root, Modal} from '../components';
+import {Update, Error, Root, Modal} from '../components';
+import Menu from 'react-icons/lib/md/menu';
 
 import * as actions from '../actions'
 import * as apiUtilities from '../utilities/apiUtilities'
@@ -89,7 +91,18 @@ class App extends React.Component {
     let {settingsView, modalChange, modal, type, view, user, loading, menuOpen, changeMenu} = this.props;
     return (
       <div id='app'>
-        { MenuContainer({modalChange, settingsView, menuOpen, changeMenu}) }
+        <div id='menu-container'>
+          <Menu id='menu' onClick={changeMenu}/>
+          <div id='menu-list' className={cn({open:menuOpen})}>
+            <a onClick={()=>(settingsView('all'))}>See All</a>
+            <a onClick={()=>(settingsView('attack'))}>See Attack</a>
+            <a onClick={()=>(settingsView('bkgd'))}>See Background</a>
+            <a onClick={()=>(settingsView('feat'))}>Add a Feat</a>
+            <a onClick={()=>(settingsView('magic'))}>See all Magic Spells</a>
+            <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Find a Character</a>
+            <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Create a Character</a>
+          </div>
+        </div>
 
         { this._mainDisplay(view) }
 
@@ -97,8 +110,10 @@ class App extends React.Component {
           { type && this._content(type, modalChange) }
         </Modal>
         <Update />
-        
-        { loading && Loading() }
+
+        { loading && <div id='loading'>
+          <span/><span/><span/><span/>
+        </div> }
       </div>
     )
   }
