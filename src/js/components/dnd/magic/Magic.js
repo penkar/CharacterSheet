@@ -1,6 +1,6 @@
 import React from 'react'
 import {SpellLevel} from './SpellLevel'
-export const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLevel3, spellLevel4, spellLevel5, spellLevel6, spellLevel7, spellLevel8, spellLevel9}, change) => (
+export const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, spellLevel3, spellLevel4, spellLevel5, spellLevel6, spellLevel7, spellLevel8, spellLevel9}, change) =>
   <div id='magic'>
     <div className='pure-g'>
       <div className='pure-u-1 pure-u-lg-1-24' />
@@ -25,4 +25,3 @@ export const magicComponent = ({stock, spellLevel0, spellLevel1, spellLevel2, sp
       { SpellLevel({level:'9', change, stock:stock['9'], spells:spellLevel9}) }
     </div>
   </div>
-);

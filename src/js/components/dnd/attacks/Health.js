@@ -6,19 +6,19 @@ import {HitDie} from './HitDie';
 export const Health = ({attack1, attack2, attack3, attacksAndSpells, armorClass, exhaustion, initiative, speed, hitPoints, currentHitPoints, temporaryHitPoints, hitDie, hitDieTotal, failures, successes}, change) => (
   <div id='health' className='sectional'>
     <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
-      {Field('armorClass', armorClass, 'Armor Class', change)}
-      {Field('initiative', initiative, 'Initiative', change)}
-      {Field('speed', speed, 'Speed', change)}
+      { Field('armorClass', armorClass, 'Armor Class', change) }
+      { Field('initiative', initiative, 'Initiative', change) }
+      { Field('speed', speed, 'Speed', change) }
     </div>
 
     <br/>
-    {Field('hitPoints', hitPoints, 'Hit Point Maximum', change)}
+    { Field('hitPoints', hitPoints, 'Hit Point Maximum', change) }
     <br/>
-    {Field('exhaustion', exhaustion, 'Exhaustion', change)}
+    { Field('exhaustion', exhaustion, 'Exhaustion', change) }
     <br/>
-    {Field('currentHitPoints', currentHitPoints, 'Current Hit Points', change)}
+    { Field('currentHitPoints', currentHitPoints, 'Current Hit Points', change) }
     <br/>
-    {Field('temporaryHitPoints', temporaryHitPoints, 'Temporary Hit Points', change)}
+    { Field('temporaryHitPoints', temporaryHitPoints, 'Temporary Hit Points', change) }
     <br/>
 
     <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>

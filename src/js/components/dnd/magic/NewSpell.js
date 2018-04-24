@@ -1,6 +1,6 @@
 import React from 'react';
 import {CBox} from '../../generics/CBox';
-export function NewSpell({change, level, i}) {
+export const NewSpell = ({change, level, i}) => {
   let string = '';
   let enter = () => {
     if(!string) return null;
