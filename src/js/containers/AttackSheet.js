@@ -5,26 +5,21 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions'
 import * as dnd from '../components'
 
-const mapStateToProps = (state)=>{
-  return ({
-    characterNameReducer: state.characterNameReducer,
-    abi: state.abilityReducer,
-    abilities: state.abilityReducer,
-    skills: state.skillsReducer,
-    textfields: state.characterBioReducer,
-    attacks: state.attackDefenseReducer,
-    magic: state.magicReducer,
-  });
-}
-
-const mapDispatchToActions = (dispatch) => {
-  return {
-    dispatch,
-    change: bindActionCreators(actions.change, dispatch),
-    changeScore: bindActionCreators(actions.changeScore, dispatch),
-    changeMagic: bindActionCreators(actions.magicChange, dispatch),
-  }
-}
+const mapStateToProps = (state)=> ({
+  characterNameReducer: state.characterNameReducer,
+  abi: state.abilityReducer,
+  abilities: state.abilityReducer,
+  skills: state.skillsReducer,
+  textfields: state.characterBioReducer,
+  attacks: state.attackDefenseReducer,
+  magic: state.magicReducer,
+})
+const mapDispatchToActions = (dispatch) => ({
+  dispatch,
+  change: bindActionCreators(actions.change, dispatch),
+  changeScore: bindActionCreators(actions.changeScore, dispatch),
+  changeMagic: bindActionCreators(actions.magicChange, dispatch),
+})
 
 class Sheet extends React.Component {
   render() {

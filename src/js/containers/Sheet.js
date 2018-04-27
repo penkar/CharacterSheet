@@ -8,26 +8,22 @@ import * as actions from '../actions'
 import * as dnd from '../components/dnd';
 import * as tf from '../components/dnd/textfields';
 
-const mapStateToProps = (state)=>{
-  return ({
-    abilities:state.abilityReducer,
-    attacks:state.attackDefenseReducer,
-    characterNameReducer:state.characterNameReducer,
-    feats:state.featsReducer,
-    magic:state.magicReducer,
-    skills:state.skillsReducer,
-    textfields:state.characterBioReducer,
-  });
-}
+const mapStateToProps = (state) => ({
+  abilities:state.abilityReducer,
+  attacks:state.attackDefenseReducer,
+  characterNameReducer:state.characterNameReducer,
+  feats:state.featsReducer,
+  magic:state.magicReducer,
+  skills:state.skillsReducer,
+  textfields:state.characterBioReducer,
+});
 
-const mapDispatchToActions = (dispatch) => {
-  return {
-    dispatch,
-    change: bindActionCreators(actions.change, dispatch),
-    changeScore: bindActionCreators(actions.changeScore, dispatch),
-    changeMagic: bindActionCreators(actions.magicChange, dispatch),
-  }
-}
+const mapDispatchToActions = (dispatch) => ({
+  dispatch,
+  change:bindActionCreators(actions.change, dispatch),
+  changeScore: bindActionCreators(actions.changeScore, dispatch),
+  changeMagic: bindActionCreators(actions.magicChange, dispatch),
+});
 
 class Sheet extends React.Component {
   render() {

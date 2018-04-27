@@ -41,7 +41,6 @@ export const deleteUser = () => {
 }
 
 export const createUser = (userID, dispatch, user = bareUser) => {
-  console.log(bareUser);
   fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`, {
     headers: {
       'Accept': 'application/json',

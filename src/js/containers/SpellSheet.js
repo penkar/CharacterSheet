@@ -4,7 +4,7 @@ import {Spells} from '../components/dnd/magic/Spells1.js';
 
 class Spell extends React.Component {
   shouldComponentUpdate = (nextProps) => nextProps.hide !==  this.props.hide;
-  render() {
+  render = () => {
     let {name, lvl, cst, desc, dur, rng, type, hide} = this.props;
     return (
       <div key={name} className={cn('pure-u-1', 'pure-u-lg-24-24', 'sectional', {hide})}>

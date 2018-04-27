@@ -1,20 +1,11 @@
 import React from 'react'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions'
 import * as tf from '../components/dnd/textfields'
 
-const mapStateToProps = (state)=>{
-  return ({
-    textfields: state.characterBioReducer,
-  });
-}
-
-const mapDispatchToActions = (dispatch) => {
-  return {
-    change: bindActionCreators(actions.change, dispatch),
-  }
-}
+const mapStateToProps = (state) => ({textfields: state.characterBioReducer});
+const mapDispatchToActions = (dispatch) => ({change: bindActionCreators(actions.change, dispatch),})
 
 class Sheet extends React.Component {
   render() {

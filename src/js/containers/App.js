@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { bindActionCreators } from 'redux';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import FeatsSheet from './FeatsSheet';
 import SpellSheet from './SpellSheet';
@@ -9,7 +9,7 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-import {Update, Error, Root, Modal} from '../components';
+import { Update, Error, Root, Modal } from '../components';
 import Menu from 'react-icons/lib/md/menu';
 
 import * as actions from '../actions'
