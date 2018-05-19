@@ -3,7 +3,7 @@ import {modifierFunc} from '../../utilities/scoreutilities'
 
 export function Ability ({modifier, value, field, change}) {
   function changeScore({target}) {
-    let modifier = parseInt(modifier);
+    let value = parseInt(target.value || 0);
     change({value, modifier, field, skill:true});
   }
   function changeModifier({target}) {
