@@ -12,26 +12,22 @@ module.exports = {
     new webpack.OldWatchingPlugin()
   ],
   module: {
-    loaders: [
-      {
-        test: /\.jpg$/,
-        loader: 'file-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        exclude: /node_modules/
-      },
-      {
-        test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'stage-0', 'react']
-        }
+    loaders: [{
+      test: /\.jpg$/,
+      loader: 'file-loader',
+      exclude: /node_modules/
+    },{
+      test: /\.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      exclude: /node_modules/
+    },{
+      test: /.jsx?$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      query: {
+        presets: ['es2015', 'stage-0', 'react']
       }
-    ]
+    }]
   },
   map: true,
   watch: true

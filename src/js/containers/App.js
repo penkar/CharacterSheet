@@ -15,7 +15,7 @@ import Menu from 'react-icons/lib/md/menu';
 import * as actions from '../actions'
 import * as apiUtilities from '../utilities/apiUtilities'
 
-require('../../style/Base.scss')
+require('../../style/Base.scss');
 
 const mapDispatchToProps = (dispatch)=> ({
   changeMenu: bindActionCreators(actions.changeMenu, dispatch),
@@ -39,8 +39,8 @@ const mapStateToProps = (state) => ({
 
 class App extends React.Component {
   componentDidMount() {
-    window.addEventListener('hashchange', this._hashChange)
-    let {fetchUser,} = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
+    window.addEventListener('hashchange', this._hashChange);
+    let { fetchUser } = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
     if(hash) {
       this._hashGrab(hash);
     } else {
@@ -111,9 +111,7 @@ class App extends React.Component {
         </Modal>
         <Update />
 
-        { loading && <div id='loading'>
-          <span/><span/><span/><span/>
-        </div> }
+        { loading && <div id='loading'><span/><span/><span/><span/></div> }
       </div>
     )
   }
