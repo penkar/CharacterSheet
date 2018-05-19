@@ -9,7 +9,7 @@ import Sheet from './Sheet';
 import AttackSheet from './AttackSheet';
 import BackgroundSheet from './BackgroundSheet';
 
-import { Update, Error, Root, Modal } from '../components';
+import { Update, Error, Modal, LandingPage } from '../components';
 import Menu from 'react-icons/lib/md/menu';
 
 import * as actions from '../actions'
@@ -38,14 +38,16 @@ const mapStateToProps = (state) => ({
 });
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {hash: window.location.hash};
+  }
   componentDidMount() {
     window.addEventListener('hashchange', this._hashChange);
     let { fetchUser } = this.props, hash = window.location.hash.substr(1, window.location.hash.length);
     if(hash) {
       this._hashGrab(hash);
-    } else {
-      this.props.modalChange({setting:true, modalType:'root'});
-   }
+    }
   }
 
   _hashGrab = (hash) => {
@@ -54,13 +56,13 @@ class App extends React.Component {
 
   _hashChange = () => {
     let hash = window.location.hash.substr(1, window.location.hash.length);
+    this.setState({hash});
     if(hash) this._hashGrab(hash);
   }
 
   _content = (type, modalChange) => {
     switch (type) {
-      case 'root':
-        return Root({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange})
+      //   return Root({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange})
       case 'error':
         return Error(this.props.error);
       default:
@@ -104,13 +106,14 @@ class App extends React.Component {
           </div>
         </div>
 
-        { this._mainDisplay(view) }
+        { !!this.state.hash && this._mainDisplay(view) }
+        {  !this.state.hash && LandingPage({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange}) }
 
         <Modal modalCB={modalChange} open={modal}>
           { type && this._content(type, modalChange) }
         </Modal>
         <Update />
-
+        
         { loading && <div id='loading'><span/><span/><span/><span/></div> }
       </div>
     )
