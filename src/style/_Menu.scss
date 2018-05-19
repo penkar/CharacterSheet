@@ -13,7 +13,6 @@
   height: 4rem;
   right: 0px;
   top: 0px;
-  // background-color: rgb(33, 150, 243);
 
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.46);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.46);
@@ -43,6 +42,16 @@
     >div {
       display: none;
     }
+  }
+  
+  #id-key {
+    &:before {
+      content: "ID: "
+    }
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
   }
 
   #menu {

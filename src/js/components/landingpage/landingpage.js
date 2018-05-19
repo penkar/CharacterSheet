@@ -20,18 +20,14 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
 
         <div className='line'>
           <div className=''>
-            Create A New Character
-          </div>
-
-          <div className='' style={{textAlign:'right'}}>
-            <button onClick={newClick} className='success'>NEW</button>
+            <button onClick={newClick} className='success'>Start a new character</button>
           </div>
         </div>
 
         <br />
 
         <div className='line'>
-          <button onClick={searchClick} className='primary'>Serch for your character</button>
+          <button onClick={searchClick} className='primary'>Search for your existing character</button>
 
           <div className='' style={{textAlign:'right'}}>
             <input placeholder='ID key' name='identifier' />

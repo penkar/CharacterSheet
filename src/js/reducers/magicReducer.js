@@ -49,7 +49,7 @@ const magicReducer = (state = initial, action) => {
       return Object.assign({}, state, {stock:nstate});
     case SPELL_PREPARED:
       arr = [...state[action.level]];
-      arr[action.i].prepared = action.prepared;// = arr[action.i].prepared = action.prepared;
+      arr[action.i].prepared = action.prepared;
       nstate[action.level] = [...arr];
       return Object.assign({}, state, nstate);
     case HYDRATE:

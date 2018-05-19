@@ -62,7 +62,6 @@ class App extends React.Component {
 
   _content = (type, modalChange) => {
     switch (type) {
-      //   return Root({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange})
       case 'error':
         return Error(this.props.error);
       default:
@@ -104,6 +103,7 @@ class App extends React.Component {
             <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Find a Character</a>
             <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Create a Character</a>
           </div>
+          { this.state.hash && <div id='id-key'>{this.state.hash.replace('#', '')}</div> }
         </div>
 
         { !!this.state.hash && this._mainDisplay(view) }
