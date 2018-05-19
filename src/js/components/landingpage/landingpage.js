@@ -6,15 +6,18 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
     modalChange({setting: false, modalType: ''});
   }
   function newClick() {
-    let id = (new Date).getTime()
-    createUser(id, dispatch)
+    let id = (new Date).getTime();
+    createUser(id, dispatch);
+  }
+  function onChange({key}) {
+    if(key == "Enter") searchClick();
   }
   
   return (
     <div id='root'>
       <div className='content'>
         <h2 className='title'>Character Sheet 1.0145</h2>
-        <h5 className='title'>Create and share your 5E characters</h5>
+        <h5 className='title'>Create and share your 5E original characters. Copy the URL, paste, and go!</h5>
         
         <br />
 
@@ -30,7 +33,7 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
           <button onClick={searchClick} className='primary'>Search for your existing character</button>
 
           <div className='' style={{textAlign:'right'}}>
-            <input placeholder='ID key' name='identifier' />
+            <input placeholder='ID key' name='identifier' onKeyDown={onChange}/>
           </div>
         </div>
 
