@@ -69,8 +69,8 @@ class App extends React.Component {
     }
   }
 
-  _mainDisplay = (view) => {
-    switch (view) {
+  _mainDisplay = () => {
+    switch (this.props.view) {
       case 'magic':
         return SpellSheet({
           filter:this.props.filter,
@@ -89,7 +89,8 @@ class App extends React.Component {
   }
 
   render() {
-    let {settingsView, modalChange, modal, type, view, user, loading, menuOpen, changeMenu} = this.props;
+    let {settingsView, modalChange, modal, type, loading, menuOpen, changeMenu, createUser, dispatch} = this.props;
+    let loadingPage = {createUser, dispatch, modalChange};
     return (
       <div id='app'>
         <div id='menu-container'>
@@ -106,8 +107,8 @@ class App extends React.Component {
           { this.state.hash && <div id='id-key'>{this.state.hash.replace('#', '')}</div> }
         </div>
 
-        { !!this.state.hash && this._mainDisplay(view) }
-        {  !this.state.hash && LandingPage({createUser:this.props.createUser, dispatch:this.props.dispatch, modalChange}) }
+        { !!this.state.hash && this._mainDisplay() }
+        {  !this.state.hash && LandingPage(loadingPage) }
 
         <Modal modalCB={modalChange} open={modal}>
           { type && this._content(type, modalChange) }

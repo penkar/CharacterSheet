@@ -43,4 +43,4 @@ class Sheet extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToActions)(Sheet)
+export default connect(mapStateToProps, mapDispatchToActions)(Sheet);

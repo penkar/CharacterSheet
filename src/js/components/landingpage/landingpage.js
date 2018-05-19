@@ -1,33 +1,26 @@
-import React from 'react'
-
+import React from 'react';
 export const LandingPage = ({createUser, dispatch, modalChange}) => {
-  function searchClick() {
-    window.location.hash = `#${document.getElementsByName('identifier')[0].value}`
+  var searchClick = function() {
+    window.location.hash = `#${document.getElementsByName('identifier')[0].value}`;
     modalChange({setting: false, modalType: ''});
-  }
-  function newClick() {
+  }, newClick = function () {
     let id = (new Date).getTime();
     createUser(id, dispatch);
-  }
-  function onChange({key}) {
+  }, onChange = function({key}) {
     if(key == "Enter") searchClick();
-  }
+  };
   
   return (
     <div id='root'>
       <div className='content'>
         <h2 className='title'>Character Sheet 1.0145</h2>
-        <h5 className='title'>Create and share your 5E original characters. Copy the URL, paste, and go!</h5>
+        <h5 className='title'>Create and share your 5e original characters. Copy the URL, paste, and go!</h5>
         
-        <br />
-
         <div className='line'>
           <div className=''>
             <button onClick={newClick} className='success'>Start a new character</button>
           </div>
         </div>
-
-        <br />
 
         <div className='line'>
           <button onClick={searchClick} className='primary'>Search for your existing character</button>
@@ -71,5 +64,5 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
         </div>
       </span>
     </div>
-  )
+  );
 }

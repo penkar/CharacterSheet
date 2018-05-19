@@ -8,7 +8,7 @@ import * as actions from '../utilities/apiUtilities'
 const mapDispatchToProps = (dispatch) => ({
   updateUser: bindActionCreators(actions.updateUser, dispatch),
   dispatch,
-})
+});
 const mapStateToProps = (state) => ({
   pending:state.settingsReducer.pending,
   user: {
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => ({
     magicReducer:state.magicReducer,
     skillsReducer:state.skillsReducer,
   }
-})
+});
 
 class UpdateComponent extends React.Component {
   componentDidMount = () => {

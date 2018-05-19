@@ -1,11 +1,11 @@
 import React from 'react'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions'
 import * as dnd from '../components'
 
-const mapStateToProps = (state)=> ({
+const mapStateToProps = (state) => ({
   characterNameReducer: state.characterNameReducer,
   abi: state.abilityReducer,
   abilities: state.abilityReducer,
@@ -52,8 +52,8 @@ class Sheet extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToActions)(Sheet)
+export default connect(mapStateToProps, mapDispatchToActions)(Sheet);

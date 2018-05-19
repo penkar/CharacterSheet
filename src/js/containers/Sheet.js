@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as constants from '../constants'
@@ -113,8 +113,8 @@ class Sheet extends React.Component {
         <hr/>
         { dnd.Feats({feats, change:changeScore, open:false}) }
       </div>
-    )
+    );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToActions)(Sheet)
+export default connect(mapStateToProps, mapDispatchToActions)(Sheet);

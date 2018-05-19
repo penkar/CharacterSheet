@@ -1,17 +1,17 @@
 import React from 'react'
 class Modal extends React.Component {
-  render () {
-    let {open, modalCB} = this.props;
-    return (
-      <div className='overlay' onClick={
-        () => modalCB({setting: false, modalType: ''})
-      } style={open ? {} : {display:'none'}}>
-        <div id='modal' onClick={(event) => event.stopPropagation()}>
-          {this.props.children}
-        </div>
+  render = () => (
+    <div
+      className='overlay'
+      onClick={ () => this.props.modalCB({setting: false, modalType: ''}) }
+      style={this.props.open ? {} : {display:'none'}}>
+      
+      <div id='modal' onClick={(event) => event.stopPropagation()}>
+        { this.props.children }
       </div>
-    )
-  }
+      
+    </div>
+  );
 }
 
 export {Modal}
