@@ -37,8 +37,8 @@
   }
 
   .title {
-    background-color: black;
-    color:lightsteelblue;
+    // background-color: black;
+    // color:lightsteelblue;
     margin:0px;
     padding:1rem;
     text-align: center;
@@ -56,13 +56,25 @@
   }
 
   .developer-notes-container {
-    &:hover .developer-notes {
-      opacity: 1;
-      height: auto;
+    display: contents;
+    >p {
+      display: contents;
+    }
+    &:hover {
+      display: initial;
+      >p {
+        display: initial;
+      }
+      .developer-notes {
+        opacity: 1;
+        height: auto;
+        width: auto;
+        padding: 0rem 4rem;
+      }
     }
     .developer-notes {
+      width: 0px;
       opacity: 0;
-      padding: 0rem 4rem;
       height: 1rem;
       overflow: hidden;
     }
