@@ -27,6 +27,13 @@ class UpdateComponent extends React.Component {
     window.onbeforeunload = this._onbeforeunload
   }
 
+  componentDidUpdate = (prev) => {
+    if(prev.user.characterNameReducer && this.props.user.characterNameReducer && (prev.user.characterNameReducer.characterName !== this.props.user.characterNameReducer.characterName)) {
+      let title = document.getElementsByTagName("Title")[0];
+      title.innerText = this.props.user.characterNameReducer.characterName || "Character Sheet";
+    }
+  }
+
   _update = () => {
     let hash = window.location.hash.substr(1, window.location.hash.length);
     let {updateUser, dispatch, user} = this.props;
