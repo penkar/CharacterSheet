@@ -13,7 +13,7 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
   return (
     <div id='root'>
       <div className='content'>
-        <h2 className='title'>Character Sheet 1.0145</h2>
+        <h2 className='title'>Character Sheet 1.0151</h2>
         <h5 className='title'>Create and share your 5e original characters. Copy the URL, paste, and go!</h5>
         
         <div className='line'>

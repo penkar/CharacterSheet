@@ -101,8 +101,7 @@ class App extends React.Component {
             <a onClick={()=>(settingsView('bkgd'))}>See Background</a>
             <a onClick={()=>(settingsView('feat'))}>Add a Feat</a>
             <a onClick={()=>(settingsView('magic'))}>See all Magic Spells</a>
-            <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Find a Character</a>
-            <a onClick={()=>(modalChange({setting:true, modalType:'root'}))}>Create a Character</a>
+            <a onClick={()=>{settingsView('all'); window.location.hash = '';}}>Create / Find Character</a>
           </div>
           { this.state.hash && <div id='id-key'>{this.state.hash.replace('#', '')}</div> }
         </div>
@@ -114,7 +113,7 @@ class App extends React.Component {
           { type && this._content(type, modalChange) }
         </Modal>
         <Update />
-        
+
         { loading && <div id='loading'><span/><span/><span/><span/></div> }
       </div>
     )
