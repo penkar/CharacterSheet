@@ -1,5 +1,5 @@
 import React from 'react'
-export const PassiveWisdom = ({placeholder, value}, change) => (
+export const PassiveWisdom = ({placeholder, value}, change) => 
   <div id='passivewisdom' className='sectional'>
     <input
       placeholder={placeholder}
@@ -9,4 +9,3 @@ export const PassiveWisdom = ({placeholder, value}, change) => (
       }/>
     <span className='bold'>Passive Wisdom (Perception)</span>
   </div>
-)

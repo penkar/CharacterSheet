@@ -1,6 +1,6 @@
 import React from 'react';
 export const LandingPage = ({createUser, dispatch, modalChange}) => {
-  var searchClick = function() {
+  const searchClick = function() {
     window.location.hash = `#${document.getElementsByName('identifier')[0].value}`;
     modalChange({setting: false, modalType: ''});
   }, newClick = function () {
@@ -9,13 +9,13 @@ export const LandingPage = ({createUser, dispatch, modalChange}) => {
   }, onChange = function({key}) {
     if(key == "Enter") searchClick();
   };
-  
+
   return (
     <div id='root'>
       <div className='content'>
         <h2 className='title'>Character Sheet 1.0151</h2>
         <h5 className='title'>Create and share your 5e original characters. Copy the URL, paste, and go!</h5>
-        
+
         <div className='line'>
           <div className=''>
             <button onClick={newClick} className='success'>Start a new character</button>

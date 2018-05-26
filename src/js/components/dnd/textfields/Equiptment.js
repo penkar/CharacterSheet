@@ -1,6 +1,6 @@
 import React from 'react'
 import {Cash} from './Cash'
-export const Equiptment = ({change, text, currency}) => (
+export const Equiptment = ({change, text, currency}) =>
   <div id='equiptment' className='sectional'>
     <div>
       <div className='currency'>
@@ -14,4 +14,3 @@ export const Equiptment = ({change, text, currency}) => (
     </div>
     <span className='bold'>EQUIPTMENT</span>
   </div>
-);

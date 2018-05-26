@@ -15,7 +15,7 @@ export const SpellLevel = ({level, spells, stock, change}) =>
         <input placeholder='Spell Expended' className='expended ct' />
       </div> }
 
-    { spells.map(({name, prepared}, i)=> Spell({i, name, prepared, change, level}) ) }
+    { spells.map(({name, prepared}, i) => Spell({i, name, prepared, change, level}) ) }
 
     { NewSpell({change, level, i: spells.length + 2}) }
   </div>
