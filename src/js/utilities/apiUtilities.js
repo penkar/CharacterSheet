@@ -37,8 +37,7 @@ export const updateUser = (userID, dispatch, user = bareUser) => {
   return ({type:CHANGE_LOADING, loading: true})
 }
 
-export const deleteUser = () => {
-}
+export const deleteUser = () => null;
 
 export const createUser = (userID, dispatch, user = bareUser) => {
   fetch(`https://charsheet-3ebfd.firebaseio.com/${userID}.json`, {
