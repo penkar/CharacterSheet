@@ -27,7 +27,7 @@ const SpellSheet = ({filter, change}) => {
   return (
     <div className='pure-g' key='spell-sheet'>
       <div key='input' className='pure-u-1 pure-u-lg-24-24 sectional'>
-        <input onChange={_onChange} name='spell-filter' placeholder="Filter spells by..." />
+        <input onChange={_onChange} name='spell-filter' placeholder="Filter spells by..." defaultValue={filter}/>
       </div>
       { Spells.map((spell, i) => <Spell key={i} {...spell} hide={!spell.name.match(regex)} /> ) }
     </div>

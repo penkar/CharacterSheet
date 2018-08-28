@@ -23,11 +23,12 @@ const mapDispatchToActions = (dispatch) => ({
   change:bindActionCreators(actions.change, dispatch),
   changeScore: bindActionCreators(actions.changeScore, dispatch),
   changeMagic: bindActionCreators(actions.magicChange, dispatch),
+  changeSettings: bindActionCreators(actions.changeSettings, dispatch),
 });
 
 class Sheet extends React.Component {
   render() {
-    let {feats, characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic,} = this.props;
+    let {feats, characterNameReducer, abilities, skills, textfields, attacks, change, changeScore, magic, changeMagic, changeSettings} = this.props;
     let atcks = {att: textfields.attacksAndSpellcasting, att1: attacks.attack1, att2: attacks.attack2, att3: attacks.attack3};
     return (
       <div style={{flexDirection:'column'}}>
@@ -108,7 +109,7 @@ class Sheet extends React.Component {
         { dnd.Header3({change:changeMagic, magic}) }
         <hr/>
 
-        { dnd.magicComponent(magic, changeMagic) }
+        { dnd.magicComponent(magic, changeMagic, changeSettings) }
 
         <hr/>
         { dnd.Feats({feats, change:changeScore, open:false}) }
