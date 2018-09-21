@@ -1,5 +1,5 @@
 import React from 'react'
-export const DeathSaves = ({failures, successes, change}) => (
+export const DeathSaves = ({failures, successes, change}) =>
   <div id='deathsaves'>
     <div>
       Successes
@@ -17,4 +17,3 @@ export const DeathSaves = ({failures, successes, change}) => (
 
     <div className='bold'>DeathSaves</div>
   </div>
-);
